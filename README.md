@@ -32,6 +32,7 @@ npm install
 
 npm install --save-dev ember-cli-simple-auth
 npm install --save-dev ember-cli-simple-auth-devise
+npm install --save-dev ember-cli-content-security-policy
 
 bower update
 ember init
