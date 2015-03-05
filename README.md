@@ -15,7 +15,7 @@ The project is currently using:
 
 ## Build
 ```bash
-git clone https://github.com/givanse/ember-cli-simple-auth-devise.git
+git clone git@git.thesponge.eu:thesponge/kep-ember.git
 ```
 
 ```bash
