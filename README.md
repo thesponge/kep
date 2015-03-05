@@ -29,6 +29,10 @@ rails server
 ```bash
 cd my-frontend
 npm install
+
+npm install --save-dev ember-cli-simple-auth
+npm install --save-dev ember-cli-simple-auth-devise
+
 bower update
 ember init
 # say no to every prompt (don't overwrite anything)
