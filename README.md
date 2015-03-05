@@ -15,11 +15,11 @@ The project is currently using:
 
 ## Build
 ```bash
-git clone https://github.com/givanse/ember-cli-simple-auth-devise.git
+git clone git@git.thesponge.eu:thesponge/kep-ember.git
 ```
 
 ```bash
-cd my-backend
+cd backend
 bundle update
 rake db:migrate
 rake db:seed
@@ -27,7 +27,7 @@ rails server
 ```
 
 ```bash
-cd my-frontend
+cd frontend
 npm install
 
 npm install --save-dev ember-cli-simple-auth
