@@ -6,6 +6,6 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 export default Ember.Route.extend(ApplicationRouteMixin, {
     beforeModel: function () {
         this._super.apply(this,arguments);
-        return this.csrf.fetchTocken();
+        return this.csrf.fetchToken();
     }
-}
+});
