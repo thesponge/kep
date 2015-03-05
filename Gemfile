@@ -7,6 +7,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'ember-cli-rails'
 
 gem 'devise'
-gem 'mysql'
 
-ruby '2.2.0'
+group :production do
+   gem 'mysql'
+end
+
+ ruby '2.2.0'

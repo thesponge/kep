@@ -17,6 +17,9 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+      railsCsrf: {
+        csrfURL: 'api/csrf'
+      }
   };
     
     ENV['simple-auth'] = {
