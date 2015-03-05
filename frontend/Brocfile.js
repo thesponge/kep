@@ -4,12 +4,6 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-app.import('bower_components/rails-csrf/dist/named-amd/main.js', {
-	  'rails-csrf': [
-		      'service'
-			    ]
-});
-	
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
