@@ -1,8 +1,8 @@
+<form {{action 'authenticate' on 'submit'}}>
+    <label for='identification'>Login</label>
+    {{ input id='identification' placeholder='Enter Login' value=identification }}
+    <label for='password'>Password</label>
+    {{ input id='password' placeholder='Enter Password' type='password' value=password }}
+    <button type='submit'>Login</button>
+</form>
 
- <form {{ action 'authenticate' on='submit'}}>
-     <label for="identification">Login</label>
-     {{input value= identification placeholder= 'Enter Login'}}
-     <label for="password">Password</label>
-     {{input value= password placeholder='Enter Password'}}
-     <button type="submit">Login</button>
- </form>
