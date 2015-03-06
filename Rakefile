@@ -37,10 +37,10 @@ task :deploy, :app_name do |t, args|
     
   sh 'git branch -f rsh-production'
   sh 'git checkout rsh-production'
-#  sh 'git push --set-upstream origin rsh-production'
+  sh 'git push --set-upstream origin rsh-production'
   sh 'git branch  -f rails-served-html'
   sh 'git checkout rails-served-html'
-#  sh 'git push --set-upstream origin rails-served-html'
+  sh 'git push --set-upstream origin rails-served-html'
     
   sh 'git checkout rsh-production'
   sh 'git merge rails-served-html -m "Merging master for deployment"'
