@@ -23,11 +23,12 @@ task :test do
   ]
 end
 
-task :deploy do
+task :deploy, :app_name do |t, args|
+  args.with_defaults(:app_name => 'kep-ember')
     
 #Destroy previous and create new heroku app 
-  sh 'heroku apps:destroy --app kep-ember --confirm kep-ember'
-  sh 'heroku apps:create kep-ember'
+  sh "heroku apps:destroy --app #{args[:app_name]} --confirm #{args[:app_name]}"
+  sh "heroku apps:create #{args[:app_name]}"
     
 #    Create deploy brances
 #  sh 'git checkout master'
@@ -55,7 +56,7 @@ task :deploy do
 
   sh 'git subtree push -P backend heroku master'
 
-  release_output = `heroku releases -a kep-ember `.split "\n"
+  release_output = `heroku releases -a #{args[:app_name]} `.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
