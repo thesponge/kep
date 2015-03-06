@@ -11,6 +11,17 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
+
 loadInitializers(App, config.modulePrefix);
+
+Ember.View.reopen({
+  didInsertElement : function(){
+    this._super();
+    Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
+  },
+  afterRenderEvent : function(){
+    $(document).foundation();
+  }
+});
 
 export default App;

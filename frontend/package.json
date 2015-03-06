@@ -22,6 +22,7 @@
     "broccoli-asset-rev": "0.3.0",
     "ember-cli": "0.1.1",
     "ember-cli-content-security-policy": "^0.3.0",
+    "ember-cli-font-awesome": "0.0.9",
     "ember-cli-htmlbars": "^0.6.0",
     "ember-cli-ic-ajax": "0.1.1",
     "ember-cli-inject-live-reload": "^1.2.2",
@@ -30,6 +31,7 @@
     "ember-cli-simple-auth": "~0.7.3",
     "ember-cli-simple-auth-devise": "~0.7.3",
     "ember-data": "1.0.0-beta.10",
+    "ember-foundation": "^0.3.0",
     "express": "^4.8.5",
     "glob": "^4.0.5"
   }
