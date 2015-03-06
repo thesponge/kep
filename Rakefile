@@ -64,6 +64,10 @@ task :deploy do
     sh "git tag #{latest_release}"
   end
 
+  # Migrate and seed the database on remote
+  sh 'heroku run rake db:migrate'
+  sh 'heroku run rake db:seed'
+
   sh 'git checkout master'
     
   #Delete branches
