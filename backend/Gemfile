@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -29,3 +29,6 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
+
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production

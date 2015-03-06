@@ -30,8 +30,8 @@ task :deploy do
   sh 'heroku apps:create kep-ember'
     
 #    Create deploy brances
-  sh 'git branch -Dq rsh-production'
-  sh 'git branch -Dq rails-served-html'
+#  sh 'git branch -Dq rsh-production'
+#  sh 'git branch -Dq rails-served-html'
   sh 'git branch rsh-production'
   sh 'git checkout rsh-production'
 #  sh 'git push --set-upstream origin rsh-production'
