@@ -7,33 +7,33 @@
                 </h1>
             </li>
         </ul>
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
-                <ul class="right">
-                    <li>
-                      {{#link-to 'candy'}}Candy{{/link-to}}
-                    </li>
-                    <li>
-                      {{#link-to 'protected'}}Access the system{{/link-to}}
-                    </li>
-                    <li class="divider"></li>
-                    {{#if session.isAuthenticated}}
-                      <li>
-                          <li class="has-dropdown">
-                              <a href="#">{{session.content.user_email}}</a>
-                              <ul class="dropdown">
-                                <li>
-                                  <a {{ action 'invalidateSession' }}>Logout</a>
-                                </li>
-                              </ul>
-                          </li>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                  {{#link-to 'candy'}}Candy{{/link-to}}
+                </li>
+                <li>
+                  {{#link-to 'protected'}}Access the system{{/link-to}}
+                </li>
+                <li class="divider"></li>
+                {{#if session.isAuthenticated}}
+                  <li>
+                      <li class="has-dropdown">
+                          <a href="#">{{session.content.user_email}}</a>
+                          <ul class="dropdown">
+                            <li>
+                              <a {{ action 'invalidateSession' }}>Logout</a>
+                            </li>
+                          </ul>
                       </li>
-                    {{else}}
-                          <!-- {{#link-to 'login' data-reveal-id="loginModal"}}Login{{/link-to}} -->
-                          <!-- <a href="#">[guest user]</a> -->
-                    {{/if}}
-                </ul>
-            </section>
+                  </li>
+                {{else}}
+                      <!-- {{#link-to 'login' data-reveal-id="loginModal"}}Login{{/link-to}} -->
+                      <!-- <a href="#">[guest user]</a> -->
+                {{/if}}
+            </ul>
+        </section>
     </nav>
 </div>
 

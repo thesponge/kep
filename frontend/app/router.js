@@ -6,10 +6,12 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  //match('/').to('index');
   this.route('application');
   this.route('protected');
   this.route('login');
   this.route('candy');
 });
+
 
 export default Router;
