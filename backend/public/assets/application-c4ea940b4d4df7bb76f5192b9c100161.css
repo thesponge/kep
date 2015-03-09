@@ -1,0 +1,202 @@
+/* line 1, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+/* line 9, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+/* line 15, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
+
+/* line 21, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000; }
+  /* line 23, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+  a:visited {
+    color: #666; }
+  /* line 26, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+  a:hover {
+    color: #fff;
+    background-color: #000; }
+
+/* line 33, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px; }
+
+/* line 38, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green; }
+
+/* line 42, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+/* line 48, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  /* line 55, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+  #error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  /* line 65, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+  #error_explanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+/*# sourceMappingURL=scaffolds.css.map */
+{
+  "version": 3,
+  "file": "scaffolds.css",
+  "sources": [
+    "scaffolds.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": ";AAAA;EACE,kBAAkB;EAClB,OAAO;EACP,aAAa;EACb,WAAW;EACX,aAAa;;;AAGf,GAAG,IAAI,IAAI;EACT,aAAa;EACb,WAAW;EACX,aAAa;;;AAGf;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;;;AAGb;EACE,OAAO;;EAAT,CAAC;IAEG,OAAO;;EACX,CAAC;IAEG,OAAO;IACP,kBAAkB;;;AAItB,GAAG,QAAQ,GAAG;EAEV,eAAe;;;AAInB;EACE,OAAO;;;AAGT;EACE,SAAS;EACT,kBAAkB;EAClB,SAAS;;;AAGX;EACE,OAAO;EACP,QAAQ;EACR,SAAS;EACT,gBAAgB;EAChB,eAAe;EACf,kBAAkB;;EAApB,mBAAmB;IAEf,YAAY;IACZ,aAAa;IACb,SAAS;IACT,WAAW;IACX,QAAQ;IACR,eAAe;IACf,kBAAkB;IAClB,OAAO;;EACX,mBAAmB,GAAG;IAElB,WAAW;IACX,YAAY",
+  "names": [],
+  "sourceRoot": ""
+}
+/* line 1, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 23, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /home/g/Documents/sorcery/backend/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/*# sourceMappingURL=user_sessions.css.map */
+{
+  "version": 3,
+  "file": "user_sessions.css",
+  "sources": [
+    "user_sessions.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "",
+  "names": [],
+  "sourceRoot": ""
+}
+
+/*# sourceMappingURL=users.css.map */
+{
+  "version": 3,
+  "file": "users.css",
+  "sources": [
+    "users.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": "",
+  "names": [],
+  "sourceRoot": ""
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+

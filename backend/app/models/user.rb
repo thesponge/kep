@@ -1,23 +1,19 @@
+
 class User < ActiveRecord::Base
-  before_save :ensure_authentication_token
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-  def ensure_authentication_token
-    if authentication_token.blank?
-      self.authentication_token = generate_authentication_token
-    end
+  attr_accessible :email, :password, :password_confirmation, :authentications_attributes
+  authenticates_with_sorcery! do |config|
+    config.authentications_class = Authentication
   end
- 
-  private
- 
-    def generate_authentication_token
-      loop do
-        token = Devise.friendly_token
-        break token unless User.where(authentication_token: token).first
-      end
-    end
+
+  has_many :authentications, :dependent => :destroy
+  accepts_nested_attributes_for :authentications
+#end
+
+  
+  validates :password, length: { minimum: 5 }
+  validates :password, confirmation: true
+  validates :password_confirmation, presence: true
+  
+  validates :email, uniqueness: true
+
 end
