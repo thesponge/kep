@@ -10,7 +10,8 @@
     * Rails behaves as an API for any frontend
 * Frontend
     * ember-cli frontend with handlebars templates (based on Zurb Foundation)
-    * 
+    * authentication using the initial backend version (based on Devise) - deprecated, switching to Sorcery in progress
+    * authenticated-only routes and templates (for fixer app at the moment)
 
 
 ### What are we working on
@@ -19,6 +20,7 @@
     * CRUD operations on user submissions
     * OAuth integration for more providers
 * Frontend
+    * Authentication 
     * SASS support for Foundation (currently a bug in our combination of node, ember and broccoli SASS modules)
     * Main module's (fixer app) main template. Partials: sidebars, feedback area. Outlets: default + navbar
     * Sign up additional forms (pwd recovery, live input validation)
