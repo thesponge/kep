@@ -6,7 +6,7 @@
 ### What works
 
 * Backend
-    * Rails server with Sorcery-based authentication and GitHub integration (more to add)
+    * Rails,Sorcery-based internal and GitHub external authentication (more to add)
     * Rails behaves as an API for any frontend
 * Frontend
     * ember-cli frontend with handlebars templates (based on Zurb Foundation)
@@ -26,9 +26,9 @@
     * Sign up additional forms (pwd recovery, live input validation)
 
 ### What's planned
-
+* Matchmacking functionality,ranking/comment system,user notifications 
 * ownCloud integration
-    * create an adapter for oC's database so we can inject Sorcery users into it (implies strict version dependency on ownCloud)
+    * create an adapter for OC's database so we can inject Sorcery users into it (implies strict version dependency on ownCloud)
     * consume ownCloud's API in order to populate the interface with some of its features (Ember -> Rails -> ownCloud -> Rails -> Ember), such as: files, calendars, contacts ( *DAV) 
 
 --------
