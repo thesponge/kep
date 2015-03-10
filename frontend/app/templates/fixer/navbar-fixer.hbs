@@ -1,0 +1,78 @@
+<nav class="top-bar" data-topbar>
+    <ul class="title-area">
+        <li class="name">
+            <h1>
+              {{#link-to 'index'}}Fixer service{{/link-to}}
+            </h1>
+        </li>
+    </ul>
+    <ul class="left">
+        <li class="has-form">
+          <div class="row collapse">
+            <div class="large-10 small-10 columns">
+              <input type="text" placeholder="Search here">
+            </div>
+            <div class="large-2 small-2 columns">
+              <a href="#" class="button expand"><i class="fa fa-search"></i>&nbsp;</a>
+            </div>
+          </div>
+        </li>
+    </ul>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li>
+                  {{#link-to 'candy'}}Candy{{/link-to}}
+                </li>
+                <li>
+                    {{#link-to 'fixer/messages'}}{{fa-icon 'envelope'}}{{/link-to}}
+                </li>
+                <li class="divider"></li>
+                <li class="has-dropdown">
+                    {{#link-to 'fixer/jobs'}}Jobs{{/link-to}}
+                    <ul class="dropdown">
+                        <li>
+                        {{#link-to 'fixer/jobs/browse'}}Browse{{/link-to}}
+                        </li>
+                        <li>
+                        {{#link-to 'fixer/jobs/suggested'}}Suggested{{/link-to}}
+                        </li>
+                        <li>
+                        {{#link-to 'fixer/jobs/accepted'}}Accepted{{/link-to}}
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  {{#link-to 'fixer/stats'}}{{fa-icon 'line-chart'}}{{/link-to}}
+                </li>
+                <li class="divider"></li>
+                {{#if session.isAuthenticated}}
+                  <li>
+                      <li class="has-dropdown">
+                          <a href="#">{{session.content.user_email}}</a>
+                          <ul class="dropdown">
+                          <li><a href="#">Profile information</a></li>
+                          <li><a href="#">Invite a friend</a></li>
+                            <li>
+                              <a {{ action 'invalidateSession' }}>Logout</a>
+                            </li>
+                          </ul>
+                      </li>
+                  </li>
+                {{else}}
+                      <!-- {{#link-to 'login' data-reveal-id="loginModal"}}Login{{/link-to}} -->
+                      <!-- <a href="#">[guest user]</a> -->
+                {{/if}}
+            </ul>
+        </section>
+</nav>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('.search-trigger').click(function(e){
+        e.preventDefault();
+        $('.search').toggleClass('triggered');
+      });
+    });
+</script>

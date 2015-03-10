@@ -21,8 +21,10 @@ Ember.View.reopen({
   },
   afterRenderEvent : function(){
     Ember.$(document).foundation();
+    Ember.$('.roll').perfectScrollbar({
+      suppressScrollX: true
+    });
   }
 });
-
 
 export default App;
