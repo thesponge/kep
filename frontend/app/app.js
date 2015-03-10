@@ -20,7 +20,10 @@ Ember.View.reopen({
     Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
   },
   afterRenderEvent : function(){
-    $(document).foundation();
+    Ember.$(document).foundation();
+    Ember.$('.roll').perfectScrollbar({
+      suppressScrollX: true
+    });
   }
 });
 

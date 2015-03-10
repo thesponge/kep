@@ -18,18 +18,18 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-  
+
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise'
   };
 
   ENV.contentSecurityPolicy = {
     'default-src': "'*'",
-    'script-src': "'self' 'unsafe-eval' *", // Allow scripts from https://cdn.mxpnl.com
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' *", // Allow scripts from https://cdn.mxpnl.com
     'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     'connect-src': "'self' https://api.mixpanel.com http://localhost:35729", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'img-src': "'self'",
-    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+    'img-src': "*",
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"
   }
 
