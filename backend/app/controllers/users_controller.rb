@@ -7,16 +7,25 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    respond_to do |f|
+      f.html {}
+      f.json { render json: @animals }
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    respond_to do |f|
+      f.html {}
+      f.json { render json: @animals }
+    end
   end
 
   # GET /users/new
   def new
     @user = User.new
+#    render json: @user
   end
 
   # GET /users/1/edit
@@ -45,7 +54,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to :users, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: :user }
+        format.json { render :show, status: :ok, location: :users }
       else
         format.html { render :edit }
         format.json { render json: :users.errors, status: :unprocessable_entity }
