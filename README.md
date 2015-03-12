@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/thesponge/kep.png?label=ready&title=Ready)](https://waffle.io/thesponge/kep)
 # Introduction
 
 ## Knowledge Exchange Platform (KEP)
