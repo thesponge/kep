@@ -1,3 +1,64 @@
-@import "settings";
+hr.slit {
+  margin: 0px auto;
+  height: 10px;
+  border: 0;
+  &.up {
+    box-shadow: inset 0 6px 6px -6px black;
+  }
+  &.down {
+    box-shadow: inset 0 -6px 6px -6px black;
+    margin-top: -6px;
+  }
+}
 
-@import "foundation";
+div.roll_container {}
+
+ul.roll {
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+  list-style: none;
+  margin: 0px auto;
+  margin-top: -6px;
+  > li.post {
+    min-height: 100px;
+    padding: 5px 5px 20px 5px;
+    position: relative;
+    background: url("http://subtlepatterns.com/patterns/lightpaperfibers.png") repeat scroll 0% 0% transparent;
+    border-bottom: 1px dashed #cccccc;
+    &:hover {
+      -moz-box-shadow: inset 0 0 10px #ccc;
+      -webkit-box-shadow: inset 0 0 10px #ccc;
+      box-shadow: inset 0 0 10px #ccc;
+      cursor: pointer;
+    }
+    > span {
+      &.post_title {
+        display: block;
+      }
+      &.post_excerpt {
+        display: block;
+        font-size: .8em;
+      }
+      &.left_icons {
+        display: block;
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+      }
+      &.right_icons {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+/* Perfect scrollbar customizations */
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  width: 3px;
+  border-radius: 0px;
+}

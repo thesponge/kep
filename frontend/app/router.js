@@ -7,17 +7,20 @@ var Router = Ember.Router.extend({
 
 // TODO: Double check for unused routes
 Router.map(function() {
+  this.route('index');
   this.route('application');
   this.route('candy');
   this.route('login');
   this.route('protected');
-  this.resource('fixer', function(){
-    this.route('/');
-    this.route('/notifications');
-    this.resource('/jobs', function(){
-      this.route('suggested');
-      this.route('accepted');
-      this.route('browse');
+  this.route('authenticated', {path: '/'}, function() {
+    this.resource('fixer', function(){
+      this.route('/');
+      this.route('/notifications');
+      this.resource('/jobs', function(){
+        this.route('suggested');
+        this.route('accepted');
+        this.route('browse');
+      });
     });
   });
   this.resource('files', function() { });
