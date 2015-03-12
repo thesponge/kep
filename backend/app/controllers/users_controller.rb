@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @users = User.all
     respond_to do |f|
       f.html {}
-      f.json { render json: @animals }
+      f.json { render json: @users }
     end
   end
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     respond_to do |f|
       f.html {}
-      f.json { render json: @animals }
+      f.json { render json: @users }
     end
   end
 

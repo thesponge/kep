@@ -26,7 +26,7 @@ class UserSessionsController < ApplicationController
   def destroy
     session.delete(:user_id)
     render json: {}, status: 204
-    #logout
+#    logout
     #redirect_to(:users, notice: "Logged out!")
   end
 
