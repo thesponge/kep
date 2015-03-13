@@ -20,7 +20,8 @@ Ember.View.reopen({
     Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
   },
   afterRenderEvent : function(){
-    $(document).foundation();
+    Foundation.global.namespace = '';
+    Ember.$(document).foundation();
   }
 });
 
