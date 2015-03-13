@@ -6,15 +6,5 @@ Ember.LinkView.reopen({
 });
 
 export default Ember.Controller.extend(LoginControllerMixin, {
-  authenticator: 'simple-auth-authenticator:token',
-  actions: {
-  login: function() {
-    var _this = this;
-    var data = this.getProperties('identification', 'password');
-    this.set('password', null);
-    this.get('session').authenticate('simple-auth-authenticator:token', data).then(null, function(error) {
-      _this.set('errorMessage', error.error);
-      });
-    }
-  }
+    authenticator: 'simple-auth-authenticator:devise'
 });

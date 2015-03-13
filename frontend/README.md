@@ -1,6 +1,8 @@
-# KEP frontend
+# My-frontend
 
 This README outlines the details of collaborating on this Ember application.
+
+A short introduction of this app could easily go here.
 
 ## Prerequisites
 
@@ -13,18 +15,12 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * change into the new directory
-```bash
-npm install
-npm install --save-dev ember-cli-simple-auth
-npm install --save-dev ember-cli-content-security-policy
-bower update
-ember init
-# say no to every prompt (don't overwrite anything)
-```
+* `npm install`
+* `bower install`
 
 ## Running / Development
 
-* `ember server --proxy http://0.0.0.0:3000`
+* `ember server`
 * Visit your app at http://localhost:4200.
 
 ### Code Generators
