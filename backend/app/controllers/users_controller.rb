@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_filter :require_login, only: [:index, :new, :create]
+  skip_before_filter :verify_authenticity_token
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -7,25 +8,27 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-    respond_to do |f|
-      f.html {}
-      f.json { render json: @animals }
-    end
+    render json: @users
+    #respond_to do |f|
+    #  f.html {}
+    #  f.json { render json: @users }
+    #end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
-    respond_to do |f|
-      f.html {}
-      f.json { render json: @animals }
-    end
+    render json: @users
+    #respond_to do |f|
+    #  f.html {}
+    #  f.json { render json: @users }
+    #end
   end
 
   # GET /users/new
   def new
     @user = User.new
-#    render json: @user
+    #render json: @user
   end
 
   # GET /users/1/edit
@@ -37,15 +40,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to :users, notice: 'User was successfully created.'}
-        format.json { render :show, status: :created, location: :users }
-      else
-        format.html { render :new }
-        format.json { render json: :users.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @user.save
+    #    #format.html { redirect_to :users, notice: 'User was successfully created.'}
+    #    format.json { render :show, status: :created, location: :users }
+    #  else
+    #    #format.html { render :new }
+    #    format.json { render json: :users.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /users/1

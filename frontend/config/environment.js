@@ -10,26 +10,24 @@ module.exports = function(environment) {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
+        "ember-metal-injected-properties": true
       }
     },
 
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      emberDevTools: {global: true}
     }
-  };
-  
-  ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
   };
 
   ENV.contentSecurityPolicy = {
     'default-src': "'*'",
-    'script-src': "'self' 'unsafe-eval' *", // Allow scripts from https://cdn.mxpnl.com
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval' *", // Allow scripts from https://cdn.mxpnl.com
     'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     'connect-src': "'self' https://api.mixpanel.com http://localhost:35729", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'img-src': "'self'",
-    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
+    'img-src': "*",
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"
   }
 
@@ -40,6 +38,20 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:token'
+  };
+
+  ENV['simple-auth-token'] = {
+    serverTokenEndpoint: '/user_sessions',
+    identificationField: 'username',
+    passwordField: 'password',
+    tokenPropertyName: 'token',
+    authorizationPrefix: 'Bearer ',
+    authorizationHeaderName: 'Authorization',
+    headers: {},
+  };
 
   if (environment === 'test') {
     // Testem prefers this...

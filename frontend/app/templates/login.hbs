@@ -1,12 +1,19 @@
 <div id="loginModal" class="reveal-modal" data-reveal>
     <form id="login" {{action 'authenticate' on='submit'}}>
+
+        {{#if error}}
+          <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+        {{#if notice}}
+          <div class="alert alert-success">{{notice}}</div>
+        {{/if}}
+
         <label for="identification">Login</label>
-        {{input id='identification' placeholder='Enter Login'
-                value=identification}}
+        {{input id='identification' placeholder='Enter Login' value=identification}}
         <label for="password">Password</label>
-        {{input id='password' placeholder='Enter Password'
-                type='password' value=password}}
-        <button id="submit" type="submit">Login</button>
+        {{input id='password' placeholder='Enter Password' type='password' value=password}}
+        <button id="submit" type="submit">Login</button> 
+        <!--<button {{action 'login' model}} class="btn btn-primary form-control">Sign in</button>-->
     </form>
   <a class="close-reveal-modal">&#215;</a>
 </div>
