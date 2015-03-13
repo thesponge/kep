@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  travel: false
+  driver_license: false
+  tech: false
+  user_id: 
+
+two:
+  title: MyString
+  description: MyText
+  travel: false
+  driver_license: false
+  tech: false
+  user_id: 
