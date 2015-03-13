@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :user_sessions
   resources :users
   
-  post 'login' => 'user_sessions#new', :as => :login
+  post 'login' => 'user_sessions#new', :path => :login
   delete 'logout' => 'user_sessions#destroy', :as => :logout
 
   #resource :session

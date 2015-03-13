@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20150312143302) do
 
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
+  create_table "submissions", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "submissions", ["user_id"], name: "index_submissions_on_user_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "email",            null: false
     t.string   "crypted_password"

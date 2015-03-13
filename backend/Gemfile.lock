@@ -186,6 +186,7 @@ DEPENDENCIES
   jquery-rails
   pg
   protected_attributes
+  rack
   rails (= 4.2.0)
   rails_12factor
   sass-rails (~> 5.0)
