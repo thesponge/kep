@@ -44,7 +44,6 @@
   },
   "dependencies": {
     "broccoli": "^0.15.0",
-    "node-sass": "^2.0.0",
-    "rails-csrf": "^2.0.1"
+    "node-sass": "^2.0.0"
   }
 }

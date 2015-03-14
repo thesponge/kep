@@ -12,7 +12,9 @@ var App = Ember.Application.extend({
 });
 
 
+//loadInitializers(App, 'rails-csrf');
 loadInitializers(App, config.modulePrefix);
+
 
 Ember.View.reopen({
   didInsertElement : function(){

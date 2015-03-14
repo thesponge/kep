@@ -1,37 +1,38 @@
-<nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <li class="name">
-            <h1>
-              {{#link-to 'index'}}Knowledge Exchange Platform{{/link-to}}
-            </h1>
-        </li>
-    </ul>
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li>
-                  {{#link-to 'candy'}}Candy shop{{/link-to}}
-                </li>
-                <li>
-                  {{#link-to 'match'}}Match maker{{/link-to}}
-                </li>
-                <li class="divider"></li>
-                {{#if session.isAuthenticated}}
+<div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+          <li class="name">
+              <h1>
+                {{#link-to 'index'}}Knowledge Exchange Platform{{/link-to}}
+              </h1>
+          </li>
+      </ul>
+          <section class="top-bar-section">
+              <!-- Right Nav Section -->
+              <ul class="right">
                   <li>
-                      <li class="has-dropdown">
-                          <a href="#">{{session.content.user_email}}</a>
-                          <ul class="dropdown">
-                            <li>
-                              <a {{ action 'logout' }}>Logout</a>
-                            </li>
-                          </ul>
-                      </li>
+                    {{#link-to 'candy'}}Candy shop{{/link-to}}
                   </li>
-                {{else}}
-                      <!-- {{#link-to 'login' data-reveal-id="loginModal"}}Login{{/link-to}} -->
-                      <!-- <a href="#">[guest user]</a> -->
-                {{/if}}
-            </ul>
-        </section>
-</nav>
-
+                  <li>
+                    {{#link-to 'match'}}Match maker{{/link-to}}
+                  </li>
+                  <li class="divider"></li>
+                  {{#if session.isAuthenticated}}
+                    <li>
+                        <li class="has-dropdown">
+                            <a href="#">{{session.content.user_email}}</a>
+                            <ul class="dropdown">
+                              <li>
+                                <a {{ action 'logout' }}>Logout</a>
+                              </li>
+                            </ul>
+                        </li>
+                    </li>
+                  {{else}}
+                        <!-- {{#link-to 'login' data-reveal-id="loginModal"}}Login{{/link-to}} -->
+                        <!-- <a href="#">[guest user]</a> -->
+                  {{/if}}
+              </ul>
+          </section>
+  </nav>
+</div>
