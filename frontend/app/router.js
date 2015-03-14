@@ -10,6 +10,14 @@ Router.map(function() {
   this.route('protected');
   this.route('login');
   this.route('candy');
+  this.route('apps');
+  this.route('match', { path: 'apps/match' }, function() {
+    this.resource('jobs', function() {
+      this.route('browse');
+    });
+    this.resource('offers', function() {});
+    this.resource('requests', function() {});
+  });
 });
 
 export default Router;
