@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   before_filter :authenticate_user_from_token!
 
   # Prevent CSRF attacks by raising an exception.
