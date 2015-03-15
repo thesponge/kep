@@ -33,11 +33,5 @@ app.import("bower_components/font-awesome/css/font-awesome.css");
 //app.import("bower_components/font-awesome/fonts/fontawesome-webfont.woff2", { destDir: "fonts" });
 //app.import("bower_components/font-awesome/fonts/FontAwesome.otf", { destDir: "fonts" });
 
-// app.import('vendor/rails-csrf/dist/named-amd/main.js', {
-//   'rails-csrf': [
-//     'service'
-//   ]
-// });
-
 module.exports = app.toTree();
 
