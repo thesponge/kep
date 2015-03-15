@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150314103806) do
   end
 
   create_table "jobs", force: true do |t|
-    t.string   "title",          null: false
-    t.text     "description",    null: false
+    t.string   "title",          limit: nil, null: false
+    t.text     "description",                null: false
     t.boolean  "travel"
     t.boolean  "driver_license"
     t.boolean  "tech"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 20150314103806) do
   end
 
   create_table "requests", force: true do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
+    t.string   "title",       limit: nil, null: false
+    t.text     "description",             null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -107,19 +107,19 @@ ActiveRecord::Schema.define(version: 20150314103806) do
   add_index "requests_request_types", ["request_id"], name: "index_requests_request_types_on_request_id"
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+    t.string   "email",                  limit: nil, default: "", null: false
+    t.string   "encrypted_password",     limit: nil, default: "", null: false
+    t.string   "reset_password_token",   limit: nil
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "current_sign_in_ip",     limit: nil
+    t.string   "last_sign_in_ip",        limit: nil
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "authentication_token"
+    t.string   "authentication_token",   limit: nil
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
