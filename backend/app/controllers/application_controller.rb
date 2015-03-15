@@ -1,4 +1,5 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
+  include ActionController::Serialization
   before_filter :authenticate_user_from_token!
 
   # Enter the normal Devise authentication path,
