@@ -2,6 +2,9 @@
 
 <div id="loginModal" class="reveal-modal" data-reveal>
     <form id="login" {{action 'authenticate' on='submit'}}>
+      {{#each flashes.queue as |flash|}}
+        {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+      {{/each}}
         <label for="identification">Login</label>
         {{input id='identification' placeholder='Enter Login'
                 value=identification}}
@@ -9,12 +12,26 @@
         {{input id='password' placeholder='Enter Password'
                 type='password' value=password}}
         <button id="submit" type="submit">Login</button>
+        <!--<a href="#" data-reveal-id="registerModal" class="secondary button">Create an account</a>-->
+        <button {{action "dangerAction"}}>Test</button>
+        <button {{action "successAction"}}>Test</button>
+        <button {{action "warningAction"}}>Test</button>
+        <button {{action "infoAction"}}>Test</button>
+        <button {{action "customAction"}}>Test</button>
     </form>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 {{#if session.isAuthenticated}}
-  <script>$('#loginModal').foundation('reveal', 'close');</script>
+  <script>
+      setTimeout(function(){
+        alert('You are still logged in!');
+        history.back();
+      }, 100);
+  </script>
 {{else}}
-  <script>$('#loginModal').foundation('reveal', 'open');</script>
+  <script>
+    $('#loginModal').foundation('reveal', 'open');
+    $(document).foundation();
+  </script>
 {{/if}}

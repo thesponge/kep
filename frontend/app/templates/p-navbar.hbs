@@ -20,10 +20,10 @@
                   {{#if session.isAuthenticated}}
                     <li>
                         <li class="has-dropdown">
-                            <a href="#">{{session.content.user_email}}</a>
+                            <a href="#">{{session.content.email}}</a>
                             <ul class="dropdown">
                               <li>
-                                <a {{ action 'logout' }}>Logout</a>
+                                <a {{ action 'invalidateSession' }}>Logout</a>
                               </li>
                             </ul>
                         </li>

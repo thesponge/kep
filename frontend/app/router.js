@@ -18,6 +18,9 @@ Router.map(function() {
     this.resource('offers', function() {});
     this.resource('requests', function() {});
   });
+  this.resource('accounts', function() {
+    this.route('new', { path: 'register' });
+  });
 });
 
 export default Router;

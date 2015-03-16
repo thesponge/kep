@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "broccoli": "^0.15.0",
+    "ember-cli-flash": "0.2.2",
     "node-sass": "^2.0.0"
   }
 }
