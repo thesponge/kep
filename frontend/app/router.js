@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('candy');
   this.route('apps');
   this.route('match', { path: 'apps/match' }, function() {
+    this.route('dashboard');
     this.resource('jobs', function() {
       this.route('browse');
     });

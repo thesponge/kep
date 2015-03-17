@@ -1,3 +1,14 @@
 @import "settings";
 
 @import "foundation";
+
+div.growl-container {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  width: 400px;
+  z-index: 10;
+  div.alert-box {
+    margin-bottom: 0.25em;
+  }
+}

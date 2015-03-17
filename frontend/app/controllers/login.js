@@ -30,6 +30,13 @@ export default Ember.Controller.extend(LoginControllerMixin, {
      
       clearMessages: function() {
         Ember.get(this, 'flashes').clear(); // clears all visible flash messages 
+      },
+      authenticate: function() {
+        var _this = this;
+        this._super().then(null, function(error) {
+          var message = error.error;
+          _this.set('loginErrorMessage', message);
+        });
       }
     },
 }
