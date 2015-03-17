@@ -10,7 +10,7 @@
             <ul class="left">
               <li class="divider"></li>
               <li>
-                {{#link-to 'match'}}Match maker{{/link-to}}
+                {{#link-to 'match.dashboard'}}<b>Match</b>{{/link-to}}
               </li>
             </ul>
           </section>
@@ -27,8 +27,27 @@
                   <li class="divider"></li>
                   {{#if session.isAuthenticated}}
                     <li>
+                      <a href="/app/fixer/updates">{{fa-icon "envelope"}} <span class="label round">10</span></a>
+                    </li>
+                    <li>
                         <li class="has-dropdown">
-                            <a href="#">{{session.content.email}}</a>
+                          <a href="#">{{fa-icon "briefcase"}}</a>
+                            <ul class="dropdown">
+                              <li>
+                                {{#link-to 'jobs.browse'}}Browse{{/link-to}}
+                              </li>
+                              <li>
+                                {{#link-to 'jobs.suggested'}}Suggested{{/link-to}}
+                              </li>
+                              <li>
+                                {{#link-to 'jobs.taken'}}Taken{{/link-to}}
+                              </li>
+                            </ul>
+                        </li>
+                    </li>
+                    <li>
+                        <li class="has-dropdown">
+                            <a href="#">{{fa-icon "user-secret"}} {{session.content.email}}</a>
                             <ul class="dropdown">
                               <li>
                                 <a {{ action 'invalidateSession' }}>Logout</a>

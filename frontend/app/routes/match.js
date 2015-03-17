@@ -8,5 +8,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       console.log('matchErrorMessage' + message);
       this.controllerFor('match').set('matchErrorMessage', message);
     }
+  },
+  beforeModel: function() {
+    this.transitionTo('match.dashboard');
   }
 });

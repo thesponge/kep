@@ -12,9 +12,13 @@ Router.map(function() {
   this.route('candy');
   this.route('apps');
   this.route('match', { path: 'apps/match' }, function() {
-    this.route('dashboard');
+    this.route('dashboard', function() {
+      this.route('cake');
+    });
     this.resource('jobs', function() {
       this.route('browse');
+      this.route('suggested');
+      this.route('taken');
     });
     this.resource('offers', function() {});
     this.resource('requests', function() {});

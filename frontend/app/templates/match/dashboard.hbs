@@ -1,11 +1,63 @@
-{{#if matchErrorMessage}}
-  <div data-alert class="alert-box alert">Alert: {{matchErrorMessage}} </div>
-{{/if}}
-{{#if matchInfoMessage}}
-  <div data-alert class="alert-box info">Info: {{matchInfoMessage}} </div>
-{{/if}}
-{{#if matchSuccessMessage}}
-  <div data-alert class="alert-box success">Success: {{matchSuccessMessage}} </div>
-{{/if}}
+<div class="row" style="margin-top: 50px;">
+    <div class="xlarge-3 xlarge-offset-1 small-4 columns roll_container">
+      <hr class="slit up">
+      <ul class="roll">
+        <li class="post">
+          <span class="post_title">Post title</span>
+          <span class="post_excerpt">Something short about this and that. Ahoy!</span>
+          <span class="left_icons">
+             <i class="fa fa-camera"></i>
+             <i class="fa fa-globe"></i>
+           </span>
+          <span class="right_icons">
+             <i class="fa fa-money"></i>
+             <i class="fa fa-gift"></i>
+           </span>
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post"></li>
+      </ul>
+      <hr class="slit down">
+    </div>
+    <div class="small-4 xlarge-4 columns">&nbsp; {{outlet}} &nbsp;</div>
+    <div class="small-4 xlarge-3 columns roll_container">
+      <hr class="slit up">
+      <ul class="roll">
+        <li class="post">
+          <span class="post_title">Post title</span>
+          <span class="post_excerpt">Something short about this and that. Ahoy!</span>
+          <span class="left_icons">
+             <i class="fa fa-camera"></i>
+             <i class="fa fa-globe"></i>
+           </span>
+          <span class="right_icons">
+             <i class="fa fa-money"></i>
+             <i class="fa fa-gift"></i>
+           </span>
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post">
+        </li>
+        <li class="post"></li>
+      </ul>
+      <hr class="slit down">
+    </div>
 
-Dashboard
+  <script type="text/javascript">
+    $('.roll').perfectScrollbar({
+      suppressScrollX: true
+    });
+  </script>
+</div>
