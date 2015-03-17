@@ -4,10 +4,17 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 
 gem 'rails-api'
-gem 'active_model_serializers'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', group: :development
+#gem 'active_model_serializers', '0.9.3'
 
+gem 'jbuilder'
+gem 'ffaker'
+gem 'responders', '~> 2.0'
+
+
+group :development do
+  gem 'byebug'
+  gem 'sqlite3'
+end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
