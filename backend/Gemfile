@@ -1,14 +1,15 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.1.1'
 
 gem 'rails-api'
-#gem 'active_model_serializers', '0.9.3'
+gem 'active_model_serializers', '0.9.3'
 
-gem 'jbuilder'
+#gem "active_model_serializers", github: "rails-api/active_model_serializers", branch: "0-9-stable"
+
 gem 'ffaker'
-gem 'responders', '~> 2.0'
+#gem 'responders', '~> 2.0'
 
 
 group :development do

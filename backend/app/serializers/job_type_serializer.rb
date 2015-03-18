@@ -1,5 +1,10 @@
 class JobTypeSerializer < ActiveModel::Serializer
-  attributes :id, :category
-  has_and_belongs_to_many :jobs, serializer: JobSerializer
+  attributes :id, :category, :jobs
   
+  def jobs
+    object.jobs.map do |job|
+      JobSerializer.new(job, scope: scope, root: false, job_type: object)
+    end
+  end
+
 end
