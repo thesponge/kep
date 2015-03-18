@@ -111,14 +111,14 @@ $font-family-serif: Georgia, Cambria, Times, serif;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
-// $charcoal    : #555555;
+$charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -1394,17 +1394,17 @@ $font-family-serif: Georgia, Cambria, Times, serif;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
+$topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
+$topbar-link-hover-lightness: -20%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-hover: $oil;
-// $topbar-link-bg-color-hover: $charcoal;
+$topbar-link-bg-hover: $charcoal;
+$topbar-link-bg-color-hover: $oil;
 // $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
+$topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: ($topbar-height / 3);
@@ -1416,9 +1416,9 @@ $font-family-serif: Georgia, Cambria, Times, serif;
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
 // $topbar-dropdown-link-color: $white;
-// $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
+$topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 // $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $oil;
+$topbar-dropdown-link-bg-hover: $charcoal;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
