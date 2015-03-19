@@ -18,10 +18,10 @@ Router.map(function() {
   this.route('candy');
   this.route('apps');
   this.route('match', { path: 'apps/match' }, function() {
-    this.resource('requests', function() {
-      this.route('show', { path: ':request_id' });
-    });
     this.route('dashboard', function() {
+      this.resource('requests', function() {
+        this.route('show', { path: ':request_id' });
+      });
       this.route('cake');
       //this.route('job');
     });

@@ -38,8 +38,8 @@
       {{!--/with--}}
       Outlet:
       <ul>
-        {{#each request in requests}}
-          <li>{{request.title}}</li>
+        {{#each request in model}}
+          <li>A {{request.title}}</li>
         {{/each}}
       </ul>
       {{outlet}} &nbsp;</div>

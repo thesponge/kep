@@ -18,8 +18,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 //  }
   beforeModel: function() {
     this.transitionTo('match.dashboard');
-  },
-  requests: function() {
-    return requests;
   }
 });
