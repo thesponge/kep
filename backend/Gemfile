@@ -1,24 +1,18 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
-
+gem 'rails', '4.2.0'
 gem 'rails-api'
 gem 'active_model_serializers', '0.9.3'
-
-#gem "active_model_serializers", github: "rails-api/active_model_serializers", branch: "0-9-stable"
-
 gem 'ffaker'
+gem 'devise', '~>3.4.1'
 #gem 'responders', '~> 2.0'
-
 
 group :development do
   gem 'byebug'
   gem 'sqlite3'
 end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 1.2'
 
@@ -38,7 +32,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'devise'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
