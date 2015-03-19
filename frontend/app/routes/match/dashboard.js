@@ -6,7 +6,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   //  return Request.find();
   //}
   model: function() {
-    return this.store.find('request');
+    return Ember.RSVP.hash({
+      requests: this.store.find('request'),
+      offers: this.store.find('offer')
+    });
   }
 });
 

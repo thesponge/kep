@@ -22,6 +22,9 @@ Router.map(function() {
       this.resource('requests', function() {
         this.route('show', { path: ':request_id' });
       });
+      this.resource('offers', function() {
+        this.route('show', { path: ':request_id' });
+      });
       this.route('cake');
       //this.route('job');
     });

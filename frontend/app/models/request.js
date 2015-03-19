@@ -6,9 +6,9 @@ var Request = DS.Model.extend({
 
 Request.reopenClass({
   FIXTURES: [
-    {id: 1, title: 'Title One'},
-    {id: 2, title: 'Title Two'},
-    {id: 3, title: 'Title Three'}
+    {id: 1, title: 'Request One'},
+    {id: 2, title: 'Request Two'},
+    {id: 3, title: 'Request Three'}
   ]
 });
 
