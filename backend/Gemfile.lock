@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -39,6 +41,9 @@ GEM
     arel (6.0.0)
     bcrypt (3.1.10)
     builder (3.2.2)
+    byebug (4.0.2)
+      columnize (= 0.9.0)
+    columnize (0.9.0)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -51,9 +56,6 @@ GEM
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.11)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     json (1.8.2)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
@@ -86,7 +88,7 @@ GEM
       railties (>= 3.2.11)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
+    rails-dom-testing (1.0.6)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
@@ -131,8 +133,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  devise
-  jbuilder
+  active_model_serializers (= 0.9.3)
+  byebug
+  devise (~> 3.4.1)
+  ffaker
   pg
   rails (= 4.2.0)
   rails-api

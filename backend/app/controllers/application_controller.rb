@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::API
-  include ActionController::ImplicitRender  
-  include ActionController::HttpAuthentication::Token::ControllerMethods
+  include ActionController::Serialization
+    include ActionController::HttpAuthentication::Token::ControllerMethods
   
   before_filter :authenticate_user_from_token!
-
-  # Enter the normal Devise authentication path,
-  # using the token authenticated user if available
-  before_filter :authenticate_user!
-
+#
+#  # Enter the normal Devise authentication path,
+#  # using the token authenticated user if available
+#  before_filter :authenticate_user!
+#
   private
 
   def authenticate_user_from_token!
@@ -20,4 +20,5 @@ class ApplicationController < ActionController::API
       end
     end
   end
+  
 end
