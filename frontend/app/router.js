@@ -7,21 +7,24 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('application');
+  this.resource('jobs', function() {
+    this.route('show', { path: ':job_id' });
+    this.route('browse');
+    this.route('suggested');
+    this.route('taken');
+  });
   this.route('protected');
   this.route('login');
   this.route('candy');
   this.route('apps');
   this.route('match', { path: 'apps/match' }, function() {
+    this.resource('requests', function() {
+      this.route('show', { path: ':request_id' });
+    });
     this.route('dashboard', function() {
       this.route('cake');
+      //this.route('job');
     });
-    this.resource('jobs', function() {
-      this.route('browse');
-      this.route('suggested');
-      this.route('taken');
-    });
-    this.resource('offers', function() {});
-    this.resource('requests', function() {});
   });
   this.resource('accounts', function() {
     this.route('new', { path: 'register' });

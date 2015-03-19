@@ -9,7 +9,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       this.controllerFor('match').set('matchErrorMessage', message);
     }
   },
+//  renderTemplate: function() {
+//    this.render();
+//    this.render('match.dashboard.index', {
+//      into: 'match',
+//      outlet: 'master'
+//    });
+//  }
   beforeModel: function() {
     this.transitionTo('match.dashboard');
+  },
+  requests: function() {
+    return requests;
   }
 });
