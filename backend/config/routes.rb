@@ -4,7 +4,7 @@ MyBackend::Application.routes.draw do
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :jobs
-      resources :users
+      resources :users, :only => [:show, :create]
       resources :job_types
     end
   end
