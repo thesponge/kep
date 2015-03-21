@@ -10,7 +10,7 @@ class Api::V1::JobsController < ApplicationController
   def create
     job = Job.new(job_params)
     if job.save
-      render json: job, status: 201, location: [:api, job]
+      render json: job, status: 201
     else
       render json: { errors: job.errors }, status: 422
     end
@@ -34,7 +34,7 @@ class Api::V1::JobsController < ApplicationController
   private 
   
   def job_params
-    params.permit(:title, :description, :travel, :diver_license, :tech)
+    params.require(:job).permit(:title, :description, :travel, :diver_license, :tech)
   end
   
   
