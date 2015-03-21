@@ -18,10 +18,10 @@ class Api::V1::JobsController < ApplicationController
   
   def update
     job = Job.find(params[:id])
-    if job.update(product_params)
-      render json: product, status: 200, location: [:api, product]
+    if job.update(job_params)
+      render json: job, status: 200
     else 
-      render json: { errors: product.errors }, status: 422
+      render json: { errors: job.errors }, status: 422
     end
   end
   
@@ -34,7 +34,7 @@ class Api::V1::JobsController < ApplicationController
   private 
   
   def job_params
-    params.require(:job).permit(:title, :description, :travel, :diver_license, :tech)
+    params.require(:job).permit(:title, :description, :travel, :driver_license, :tech)
   end
   
   
