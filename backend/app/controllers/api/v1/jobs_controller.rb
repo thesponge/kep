@@ -1,4 +1,6 @@
 class Api::V1::JobsController < ApplicationController
+  before_action :authenticate_with_token!, only: [ :create, :update, :destroy]
+   
   def index
     render json: Job.all
   end
@@ -8,7 +10,7 @@ class Api::V1::JobsController < ApplicationController
   end
   
   def create
-    job = Job.new(job_params)
+    job = current_user.jobs.build(product_parms)
     if job.save
       render json: job, status: 201
     else
@@ -17,7 +19,7 @@ class Api::V1::JobsController < ApplicationController
   end  
   
   def update
-    job = Job.find(params[:id])
+    job = current_user.jobs.find(params[:id])
     if job.update(job_params)
       render json: job, status: 200
     else 
@@ -26,7 +28,7 @@ class Api::V1::JobsController < ApplicationController
   end
   
   def destroy 
-    job = Job.find(params[:id])
+    job = current_user.jobs.find(params[:id])
     job.destroy
     head 204
   end
