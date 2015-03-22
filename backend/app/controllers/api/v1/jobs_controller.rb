@@ -10,7 +10,7 @@ class Api::V1::JobsController < ApplicationController
   end
   
   def create
-    job = current_user.jobs.build(product_parms)
+    job = current_user.jobs.build(job_params)
     if job.save
       render json: job, status: 201
     else

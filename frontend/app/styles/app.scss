@@ -2,6 +2,25 @@
 
 @import "foundation";
 
+/* Custom mixins */
+@mixin roll-toolbar-icon($color) {
+  i {
+    font-size: 16px;
+    padding: 8px 3px;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      color: darken($color, 20%);
+      /*background-color: black;*/
+    }
+  }
+}
+
+/* The SASS! */
+html, body {
+  background: url('/assets/subtledots.png') repeat;
+}
+
 div.growl-container {
   position: absolute;
   top: 50px;
@@ -14,20 +33,47 @@ div.growl-container {
 }
 
 
-hr.slit {
+div.slit {
   margin: 0px auto;
-  height: 10px;
+  background-color: #F3F3F3;
   border: 0;
+  width: 100%;
+  position: absolute;
+  padding: auto 10px;
   &.up {
-    box-shadow: inset 0 6px 6px -6px black;
+    background-color: #008cba;
+    box-shadow: 0px 3px 65px 3px #ccc;
+    top: 0px;
+    height: 32px;
+    .roll-tools-left {
+      color: #ffffff;
+      float: left;
+      margin-left: 10px;
+      @include roll-toolbar-icon(#fff);
+    }
+    .roll-tools-right {
+      color: #ffffff;
+      float: right;
+      margin-right: 10px;
+      @include roll-toolbar-icon(#fff);
+    }
   }
   &.down {
-    box-shadow: inset 0 -6px 6px -6px black;
+    height: 3px;
+    background-color: #fefefe;
+    box-shadow: 0px -3px 65px 4px #777;
     margin-top: -6px;
+    bottom: 0px;
   }
 }
 
-div.roll_container {}
+div.roll-container {
+  overflow: hidden;
+  padding-top: 10px;
+  width: 100%;
+  position: relative;
+  /*border-bottom: 1px solid #ccc;*/
+}
 
 ul.roll {
   position: relative;
@@ -35,41 +81,35 @@ ul.roll {
   height: 470px;
   list-style: none;
   margin: 0px auto;
-  margin-top: -6px;
-  box-shadow: inset 0px -16px 31px 0px rgba(0,0,0,0.21);
+  margin-top: 25px;
   > a li.post {
     min-height: 100px;
     color: #555;
     padding: 10px 8px 25px 8px;
     position: relative;
-    background: url("/assets/lightpaperfibers.png") repeat scroll 0% 0% transparent;
     border-bottom: 1px dashed #cccccc;
     &:hover {
-      -moz-box-shadow: inset 0 0 10px #ccc;
-      -webkit-box-shadow: inset 0 0 10px #ccc;
-      box-shadow: inset 0 0 10px #ccc;
+      background-color: #efefef;
       cursor: pointer;
       color: #222;
     }
     > span {
+      display: block;
       &.post_title {
-        display: block;
         font-weight: bold;
+        font-size: .8em;
       }
       &.post_excerpt {
-        display: block;
-        font-size: .8em;
+        font-size: .7em;
         padding: 3px 0px;
         font-style: oblique;
       }
       &.left_icons {
-        display: block;
         position: absolute;
         left: 10px;
         bottom: 5px;
       }
       &.right_icons {
-        display: block;
         position: absolute;
         right: 10px;
         bottom: 5px;
@@ -83,4 +123,12 @@ ul.roll {
 .ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
   width: 3px;
   border-radius: 0px;
+}
+
+.clickthrough {
+  pointer-events: none;
+}
+
+div.content {
+  background: white;
 }

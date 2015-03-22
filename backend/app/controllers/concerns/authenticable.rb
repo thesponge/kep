@@ -1,9 +1,11 @@
 module Authenticable
+  include ActionController::HttpAuthentication::Token
+
   #Devise methods overwrites
   
   #Identifies current user by the token from the request
   def current_user
-    @current_user ||= User.find_by(auth_token: request.headers['Authorization']) 
+    @current_user ||= User.find_by(authentication_token: token_and_options(request)) 
   end
   
   #Prevents unauthorized users from making user  specific actions i.e. edit & friends 

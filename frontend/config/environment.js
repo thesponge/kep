@@ -25,6 +25,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-devise'] = {
+    tokenAttributeName: 'token',
     identificationAttributeName: 'email'
   };
 
