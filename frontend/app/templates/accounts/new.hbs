@@ -1,57 +1,53 @@
 {{partial 'p-navbar'}}
 
-<div id="registerModal" class="reveal-modal" data-reveal>
+<!--<div id="registerModal" class="reveal-modal" data-reveal>-->
   <div class="row">
-    <div class="small-7 push-1 columns">
-      {{!--
-      <form id="register" {{action 'register' on='submit'}}>
-        <fieldset>
-          <legend>Registration</legend>
-          <label for="identification">Email address</label>
-          {{input id='identification' placeholder='Enter a valid email address'
-                  value=email}}
-          <label for="password">Password</label>
-          {{input id='password' placeholder='Enter Password'
-                  type='password' value=password}}
-          <label for="password">Password confirmation</label>
-          {{input id='confirmation' placeholder='Confirm your password'
-                  type='password' value=confirmation}}
-          <button id="submit" type="submit">Sign up</button>
-        </fieldset>
-      </form>
-      --}}
-      {{#form-wrapper}}
-        {{#form-controls legend='Register'}}
-          {{input email}}
-          {{input password as='password'}}
-          {{input confirmation as='password'}}
-        {{/form-controls}}
-
-        {{form-submission}}
-      {{/form-wrapper}}
+    <div class="small-2 xlarge-3 columns">&nbsp;</div>
+    <div class="small-8 xlarge-6 columns">
+      <div class="row">
+        <div class="small-8 xlarge-7 push-1 xlarge-push-2 columns">
+          <form id="register" {{action 'register' on='submit'}}>
+            <fieldset>
+              <legend>Registration</legend>
+              <label for="identification">Email address</label>
+              {{input id='identification' placeholder='Enter a valid email address'
+                      value=user.email}}
+              <label for="password">Password</label>
+              {{input id='password' placeholder='Enter Password'
+                      type='password' value=user.password}}
+              <label for="password">Password confirmation</label>
+              {{input id='password_confirmation' placeholder='Confirm your password'
+                      type='password' value=user.password_confirmation}}
+              <button id="submit" type="submit">Sign up</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="small-2 xlarge-1 pull-1 xlarge-pull-2 columns">
+          <form id="oauth" {{action 'register' on='submit'}}>
+            <fieldset>
+              <legend>Sign up with:</legend>
+                <div class="icon-bar vertical three-up" style="width: 100% !important;">
+                  <a class="item">
+                    <label>{{fa-icon "facebook-official"}}Facebook</label>
+                  </a>
+                  <a class="item">
+                    <label>{{fa-icon "github"}}GitHub</label>
+                  </a>
+                  <a class="item">
+                    <label>{{fa-icon "google-plus"}}Google</label>
+                  </a>
+                </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
-    <div class="small-3 pull-1 columns">
-      <form id="oauth" {{action 'register' on='submit'}}>
-        <fieldset>
-          <legend>Sign up with:</legend>
-            <div class="icon-bar vertical three-up" style="width: 100% !important;">
-              <a class="item">
-                <label>{{fa-icon "facebook-official"}}Facebook</label>
-              </a>
-              <a class="item">
-                <label>{{fa-icon "github"}}GitHub</label>
-              </a>
-              <a class="item">
-                <label>{{fa-icon "google-plus"}}Google</label>
-              </a>
-            </div>
-        </fieldset>
-      </form>
-    </div>
+    <div class="small-2 xlarge-3 columns">&nbsp;</div>
   </div>
-  <a class="close-reveal-modal">&#215;</a>
-</div>
+  <!--<a class="close-reveal-modal">&#215;</a>-->
+<!--</div>-->
 
+{{!--
 <script>$('#registerModal').foundation('reveal', 'open');</script>
 <script>
   $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
@@ -60,3 +56,4 @@
     }, 1000);
   });
 </script>
+--}}

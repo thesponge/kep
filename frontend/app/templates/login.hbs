@@ -20,7 +20,8 @@
     {{input id='password' placeholder='Enter Password'
             type='password' value=password}}
     <button id="submit" type="submit">Sign in</button>
-    <a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>
+    <!--<a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>-->
+    {{link-to 'Create an account' 'accounts.new'}}
     <!--<button {{action "dangerAction"}}>Test</button>-->
     <!--<button {{action "successAction"}}>Test</button>-->
     <!--<button {{action "warningAction"}}>Test</button>-->

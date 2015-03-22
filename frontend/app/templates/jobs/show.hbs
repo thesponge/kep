@@ -1,11 +1,18 @@
-{{model.title}}
-<div>
-  {{model.description}}
+<div class="row">
+  <div class="small-1 columns">&nbsp;</div>
+  <div class="small-10 columns content">
+    <h1 class="content-title">
+      {{model.title}}
+    </h1>
+    <hr>
+    <p>
+      {{model.description}}
+    </p>
 
-  <br>
-  
-<button class="small radius pull-right" {{action 'deleteJob'}}>
-  Delete this shit
-</button>
-
+    <button class="small radius pull-right" {{action 'deleteJob'}}>
+      Delete this shit
+    </button>
+  </div>
+  <div class="small-1 columns">&nbsp;</div>
 </div>
+
