@@ -1,5 +1,37 @@
 {{partial 'p-navbar'}}
 
+<div class="row">
+  <div class="small-3 columns">&nbsp;</div>
+  <div class="small-6 columns">
+  {{#if loginErrorMessage}}
+    <div data-alert class="alert-box alert">
+      {{loginErrorMessage}}
+    </div>
+  {{/if}}
+  <form id="login" {{action 'authenticate' on='submit'}}>
+    {{#each flashes.queue as |flash|}}
+      {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+    {{/each}}
+  
+    <label for="identification">Login</label>
+    {{input id='identification' placeholder='Enter Login'
+            value=identification}}
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Enter Password'
+            type='password' value=password}}
+    <button id="submit" type="submit">Sign in</button>
+    <a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>
+    <!--<button {{action "dangerAction"}}>Test</button>-->
+    <!--<button {{action "successAction"}}>Test</button>-->
+    <!--<button {{action "warningAction"}}>Test</button>-->
+    <!--<button {{action "infoAction"}}>Test</button>-->
+    <!--<button {{action "customAction"}}>Test</button>-->
+  </form>
+  </div>
+  <div class="small-3 columns">&nbsp;</div>
+</div>
+
+{{!--
 <div id="loginModal" class="reveal-modal" data-reveal>
     {{#if loginErrorMessage}}
       <div data-alert class="alert-box alert">
@@ -40,3 +72,4 @@
     $('#loginModal').foundation('reveal', 'open');
   </script>
 {{/if}}
+--}}

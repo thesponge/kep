@@ -1,2 +1,8 @@
-<h2>Job</h2>
-<h3>{{title}}</h3>
+{{model.title}}
+<div class="panel">
+  {{model.description}}
+</div>
+
+<button class="small radius" {{action 'deleteJob'}}>
+  Delete this shit
+</button>

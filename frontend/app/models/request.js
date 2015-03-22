@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 var Request = DS.Model.extend({
-  title: DS.attr('string')
+  title: DS.attr('string'),
+  description: DS.attr('string')
 });
 
 Request.reopenClass({
