@@ -41,17 +41,19 @@ div.slit {
   position: absolute;
   padding: auto 10px;
   &.up {
-    background-color: #008cba;
+    /*background-color: #008cba;*/
     box-shadow: 0px 3px 65px 3px #ccc;
     top: 0px;
-    height: 32px;
+    height: 3px;
     .roll-tools-left {
+      display: none;
       color: #ffffff;
       float: left;
       margin-left: 10px;
       @include roll-toolbar-icon(#fff);
     }
     .roll-tools-right {
+      display: none;
       color: #ffffff;
       float: right;
       margin-right: 10px;
@@ -69,7 +71,7 @@ div.slit {
 
 div.roll-container {
   overflow: hidden;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   width: 100%;
   position: relative;
   /*border-bottom: 1px solid #ccc;*/
@@ -81,9 +83,10 @@ ul.roll {
   height: 470px;
   list-style: none;
   margin: 0px auto;
-  margin-top: 25px;
+  background-color: rgba(255,255,255,.7);
+  /*margin-top: 25px;*/
   > a li.post {
-    min-height: 100px;
+    min-height: 120px;
     color: #555;
     padding: 10px 8px 25px 8px;
     position: relative;
@@ -96,11 +99,12 @@ ul.roll {
     > span {
       display: block;
       &.post_title {
-        font-weight: bold;
+        /*font-weight: bold;*/
         font-size: .8em;
+        margin-bottom: 10px;
       }
       &.post_excerpt {
-        font-size: .7em;
+        font-size: .8em;
         padding: 3px 0px;
         font-style: oblique;
       }
@@ -131,4 +135,7 @@ ul.roll {
 
 div.content {
   background: white;
+  h1.content-title {
+    font-size: 1.3em;
+  }
 }

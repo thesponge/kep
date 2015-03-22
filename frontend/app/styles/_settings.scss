@@ -56,6 +56,8 @@
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700&subset=latin,latin-ext,cyrillic-ext,greek);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,500,400italic,500italic&subset=cyrillic,latin,latin-ext);
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -90,6 +92,7 @@ $row-width: 100%;
 
 // We use these to define default font stacks
 // $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Ubuntu", sans-serif;
 $font-family-serif: Georgia, Cambria, Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 

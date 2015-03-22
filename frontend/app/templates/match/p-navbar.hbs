@@ -18,9 +18,6 @@
       <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="right">
-          <li>
-            {{#link-to 'candy'}}Candy shop{{/link-to}}
-          </li>
           <!--<li>-->
             <!--<button {{action 'setError' 'Sample error'}}>Error</button>-->
           <!--</li>-->
@@ -48,6 +45,9 @@
             <li class="has-dropdown">
               <a href="#">{{fa-icon "user-secret"}} {{session.content.email}}</a>
               <ul class="dropdown">
+                <li>
+                  <a {{ action 'destroyCurrentUser' }}>Delete my account</a>
+                </li>
                 <li>
                   <a {{ action 'invalidateSession' }}>Logout</a>
                 </li>

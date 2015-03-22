@@ -11,7 +11,7 @@
                 {{#link-to "jobs.show" job}}
                   <li class="post text-center">
                     <span class="post_title">{{job.title}}</span>
-                    <span class="post_excerpt">{{substr job.description 0 100}} [...]</span>
+                    <span class="post_excerpt">{{substr job.description 0 50}} [...]</span>
                     <span class="left_icons">
                        <i class="fa fa-camera"></i>
                        <i class="fa fa-globe"></i>
@@ -42,7 +42,7 @@
       </div>
     </div>
     <!--<div class="small-4 large-4 xlarge-4 columns content">-->
-    <div class="small-6 large-6 xlarge-4 columns content">
+    <div class="small-6 large-6 xlarge-4 columns">
       &nbsp; 
       {{outlet}}
       &nbsp;
@@ -57,7 +57,7 @@
                 {{#link-to "jobs.show" job}}
                   <li class="post text-center">
                     <span class="post_title">{{job.title}}</span>
-                    <span class="post_excerpt">{{substr job.description 0 100}} [...]</span>
+                    <span class="post_excerpt">{{substr job.description 0 50}} [...]</span>
                     <span class="left_icons">
                        <i class="fa fa-camera"></i>
                        <i class="fa fa-globe"></i>

@@ -33,6 +33,7 @@ Router.map(function() {
   });
   this.resource('accounts', function() {
     this.route('new', { path: 'register' });
+    this.route('destroy');
   });
 });
 

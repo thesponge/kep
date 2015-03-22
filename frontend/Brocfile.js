@@ -7,8 +7,9 @@ var app = new EmberApp({
     'modernizr': true,
     'fastclick': true,
     'foundationJs': 'all'
-  },
-  emberCliFontAwesome: { includeFontAwesomeAssets: true }
+  }
+  //,
+  //emberCliFontAwesome: { includeFontAwesomeAssets: true }
 });
 
 // Use `app.import` to add additional libraries to the generated
