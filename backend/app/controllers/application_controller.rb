@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
       if user && Devise.secure_compare(user.authentication_token, token)
         sign_in user, store: false
       else
-        render json: 'Invalid authorization.'
+        render json: { message: 'Invalid authorization.' }, status: 400
       end
     end
   end
