@@ -2,14 +2,10 @@ import DS from 'ember-data';
 
 var attr = DS.attr;
 
-var Job = DS.Model.extend({
-  title:           attr('string'),
-  description:     attr('string'),
-  travel:          attr('string'),
-  tech:            attr('string'),
-  driver_license:  attr('string'),
-  types:           DS.hasMany('job.types'),
-  compensations:   DS.hasMany('job.compensations')
+var Compensation = DS.Model.extend({
+  title:                 attr('string'),
+  description:           attr('string'),
+  job: DS.hasMany('job')
   //job_type_ids:          attr('string'),
   //job_compensation_ids:  attr('string'),
   //job_priority_ids:      attr('string')
@@ -23,4 +19,5 @@ var Job = DS.Model.extend({
 //  ]
 //});
 
-export default Job;
+export default Compensation;
+
