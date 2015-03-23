@@ -21,7 +21,9 @@
             type='password' value=password}}
     <button id="submit" type="submit">Sign in</button>
     <!--<a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>-->
-    {{link-to 'Create an account' 'accounts.new'}}
+    {{link-to 'Create an account' 'accounts.new' class='pull-right'}}
+    <br>
+    {{link-to 'Forgot your password? Click here.' 'accounts.recover' class='pull-right'}}
     <!--<button {{action "dangerAction"}}>Test</button>-->
     <!--<button {{action "successAction"}}>Test</button>-->
     <!--<button {{action "warningAction"}}>Test</button>-->
