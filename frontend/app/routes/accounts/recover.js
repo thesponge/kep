@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     deviseSendRecover: function(identification) {
       var req = raw({
         type: 'POST',
-        url: '/users/password',
+        url: '/api/v1/users/password',
         data: { "email": identification },
         dataType: 'json'
       });

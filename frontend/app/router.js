@@ -35,6 +35,7 @@ Router.map(function() {
     this.route('new', { path: 'register' });
     this.route('recover', { path: 'recover' });
     this.route('destroy');
+    this.route('confirm');
   });
 });
 
