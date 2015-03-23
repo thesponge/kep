@@ -1,6 +1,5 @@
 MyBackend::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -71,7 +70,7 @@ MyBackend::Application.configure do
 
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
-
+    
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
