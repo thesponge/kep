@@ -78,3 +78,8 @@ green@mail.com // 12345678
 ## About
 Authentication is done using [ember-simple-auth](https://github.com/simplabs/ember-simple-auth) and Devise
 
+
+## License
+
+License is [AGPLv3+](https://www.gnu.org/licenses/agpl-3.0.html) ([plain text version](https://www.gnu.org/licenses/agpl-3.0.txt)). Please see the COPYING file for more details.
+
