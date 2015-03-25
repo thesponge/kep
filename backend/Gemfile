@@ -7,6 +7,7 @@ gem 'active_model_serializers', '0.9.3'
 gem 'ffaker'
 gem 'devise', '~>3.4.1'
 #gem 'responders', '~> 2.0'
+gem 'figaro'
 
 group :development do
   gem 'byebug'
