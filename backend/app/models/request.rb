@@ -1,5 +1,6 @@
 class Request < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, inverse_of: :requests
+  
   has_and_belongs_to_many :request_types
   has_and_belongs_to_many :request_compensations
   has_and_belongs_to_many :request_priorities

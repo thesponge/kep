@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325013542) do
+ActiveRecord::Schema.define(version: 20150325142453) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "job_compensations", force: :cascade do |t|
     t.string "compensation", null: false
@@ -53,11 +58,11 @@ ActiveRecord::Schema.define(version: 20150325013542) do
   add_index "job_types_jobs", ["job_type_id"], name: "index_job_types_jobs_on_job_type_id"
 
   create_table "jobs", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title",          null: false
     t.text     "description",    null: false
     t.boolean  "travel"
     t.boolean  "driver_license"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -103,9 +108,9 @@ ActiveRecord::Schema.define(version: 20150325013542) do
   add_index "request_types_requests", ["request_type_id"], name: "index_request_types_requests_on_request_type_id"
 
   create_table "requests", force: :cascade do |t|
+    t.integer  "user_id"
     t.string   "title",          null: false
     t.text     "description",    null: false
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "travel"
