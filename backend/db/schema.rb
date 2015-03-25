@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322204410) do
+ActiveRecord::Schema.define(version: 20150325013542) do
 
   create_table "job_compensations", force: :cascade do |t|
-    t.string "compensation", limit: 255, null: false
+    t.string "compensation", null: false
   end
 
   create_table "job_compensations_jobs", force: :cascade do |t|
@@ -38,9 +38,10 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "job_priorities_jobs", ["job_priority_id"], name: "index_job_priorities_jobs_on_job_priority_id"
 
   create_table "job_types", force: :cascade do |t|
-    t.string   "category",   limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "category",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "option",     null: false
   end
 
   create_table "job_types_jobs", force: :cascade do |t|
@@ -52,11 +53,10 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "job_types_jobs", ["job_type_id"], name: "index_job_types_jobs_on_job_type_id"
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title",          limit: 255, null: false
-    t.text     "description",                null: false
+    t.string   "title",          null: false
+    t.text     "description",    null: false
     t.boolean  "travel"
     t.boolean  "driver_license"
-    t.boolean  "tech"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
   create_table "request_compensations", force: :cascade do |t|
-    t.string "compensation", limit: 255, null: false
+    t.string "compensation", null: false
   end
 
   create_table "request_compensations_requests", force: :cascade do |t|
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "request_compensations_requests", ["request_id"], name: "index_request_compensations_requests_on_request_id"
 
   create_table "request_priorities", force: :cascade do |t|
-    t.string "priority", limit: 255, null: false
+    t.string "priority", null: false
   end
 
   create_table "request_priorities_requests", force: :cascade do |t|
@@ -88,9 +88,10 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "request_priorities_requests", ["request_id"], name: "index_request_priorities_requests_on_request_id"
 
   create_table "request_types", force: :cascade do |t|
-    t.string   "type",       limit: 255, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "category",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "option",     null: false
   end
 
   create_table "request_types_requests", force: :cascade do |t|
@@ -102,29 +103,31 @@ ActiveRecord::Schema.define(version: 20150322204410) do
   add_index "request_types_requests", ["request_type_id"], name: "index_request_types_requests_on_request_type_id"
 
   create_table "requests", force: :cascade do |t|
-    t.string   "title",       limit: 255, null: false
-    t.text     "description",             null: false
+    t.string   "title",          null: false
+    t.text     "description",    null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "travel"
+    t.boolean  "driver_license"
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "authentication_token",   limit: 255
+    t.string   "authentication_token"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
