@@ -5,10 +5,11 @@ export default Ember.Route.extend({
   actions: {
     deviseSendRecover: function(identification) {
       var req = raw({
-        type: 'POST',
-        url: '/api/v1/users/password',
-        data: { "email": identification },
-        dataType: 'json'
+        type: 'GET',
+        url: '/api/v1/user/password',
+        data: { "email": identification }
+        //,
+        //dataType: 'json'
       });
       req.then(function(result){
         console.log('Response from Rails', result.response);
