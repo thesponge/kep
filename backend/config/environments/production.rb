@@ -9,8 +9,8 @@ MyBackend::Application.configure do
     port: 25,
     domain: "hol.ro",
     authentication: :login,
-    user_name: "kep@thesponge.eu",
-    password: "",
+    user_name: ENV["SMTP_USERNAME"],
+    password: ENV["SMTP_PASSWORD"],
     openssl_verify_mode: "none"
   }
 
