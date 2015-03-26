@@ -1,6 +1,6 @@
-class CreateRequestCompensationsRequests < ActiveRecord::Migration
+class CreateRequestCompensationsRequestsJoinTable < ActiveRecord::Migration
   def change
-    create_table :request_compensations_requests do |t|
+    create_table :request_compensations_requests, id: false do |t|
       t.belongs_to :request, index: true
       t.belongs_to :request_compensation
     end
