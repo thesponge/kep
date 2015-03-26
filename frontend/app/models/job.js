@@ -6,7 +6,6 @@ var Job = DS.Model.extend({
   title:                 attr('string'),
   description:           attr('string'),
   travel:                attr('string'),
-  tech:                  attr('string'),
   driver_license:        attr('string'),
   //job_type_ids:          attr(),
   //job_compensation_ids:  attr(),

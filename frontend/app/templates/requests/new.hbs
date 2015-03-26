@@ -1,6 +1,6 @@
 <h5>New request</h5>
 
-<form id="newRequest" {{action 'submitrequest' on='submit'}}>
+<form id="newRequest" {{action 'submitRequest' on='submit'}}>
   {{#each flashes.queue as |flash|}}
     {{flash-message flash=flash messageStyle='foundation' class='radius'}}
   {{/each}}
@@ -12,9 +12,6 @@
   {{textarea id='description' placeholder='Description' value=request.description}}
   {{input id='travel' type='checkbox' checked=request.travel}}
   <label for='travel'>Travel</label>
-  <br>
-  {{input id='tech' type='checkbox' checked=request.tech}}
-  <label for='tech'>Tech knowledge?</label>
   <br>
   {{input id='driver_license' type='checkbox' checked=request.driver_license}}
   <label for='driver_license'>Driving license</label>
