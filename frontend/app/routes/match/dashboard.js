@@ -7,11 +7,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   //}
   model: function() {
     return Ember.RSVP.hash({
-      jobs: this.store.find('job')
-      //,
-      //user: this.store.find('user', { email: session.content.email })
-      //,
-      //requests: this.store.find('request')
+      jobs: this.store.find('job'),
+      //user: this.store.find('user', { email: session.content.email }),
+      requests: this.store.find('request')
     });
   }
 });
