@@ -12,6 +12,7 @@ gem 'figaro'
 group :development do
   gem 'byebug'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
