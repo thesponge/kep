@@ -1,0 +1,141 @@
+@import "settings";
+
+@import "foundation";
+
+/* Custom mixins */
+@mixin roll-toolbar-icon($color) {
+  i {
+    font-size: 16px;
+    padding: 8px 3px;
+    display: inline-block;
+    cursor: pointer;
+    &:hover {
+      color: darken($color, 20%);
+      /*background-color: black;*/
+    }
+  }
+}
+
+/* The SASS! */
+html, body {
+  background: url('/assets/subtledots.png') repeat;
+}
+
+div.growl-container {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  width: 400px;
+  z-index: 10;
+  div.alert-box {
+    margin-bottom: 0.25em;
+  }
+}
+
+
+div.slit {
+  margin: 0px auto;
+  background-color: #F3F3F3;
+  border: 0;
+  width: 100%;
+  position: absolute;
+  padding: auto 10px;
+  &.up {
+    /*background-color: #008cba;*/
+    box-shadow: 0px 3px 65px 3px #ccc;
+    top: 0px;
+    height: 3px;
+    .roll-tools-left {
+      display: none;
+      color: #ffffff;
+      float: left;
+      margin-left: 10px;
+      @include roll-toolbar-icon(#fff);
+    }
+    .roll-tools-right {
+      display: none;
+      color: #ffffff;
+      float: right;
+      margin-right: 10px;
+      @include roll-toolbar-icon(#fff);
+    }
+  }
+  &.down {
+    height: 3px;
+    background-color: #fefefe;
+    box-shadow: 0px -3px 65px 4px #777;
+    margin-top: -6px;
+    bottom: 0px;
+  }
+}
+
+div.roll-container {
+  overflow: hidden;
+  /*padding-top: 10px;*/
+  width: 100%;
+  position: relative;
+  /*border-bottom: 1px solid #ccc;*/
+}
+
+ul.roll {
+  position: relative;
+  overflow: hidden;
+  height: 470px;
+  list-style: none;
+  margin: 0px auto;
+  background-color: rgba(255,255,255,.7);
+  /*margin-top: 25px;*/
+  > a li.post {
+    min-height: 120px;
+    color: #555;
+    padding: 10px 8px 25px 8px;
+    position: relative;
+    border-bottom: 1px dashed #cccccc;
+    &:hover {
+      background-color: #efefef;
+      cursor: pointer;
+      color: #222;
+    }
+    > span {
+      display: block;
+      &.post_title {
+        /*font-weight: bold;*/
+        font-size: .8em;
+        margin-bottom: 10px;
+      }
+      &.post_excerpt {
+        font-size: .8em;
+        padding: 3px 0px;
+        font-style: oblique;
+      }
+      &.left_icons {
+        position: absolute;
+        left: 10px;
+        bottom: 5px;
+      }
+      &.right_icons {
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+      }
+    }
+  }
+}
+
+/* Perfect scrollbar customizations */
+
+.ps-container > .ps-scrollbar-y-rail > .ps-scrollbar-y {
+  width: 3px;
+  border-radius: 0px;
+}
+
+.clickthrough {
+  pointer-events: none;
+}
+
+div.content {
+  background: white;
+  h1.content-title {
+    font-size: 1.3em;
+  }
+}

@@ -1,10 +1,10 @@
 {
-  "name": "my-frontend",
+  "name": "kep_ember",
   "dependencies": {
     "handlebars": "3.0.0",
     "jquery": "^1.11.1",
     "ember": "~1.10.0",
-    "ember-data": "1.0.0-beta.10",
+    "ember-data": "1.0.0-beta.12",
     "ember-resolver": "~0.1.7",
     "loader.js": "stefanpenner/loader.js#1.0.1",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
@@ -13,9 +13,9 @@
     "ember-qunit": "0.1.8",
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
-    "ember-simple-auth": "0.6.7",
+    "ember-simple-auth": "0.7.3",
     "pretender": "0.1.0",
-    "foundation": "~5.5.1",
+    "foundation": "~5.5.0",
     "font-awesome": "~4.3.0"
   }
 }

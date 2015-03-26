@@ -1,18 +1,78 @@
+{{partial 'p-navbar'}}
+
+<div class="row">
+  <div class="small-3 columns">&nbsp;</div>
+  <div class="small-6 columns">
+  {{#if loginErrorMessage}}
+    <div data-alert class="alert-box alert">
+      {{loginErrorMessage}}
+    </div>
+  {{/if}}
+  <form id="login" {{action 'authenticate' on='submit'}}>
+    {{#each flashes.queue as |flash|}}
+      {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+    {{/each}}
+  
+    <label for="identification">Login</label>
+    {{input id='identification' placeholder='Enter Login'
+            value=identification}}
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Enter Password'
+            type='password' value=password}}
+    <button id="submit" type="submit">Sign in</button>
+    <!--<a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>-->
+    {{link-to 'Create an account' 'accounts.new' class='pull-right'}}
+    <br>
+    {{link-to 'Forgot your password? Click here.' 'accounts.recover' class='pull-right'}}
+    <!--<button {{action "dangerAction"}}>Test</button>-->
+    <!--<button {{action "successAction"}}>Test</button>-->
+    <!--<button {{action "warningAction"}}>Test</button>-->
+    <!--<button {{action "infoAction"}}>Test</button>-->
+    <!--<button {{action "customAction"}}>Test</button>-->
+  </form>
+  </div>
+  <div class="small-3 columns">&nbsp;</div>
+</div>
+
+{{!--
 <div id="loginModal" class="reveal-modal" data-reveal>
+    {{#if loginErrorMessage}}
+      <div data-alert class="alert-box alert">
+        {{loginErrorMessage}}
+      </div>
+    {{/if}}
     <form id="login" {{action 'authenticate' on='submit'}}>
-        <label for="identification">Login</label>
-        {{input id='identification' placeholder='Enter Login'
-                value=identification}}
-        <label for="password">Password</label>
-        {{input id='password' placeholder='Enter Password'
-                type='password' value=password}}
-        <button id="submit" type="submit">Login</button>
+      {{#each flashes.queue as |flash|}}
+        {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+      {{/each}}
+
+      <label for="identification">Login</label>
+      {{input id='identification' placeholder='Enter Login'
+              value=identification}}
+      <label for="password">Password</label>
+      {{input id='password' placeholder='Enter Password'
+              type='password' value=password}}
+      <button id="submit" type="submit">Sign in</button>
+      <a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>
+      <!--<button {{action "dangerAction"}}>Test</button>-->
+      <!--<button {{action "successAction"}}>Test</button>-->
+      <!--<button {{action "warningAction"}}>Test</button>-->
+      <!--<button {{action "infoAction"}}>Test</button>-->
+      <!--<button {{action "customAction"}}>Test</button>-->
     </form>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 
 {{#if session.isAuthenticated}}
-  <script>$('#loginModal').foundation('reveal', 'close');</script>
+  <script>
+      setTimeout(function(){
+        alert('You are still logged in!');
+        history.back();
+      }, 100);
+  </script>
 {{else}}
-  <script>$('#loginModal').foundation('reveal', 'open');</script>
+  <script>
+    $('#loginModal').foundation('reveal', 'open');
+  </script>
 {{/if}}
+--}}

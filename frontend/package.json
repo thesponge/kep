@@ -1,41 +1,51 @@
 {
-  "name": "my-frontend",
-  "version": "0.0.0",
+  "name": "kep_ember",
+  "version": "0.1.1",
   "private": true,
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "start": "ember server",
+    "start": "ember server --proxy http://0.0.0.0:3000",
     "build": "ember build",
     "test": "ember test"
   },
-  "repository": "https://github.com/stefanpenner/ember-cli",
+  "repository": "https://github.com/thesponge/kep.git",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "The Sponge Media Innovation Lab",
   "license": "MIT",
   "devDependencies": {
     "body-parser": "^1.2.0",
     "broccoli-asset-rev": "0.3.0",
-    "ember-cli": "0.1.1",
+    "broccoli-clean-css": "^1.0.0",
+    "broccoli-sass": "^0.4.0",
+    "ember-cli": "0.1.15",
+    "ember-cli-auto-register-helpers": "0.0.3",
     "ember-cli-content-security-policy": "^0.3.0",
     "ember-cli-font-awesome": "0.0.9",
+    "ember-cli-foundation-sass": "1.1.0",
     "ember-cli-htmlbars": "^0.6.0",
     "ember-cli-ic-ajax": "0.1.1",
-    "ember-cli-inject-live-reload": "^1.2.2",
-    "ember-cli-pretender": "^0.3.1",
+    "ember-cli-inject-live-reload": "^1.3.0",
+    "ember-cli-pretender": "0.3.1",
     "ember-cli-qunit": "0.1.0",
+    "ember-cli-sass": "^3.1.0",
     "ember-cli-simple-auth": "~0.7.3",
     "ember-cli-simple-auth-devise": "~0.7.3",
-    "ember-data": "1.0.0-beta.10",
+    "ember-data": "1.0.0-beta.12",
+    "ember-devtools": "^3.0.4",
     "ember-foundation": "^0.3.0",
     "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "glob": "^4.0.5",
+    "handlebars-helpers": "^0.5.8",
+    "rimraf": "2.2.8"
   },
   "dependencies": {
-    "broccoli": "^0.15.0"
+    "broccoli": "^0.15.0",
+    "ember-cli-flash": "0.2.5",
+    "node-sass": "^2.0.0"
   }
 }

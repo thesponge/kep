@@ -1,0 +1,27 @@
+<h5>New job</h5>
+
+<form id="newjob" {{action 'submitJob' on='submit'}}>
+  {{#each flashes.queue as |flash|}}
+    {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+  {{/each}}
+
+  <label for="title">Title</label>
+  {{input id='title' placeholder='Enter a title'
+          value=job.title}}
+  <label for="description">Description</label>
+  {{textarea id='description' placeholder='Description' value=job.description}}
+  {{input id='travel' type='checkbox' checked=job.travel}}
+  <label for='travel'>Travel</label>
+  <br>
+  {{input id='tech' type='checkbox' checked=job.tech}}
+  <label for='tech'>Tech knowledge?</label>
+  <br>
+  {{input id='driver_license' type='checkbox' checked=job.driver_license}}
+  <label for='driver_license'>Driving license</label>
+  <button id="submit" type="submit" class="pull-right">Send</button>
+  <!--<button {{action "dangerAction"}}>Test</button>-->
+  <!--<button {{action "successAction"}}>Test</button>-->
+  <!--<button {{action "warningAction"}}>Test</button>-->
+  <!--<button {{action "infoAction"}}>Test</button>-->
+  <!--<button {{action "customAction"}}>Test</button>-->
+</form>
