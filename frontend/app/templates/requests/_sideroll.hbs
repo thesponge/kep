@@ -1,0 +1,17 @@
+<h1>Rolling...</h1>
+{{#each job in jobs}}
+  {{#link-to "jobs.show" job}}
+    <li class="post text-center">
+      <span class="post_title">{{job.title}}</span>
+      <span class="post_excerpt">{{substr job.description 0 50}} [...]</span>
+      <span class="left_icons">
+         <i class="fa fa-camera"></i>
+         <i class="fa fa-globe"></i>
+       </span>
+      <span class="right_icons">
+         <i class="fa fa-money"></i>
+         <i class="fa fa-gift"></i>
+       </span>
+    </li>
+  {{/link-to}}
+{{/each}}

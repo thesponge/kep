@@ -6,13 +6,12 @@ var Job = DS.Model.extend({
   title:                 attr('string'),
   description:           attr('string'),
   travel:                attr('string'),
-  tech:                  attr('string'),
   driver_license:        attr('string'),
   //job_type_ids:          attr(),
   //job_compensation_ids:  attr(),
   //job_priority_ids:      attr(),
-  types:                 DS.hasMany('jobType', {polymorphic: true, async: true, embedded: 'always'}),
-  compensations:         DS.hasMany('jobCompensation', {polymorphic: true, async: true, embedded: 'always'})
+  types:                 DS.hasMany('jobType', {async: true, embedded: 'always'}),
+  compensations:         DS.hasMany('jobCompensation', {async: true, embedded: 'always'})
 });
 
 //Job.reopenClass({

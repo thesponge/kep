@@ -21,6 +21,8 @@ Router.map(function() {
     this.route('dashboard', function() {
       this.resource('requests', function() {
         this.route('show', { path: ':request_id' });
+        this.route('edit', { path: ':request_id/edit' });
+        this.route('new', { path: 'new' });
       });
       this.resource('jobs', function() {
         this.route('show', { path: ':job_id' });

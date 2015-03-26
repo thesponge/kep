@@ -7,11 +7,11 @@
         <div class="large-11 columns">
           <div class="roll-container">
             <ul class="roll">
-              {{#each job in model.jobs}}
-                {{#link-to "jobs.show" job}}
+              {{#each request in model.requests}}
+                {{#link-to "requests.show" request}}
                   <li class="post text-center">
-                    <span class="post_title">{{job.title}}</span>
-                    <span class="post_excerpt">{{substr job.description 0 50}} [...]</span>
+                    <span class="post_title">{{request.title}}</span>
+                    <span class="post_excerpt">{{substr request.description 0 50}} [...]</span>
                     <span class="left_icons">
                        <i class="fa fa-camera"></i>
                        <i class="fa fa-globe"></i>
@@ -19,7 +19,7 @@
                     <span class="right_icons">
                        <i class="fa fa-money"></i>
                        <i class="fa fa-gift"></i>
-                    </span>
+                     </span>
                   </li>
                 {{/link-to}}
               {{/each}}
@@ -37,7 +37,7 @@
             </div>
             <div class="slit down"></div>
           </div>
-          {{link-to "Add new job" "jobs.new" class="pull-right"}}
+          {{link-to "Add new request" "requests.new" class="pull-right"}}
         </div>
       </div>
     </div>
@@ -53,6 +53,8 @@
         <div class="large-11 columns">
           <div class="roll-container">
             <ul class="roll">
+              {{!--
+              --}}
               {{#each job in model.jobs}}
                 {{#link-to "jobs.show" job}}
                   <li class="post text-center">

@@ -5,12 +5,12 @@ var Request = DS.Model.extend({
   description: DS.attr('string')
 });
 
-Request.reopenClass({
-  FIXTURES: [
-    {id: 1, title: 'Request One'},
-    {id: 2, title: 'Request Two'},
-    {id: 3, title: 'Request Three'}
-  ]
-});
+//Request.reopenClass({
+  //FIXTURES: [
+    //{id: 1, title: 'Request One'},
+    //{id: 2, title: 'Request Two'},
+    //{id: 3, title: 'Request Three'}
+  //]
+//});
 
 export default Request;

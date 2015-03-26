@@ -1,19 +1,19 @@
-<h5>New job</h5>
+<h5>Edit request</h5>
 
-<form id="newjob" {{action 'submitJob' on='submit'}}>
+<form id="updateRequest" {{action 'updateRequest' on='submit'}}>
   {{#each flashes.queue as |flash|}}
     {{flash-message flash=flash messageStyle='foundation' class='radius'}}
   {{/each}}
 
   <label for="title">Title</label>
   {{input id='title' placeholder='Enter a title'
-          value=job.title}}
+          value=model.title}}
   <label for="description">Description</label>
-  {{textarea id='description' placeholder='Description' value=job.description}}
-  {{input id='travel' type='checkbox' checked=job.travel}}
+  {{textarea id='description' placeholder='Description' value=model.description}}
+  {{input id='travel' type='checkbox' checked=model.travel}}
   <label for='travel'>Travel</label>
   <br>
-  {{input id='driver_license' type='checkbox' checked=job.driver_license}}
+  {{input id='driver_license' type='checkbox' checked=model.driver_license}}
   <label for='driver_license'>Driving license</label>
   <button id="submit" type="submit" class="pull-right">Send</button>
   <!--<button {{action "dangerAction"}}>Test</button>-->

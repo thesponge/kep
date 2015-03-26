@@ -14,6 +14,7 @@ gem 'language_list'
 group :development do
   gem 'byebug'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 
