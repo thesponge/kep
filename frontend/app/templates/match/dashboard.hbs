@@ -7,6 +7,7 @@
         <div class="large-11 columns">
           <div class="roll-container">
             <ul class="roll">
+              {{!--
               {{#each request in model.requests}}
                 {{#link-to "requests.show" request}}
                   <li class="post text-center">
@@ -23,6 +24,8 @@
                   </li>
                 {{/link-to}}
               {{/each}}
+              --}}
+              {{outlet 'leftside'}}
             </ul>
             <div class="slit up">
               <div class="roll-tools-left">
@@ -54,7 +57,6 @@
           <div class="roll-container">
             <ul class="roll">
               {{!--
-              --}}
               {{#each job in model.jobs}}
                 {{#link-to "jobs.show" job}}
                   <li class="post text-center">
@@ -71,6 +73,8 @@
                   </li>
                 {{/link-to}}
               {{/each}}
+              --}}
+              {{outlet 'rightside'}}
             </ul>
             <div class="slit up">
               <div class="roll-tools-left">
