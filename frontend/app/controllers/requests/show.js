@@ -6,6 +6,14 @@ export default Ember.Controller.extend({
       this.get('model').destroyRecord().then(function() {
         this.transitionToRoute('match.dashboard');
       }.bind(this));
+    },
+    editRequest: function() {
+      var self = this;
+      self.transitionToRoute('requests.edit', self.get('model'));
     }
+  },
+ setupController: function(controller, model) {
+  //  model.reload();
+    controller.set('model', model);
   }
 });
