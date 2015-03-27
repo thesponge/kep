@@ -7,13 +7,13 @@
 
   <label for="title">Title</label>
   {{input id='title' placeholder='Enter a title'
-          value=model.title}}
+          value=job.title}}
   <label for="description">Description</label>
-  {{textarea id='description' placeholder='Description' value=model.description}}
-  {{input id='travel' type='checkbox' checked=model.travel}}
+  {{textarea id='description' placeholder='Description' value=job.description}}
+  {{input id='travel' type='checkbox' checked=job.travel}}
   <label for='travel'>Travel</label>
   <br>
-  {{input id='driver_license' type='checkbox' checked=model.driver_license}}
+  {{input id='driver_license' type='checkbox' checked=job.driver_license}}
   <label for='driver_license'>Driving license</label>
   <button id="submit" type="submit" class="pull-right">Send</button>
   <!--<button {{action "dangerAction"}}>Test</button>-->

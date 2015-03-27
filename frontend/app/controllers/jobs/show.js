@@ -6,6 +6,10 @@ export default Ember.Controller.extend({
       this.get('model').destroyRecord().then(function() {
         this.transitionToRoute('match.dashboard');
       }.bind(this));
+    },
+    editJob: function() {
+      var self = this;
+      self.transitionToRoute('jobs.edit', self.get('model'));
     }
   },
   //queryParams: {

@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  //beforeModel: function(){
-  //  model.reload();
-  //}
+  //model: function() {
+  //  return this.store.find('job', 66);
+  //},
+  setupController: function(controller, model){
+    controller.set('job', model)
+  }
 });
 
