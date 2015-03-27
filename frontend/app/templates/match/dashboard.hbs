@@ -40,7 +40,9 @@
             </div>
             <div class="slit down"></div>
           </div>
-          {{link-to "Add new request" "requests.new" class="pull-right"}}
+          {{#link-to 'requests.new' class="pull-right"}}
+            {{fa-icon 'plus'}} Add a new request
+          {{/link-to}}
         </div>
       </div>
     </div>
@@ -55,7 +57,7 @@
       <div class="row">
         <div class="large-11 columns">
           <div class="roll-container">
-            <ul class="roll">
+            <ul class="roll" id="jobs-container">
               {{!--
               {{#each job in model.jobs}}
                 {{#link-to "jobs.show" job}}
@@ -89,7 +91,9 @@
             </div>
             <div class="slit down"></div>
           </div>
-          {{link-to "Add new job" "jobs.new"}}
+          {{#link-to 'jobs.new'}}
+            {{fa-icon 'plus'}} Add a new job
+          {{/link-to}}
         </div>
         <div class="large-1 columns">
         </div>
