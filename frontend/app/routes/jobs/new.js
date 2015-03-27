@@ -1,9 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-//  job: function() {
-//    return this.store.createRecord('job');
-//  }.property(),
+  model: function() {
+    return this.store.createRecord('job');
+  },
+  setupController: function(controller, model){
+    controller.set('newJob', model)
+  }
 //  actions: {
 //    submitJob: function() {
 //      console.log("Title: ", this.get('job.title'));

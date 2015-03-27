@@ -7,18 +7,20 @@
 
   <label for="title">Title</label>
   {{input id='title' placeholder='Enter a title'
-          value=job.title}}
+          value=newJob.title}}
   <label for="description">Description</label>
-  {{textarea id='description' placeholder='Description' value=job.description}}
-  {{input id='travel' type='checkbox' checked=job.travel}}
+  {{textarea id='description' placeholder='Description' value=newJob.description}}
+  {{input id='travel' type='checkbox' checked=newJob.travel}}
   <label for='travel'>Travel</label>
   <br>
-  {{input id='driver_license' type='checkbox' checked=job.driver_license}}
+  {{input id='driver_license' type='checkbox' checked=newJob.driver_license}}
   <label for='driver_license'>Driving license</label>
   <button id="submit" type="submit" class="pull-right">Send</button>
-  <!--<button {{action "dangerAction"}}>Test</button>-->
-  <!--<button {{action "successAction"}}>Test</button>-->
-  <!--<button {{action "warningAction"}}>Test</button>-->
-  <!--<button {{action "infoAction"}}>Test</button>-->
-  <!--<button {{action "customAction"}}>Test</button>-->
+  {{!--
+  <button {{action "dangerAction"}}>Test</button>
+  <button {{action "successAction"}}>Test</button>
+  <button {{action "warningAction"}}>Test</button>
+  <button {{action "infoAction"}}>Test</button>
+  <button {{action "customAction"}}>Test</button>
+  --}}
 </form>
