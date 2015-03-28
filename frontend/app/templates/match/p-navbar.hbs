@@ -24,7 +24,7 @@
           <li class="divider"></li>
           {{#if session.isAuthenticated}}
             <li>
-              <a href="/app/fixer/updates">{{fa-icon "envelope"}} <span class="label round">10</span></a>
+              {{#link-to 'match.dashboard'}}{{fa-icon "envelope"}}&nbsp;<span class="label round">10</span>{{/link-to}}
             </li>
             {{!--
             <li class="has-dropdown">

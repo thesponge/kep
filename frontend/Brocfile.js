@@ -3,11 +3,11 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
-  'ember-cli-foundation-sass': {
-    'modernizr': true,
-    'fastclick': true,
-    'foundationJs': 'all'
-  }
+  //'ember-cli-foundation-sass': {
+    //'modernizr': true,
+    //'fastclick': true,
+    //'foundationJs': 'all'
+  //}
   //,
   //emberCliFontAwesome: { includeFontAwesomeAssets: true }
 });
@@ -25,7 +25,6 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import("bower_components/font-awesome/css/font-awesome.css");
+// app.import("bower_components/font-awesome/css/font-awesome.css");
 
 module.exports = app.toTree();
-

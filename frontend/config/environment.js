@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'kep_ember',
+    modulePrefix: 'kep-ember',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -16,19 +16,20 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      emberDevTools: {global: true}
+      emberDevTools: {global: true},
+      'ember-cli-notifications': {
+          includeFontAwesome: true
+      }
     }
   };
-  
+
   ENV['simple-auth'] = {
     authorizer: 'simple-auth-authorizer:devise'
   };
-
   ENV['simple-auth-devise'] = {
     tokenAttributeName: 'token',
     identificationAttributeName: 'email'
   };
-
   ENV.contentSecurityPolicy = {
     'default-src': "'self'",
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *", // Allow scripts from https://cdn.mxpnl.com
@@ -39,11 +40,10 @@ module.exports = function(environment) {
     'media-src': "'self'",
     'report-uri': "http://localhost:4200"
   }
-
   ENV.sassOptions = {
-    includePaths: [
-      'bower_components/foundation/scss'
-    ]
+    //includePaths: [
+      //'bower_components/foundation/scss'
+    //]
   }
 
   if (environment === 'development') {
@@ -51,13 +51,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    ENV.APP.LOG_VIEW_LOOKUPS = true;
+    // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
   if (environment === 'test') {
     // Testem prefers this...
     ENV.baseURL = '/';
-    ENV.locationType = 'auto';
+    ENV.locationType = 'none';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;

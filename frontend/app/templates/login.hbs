@@ -3,21 +3,21 @@
 <div class="row">
   <div class="small-3 columns">&nbsp;</div>
   <div class="small-6 columns">
-  {{#if loginErrorMessage}}
-    <div data-alert class="alert-box alert">
-      {{loginErrorMessage}}
-    </div>
-  {{/if}}
-  <form id="login" {{action 'authenticate' on='submit'}}>
+  <div class="notifications-container">
+      {{#each notification in notifications}}
+          {{notification-message notification=notification}}
+      {{/each}}
+  </div>
+  <form autocomplete='on' id="login" {{action 'authenticate' on='submit'}}>
     {{#each flashes.queue as |flash|}}
       {{flash-message flash=flash messageStyle='foundation' class='radius'}}
     {{/each}}
   
     <label for="identification">Login</label>
-    {{input id='identification' placeholder='Enter Login'
+    {{input id='identification' placeholder='Enter Login' name='email'
             value=identification}}
     <label for="password">Password</label>
-    {{input id='password' placeholder='Enter Password'
+    {{input id='password' placeholder='Enter Password' name='password'
             type='password' value=password}}
     <button id="submit" type="submit">Sign in</button>
     <!--<a href="#" data-reveal-id="registerModal" class="secondary button">Sign up</a>-->

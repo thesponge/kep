@@ -3,6 +3,7 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 var Job = DS.Model.extend({
+  user_id:               attr(),
   title:                 attr('string'),
   description:           attr('string'),
   travel:                attr('string'),
