@@ -1,5 +1,5 @@
 class JobSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :travel, :driver_license
+  attributes :id, :user_id, :title, :description, :travel, :driver_license
   
   has_many :job_types
   has_many :job_compensations
