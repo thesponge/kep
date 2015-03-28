@@ -8,22 +8,22 @@
 ### What works
 
 * Backend
-    * Rails, Devise-based internal and GitHub external authentication (more to add)
-    * Rails behaves as an API for any frontend
+    * Rails, Devise-based internal authentication (more to add)
+    * Rails behaves as a REST API for any frontend
+    * CRUD operations on user submissions
 * Frontend
     * ember-cli frontend with handlebars templates (based on Zurb Foundation)
     * authentication based on Devise, the ember-cli bindings
     * authenticated-only routes and templates (for fixer app at the moment)
+    * Main module's (match app) main template. Partials: sidebars, feedback area. Outlets: default + navbar
 
 
 ### What are we working on
 
 * Backend
-    * CRUD operations on user submissions
     * OAuth integration for more providers
 * Frontend
-    * Main module's (match app) main template. Partials: sidebars, feedback area. Outlets: default + navbar
-    * Sign up additional forms (pwd recovery, live input validation)
+    * see the [list of issues](https://github.com/thesponge/kep/issues)
 
 ### What's planned
 * Matchmacking functionality,ranking/comment system,user notifications 
@@ -56,6 +56,8 @@ git clone git@git.thesponge.eu:thesponge/kep-ember.git # (this is a mirror)
 cd backend
 bundle update
 rake db:migrate
+# rake db:populate # this will populate your DB with fake data (optional, for
+testing purposes)
 rails server
 ```
 
@@ -63,17 +65,12 @@ rails server
 cd frontend
 npm install
 bower install
-ember init
-# say no to every prompt (don't overwrite anything)
 npm start
 ```
 You can only log in from the ember app.
 
-Two accounts will be already available for log in:
-```
-green@mail.com // 12345678
- pink@mail.com // 12345678
-```
+You need to have a SMTP server set up in `backend/config/application.yml`
+
 
 ## About
 Authentication is done using [ember-simple-auth](https://github.com/simplabs/ember-simple-auth) and Devise
