@@ -4,16 +4,20 @@ class ApplicationController < ActionController::API
   include ActionController::ImplicitRender
   include ActionController::StrongParameters
   include Authenticable
-  
+
   before_action :authenticate_user_from_token!
   before_action :set_default_response_format
 
-  respond_to :json
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
   def set_default_response_format
     request.format = :json
   end
-
+  
+  def record_not_found(error)
+    render :json => {:error => error.message}, :status => :not_found
+  end
+  
   private
 
   def authenticate_user_from_token!
