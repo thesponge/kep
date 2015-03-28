@@ -9,9 +9,20 @@
       {{model.description}}
     </p>
 
+    <div class="panel radius callout">
+      {{#if model.travel}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+      Travel
+      <br>
+      {{#if model.driver_license}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+      Driving license
+      <br>
+    </div>
+
     <ul class="button-group radius pull-right">
-      <li><a href="#" class="button small" {{action 'editJob'}}>Edit</a></li>
-      <li><a href="#" class="button small alert" {{action 'deleteJob'}}>Delete</a></li>
+      <li><a href="#" class="button tiny" {{action 'editJob'}}>Edit</a></li>
+      <li><a href="#" class="button tiny alert" {{action 'deleteJob'}}>Delete</a></li>
     </ul>
   </div>
   <div class="small-1 columns">&nbsp;</div>
