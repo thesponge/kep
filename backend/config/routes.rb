@@ -5,10 +5,8 @@ MyBackend::Application.routes.draw do
   
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
-      resources :users, :only => [:update, :destroy]
-      resources :users, :only => [:create, :show]
-      resources :jobs, :only => [:create, :update, :destroy]
-      resources :jobs, :only => [:show, :index]
+      resources :users, :only => [:update, :destroy,:create, :show]
+      resources :jobs, :only => [:show, :index,:create, :update, :destroy]
       resources :job_types
       resources :requests, :only => [:show, :index]
       resources :requests, :only => [:create, :update, :destroy]

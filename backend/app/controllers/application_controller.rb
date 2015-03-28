@@ -5,13 +5,17 @@ class ApplicationController < ActionController::API
 #  include ActionController::MimeResponds::ClassMethods
   include ActionController::ImplicitRender
   include Authenticable
-    
-  respond_to :json
-  before_filter :authenticate_user_from_token!
+  
+  before_action :authenticate_user_from_token!
+  before_action :set_default_response_format
 
-#  # Enter the normal Devise authentication path,
-#  # using the token authenticated user if available
-#  before_filter :authenticate_user!
+  respond_to :json
+  
+  def set_default_response_format
+    request.format = :json
+  end
+
+  private
 
   def authenticate_user_from_token!
     authenticate_with_http_token do |token, options|

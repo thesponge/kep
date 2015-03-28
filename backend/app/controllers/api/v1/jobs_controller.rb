@@ -1,6 +1,6 @@
 class Api::V1::JobsController < ApplicationController
   before_action :authenticate_with_token!, only: [ :create, :update, :destroy]
-   
+  
   def index
     render json: Job.all
   end
@@ -16,7 +16,7 @@ class Api::V1::JobsController < ApplicationController
     else
       render json: { errors: job.errors }, status: 422
     end
-  end  
+  end 
   
   def update
     job = current_user.jobs.find(params[:id])
@@ -28,15 +28,18 @@ class Api::V1::JobsController < ApplicationController
   end
   
   def destroy 
-    job = current_user.jobs.find(params[:id])
-    job.destroy
-    head 204
+    if current_user.jobs.find(params[:id])
+      current_user.jobs.find(params[:id]).destroy
+      head 204
+    else
+      render json: {errors: job.errors.full_messages}, status: 403
+    end
   end
     
   private 
   
   def job_params
-    params.require(:job).permit(:title, :description, :travel, :driver_license, :tech)
+    params.require(:job).permit(:title, :description, :travel, :driver_license)
   end
   
   

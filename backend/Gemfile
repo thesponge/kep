@@ -5,7 +5,7 @@ gem 'rails-api'
 gem 'active_model_serializers', '0.9.3'
 gem 'ffaker'
 gem 'devise', '~>3.4.1'
-#gem 'responders', '~> 2.0'
+gem 'responders', '~> 2.0'
 gem 'figaro'
 
 #For the list of languages in language model

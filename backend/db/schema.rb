@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.string "compensation", null: false
   end
 
-  create_table "job_compensations_jobs", id: false, force: :cascade do |t|
+  create_table "job_compensations_jobs", force: :cascade do |t|
     t.integer "job_id"
     t.integer "job_compensation_id"
   end
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.text "priority", null: false
   end
 
-  create_table "job_priorities_jobs", id: false, force: :cascade do |t|
+  create_table "job_priorities_jobs", force: :cascade do |t|
     t.integer "job_id"
     t.integer "job_priority_id"
   end
@@ -62,14 +62,12 @@ ActiveRecord::Schema.define(version: 20150326010925) do
 
   create_table "job_types", force: :cascade do |t|
     t.string   "category",   null: false
-    t.string   "option",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "option",     null: false
   end
 
-  add_index "job_types", ["category", "option"], name: "index_job_types_on_category_and_option", unique: true
-
-  create_table "job_types_jobs", id: false, force: :cascade do |t|
+  create_table "job_types_jobs", force: :cascade do |t|
     t.integer "job_id"
     t.integer "job_type_id"
   end
@@ -98,7 +96,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.string "compensation", null: false
   end
 
-  create_table "request_compensations_requests", id: false, force: :cascade do |t|
+  create_table "request_compensations_requests", force: :cascade do |t|
     t.integer "request_id"
     t.integer "request_compensation_id"
   end
@@ -110,7 +108,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.string "priority", null: false
   end
 
-  create_table "request_priorities_requests", id: false, force: :cascade do |t|
+  create_table "request_priorities_requests", force: :cascade do |t|
     t.integer "request_id"
     t.integer "request_priority_id"
   end
@@ -119,14 +117,12 @@ ActiveRecord::Schema.define(version: 20150326010925) do
 
   create_table "request_types", force: :cascade do |t|
     t.string   "category",   null: false
-    t.string   "option",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "option",     null: false
   end
 
-  add_index "request_types", ["category", "option"], name: "index_request_types_on_category_and_option", unique: true
-
-  create_table "request_types_requests", id: false, force: :cascade do |t|
+  create_table "request_types_requests", force: :cascade do |t|
     t.integer "request_id"
     t.integer "request_type_id"
   end
@@ -138,10 +134,10 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.integer  "user_id"
     t.string   "title",          null: false
     t.text     "description",    null: false
-    t.boolean  "travel"
-    t.boolean  "driver_license"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "travel"
+    t.boolean  "driver_license"
   end
 
   add_index "requests", ["user_id"], name: "index_requests_on_user_id"
@@ -154,7 +150,6 @@ ActiveRecord::Schema.define(version: 20150326010925) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "authentication_token"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -163,12 +158,12 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "authentication_token"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
