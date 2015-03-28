@@ -9,10 +9,10 @@
       {{model.description}}
     </p>
 
-    <button class="small radius pull-right" {{action 'deleteRequest'}}>
-      Delete this
-    </button>
-    {{#link-to 'jobs.edit'}}Edit{{/link-to}}
+    <ul class="button-group radius pull-right">
+      <li><a href="#" class="button small" {{action 'editRequest'}}>Edit</a></li>
+      <li><a href="#" class="button small alert" {{action 'deleteRequest'}}>Delete</a></li>
+    </ul>
   </div>
   <div class="small-1 columns">&nbsp;</div>
 </div>

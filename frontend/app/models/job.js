@@ -11,7 +11,7 @@ var Job = DS.Model.extend({
   //job_compensation_ids:  attr(),
   //job_priority_ids:      attr(),
   types:                 DS.hasMany('jobType', {async: true, embedded: 'always'}),
-  compensations:         DS.hasMany('jobCompensation', {async: true, embedded: 'always'})
+  compensations:         DS.hasMany('jobCompensation', {async: true/*, embedded: 'always'*/})
 });
 
 //Job.reopenClass({

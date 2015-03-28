@@ -1,4 +1,3 @@
-<h5>Job details</h5>
 <div class="row">
   <div class="small-1 columns">&nbsp;</div>
   <div class="small-10 columns content">
@@ -10,13 +9,21 @@
       {{model.description}}
     </p>
 
-    <button class="small radius pull-right" {{action 'deleteJob'}}>
-      Delete this
-    </button>
-    {{!--
-    {{#link-to 'jobs.edit'}}Edit{{/link-to}}
-    --}}
-    <button {{action 'editJob'}}>Edit</button>
+    <div class="panel radius callout">
+      {{#if model.travel}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+      Travel
+      <br>
+      {{#if model.driver_license}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+      Driving license
+      <br>
+    </div>
+
+    <ul class="button-group radius pull-right">
+      <li><a href="#" class="button tiny" {{action 'editJob'}}>Edit</a></li>
+      <li><a href="#" class="button tiny alert" {{action 'deleteJob'}}>Delete</a></li>
+    </ul>
   </div>
   <div class="small-1 columns">&nbsp;</div>
 </div>

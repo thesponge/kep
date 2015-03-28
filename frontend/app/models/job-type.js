@@ -4,7 +4,7 @@ var attr = DS.attr;
 
 var jobType = DS.Model.extend({
   category:  attr('string'),
-  job:       DS.hasMany('job', {embedded: 'always'})
+  job:       DS.belongsTo('job', {async: true, embedded: 'always'})
 });
 
 export default jobType;

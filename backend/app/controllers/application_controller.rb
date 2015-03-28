@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::API
   include ActionController::Serialization
   include ActionController::HttpAuthentication::Token::ControllerMethods
-#  include ActionController::RespondWith
-#  include ActionController::MimeResponds::ClassMethods
   include ActionController::ImplicitRender
+  include ActionController::StrongParameters
   include Authenticable
   
   before_action :authenticate_user_from_token!
