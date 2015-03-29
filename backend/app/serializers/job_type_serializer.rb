@@ -1,5 +1,5 @@
 class JobTypeSerializer < ActiveModel::Serializer
-  attributes :id, :category #, :jobs
+  attributes :id, :category, :option #, :jobs
   
   def jobs
     object.jobs.map do |job|
