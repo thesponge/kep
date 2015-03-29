@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
       console.log("Travel: ", this.get('newJob.travel'));
       console.log("Driving license: ", this.get('newJob.driver_license'));
       var self = this;
-      self.get('newJob').save().then(function(job) {
+      self.get('newJob').save().then(function() {
         //this.get('jobs').pushObject(self.get('job'));
         self.transitionToRoute('jobs.show', self.get('newJob'));
       });

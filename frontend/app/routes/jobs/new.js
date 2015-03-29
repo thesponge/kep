@@ -5,6 +5,6 @@ export default Ember.Route.extend({
     return this.store.createRecord('job');
   },
   setupController: function(controller, model){
-    controller.set('newJob', model)
+    controller.set('newJob', model);
   }
 });

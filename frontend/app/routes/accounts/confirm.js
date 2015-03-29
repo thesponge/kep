@@ -5,8 +5,7 @@ export default Ember.Route.extend({
   queryParams: {
     confirmation_token: {
     } 
-  }
-  ,
+  },
   model: function(params) {
     var token = params.confirmation_token;
     var req = raw({

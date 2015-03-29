@@ -11,8 +11,5 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
           autoclear: false
       });
     }
-  },
-  setupController: function(controller, model) {
-    controller.set('loginErrorMessage', null);
   }
 });

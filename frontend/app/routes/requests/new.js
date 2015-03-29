@@ -5,6 +5,6 @@ export default Ember.Route.extend({
     return this.store.createRecord('request');
   },
   setupController: function(controller, model){
-    controller.set('newRequest', model)
+    controller.set('newRequest', model);
   }
 });
