@@ -1,5 +1,5 @@
 class RequestTypeSerializer < ActiveModel::Serializer
-  attributes :id, :category #, :requests
+  attributes :id, :category, :option, :icon #, :requests
   
   def requests
     object.requests.map do |request|
