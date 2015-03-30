@@ -86,7 +86,7 @@ ul.roll {
   background-color: rgba(255,255,255,.7);
   /*margin-top: 25px;*/
   > a li.post {
-    min-height: 120px;
+    min-height: 100px;
     color: #555;
     padding: 10px 8px 25px 8px;
     position: relative;
@@ -112,11 +112,34 @@ ul.roll {
         position: absolute;
         left: 10px;
         bottom: 5px;
+        i.fa {
+          display: inline-block;
+          width: 1em;
+          text-align: center;
+        }
       }
       &.right_icons {
         position: absolute;
         right: 10px;
         bottom: 5px;
+      }
+    }
+    .description-trigger {
+      position: relative;
+      float: none !important;
+      font-size: .6em;
+    }
+    .ember-tooltip{
+      div.tip {
+        padding: 3px;
+        z-index: 10;
+        width: 230px;
+        border-radius: 2px;
+        background-color: rgba(100,100,100,.9);
+        color: #ddd;
+      }
+      p {
+        font-size: .7em;
       }
     }
   }
@@ -138,5 +161,16 @@ div.content {
   word-wrap: break-word;
   h1.content-title {
     font-size: 1.3em;
+  }
+  ul.details-list,
+  ul.details-list ul{
+    list-style: none;
+    ul {margin-left: 0px;}
+    li .list-icon {
+      display: inline-block;
+      width: 2em;
+      text-align: center;
+      background-color: rgba(255,255,255,.5);
+    }
   }
 }
