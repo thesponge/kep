@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326010925) do
+ActiveRecord::Schema.define(version: 20150329131500) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "user_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
 
   create_table "job_compensations", force: :cascade do |t|
     t.string "compensation", null: false
+    t.string "icon"
   end
 
   create_table "job_compensations_jobs", force: :cascade do |t|
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "option",     null: false
+    t.string   "icon"
   end
 
   create_table "job_types_jobs", force: :cascade do |t|
@@ -92,8 +94,24 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.string "common"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "request_id",       null: false
+    t.integer  "job_id",           null: false
+    t.integer  "request_owner",    null: false
+    t.integer  "job_owner",        null: false
+    t.boolean  "accepted_job"
+    t.boolean  "accepted_request"
+    t.boolean  "completed"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "matches", ["user_id"], name: "index_matches_on_user_id"
+
   create_table "request_compensations", force: :cascade do |t|
     t.string "compensation", null: false
+    t.string "icon"
   end
 
   create_table "request_compensations_requests", force: :cascade do |t|
@@ -120,6 +138,7 @@ ActiveRecord::Schema.define(version: 20150326010925) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "option",     null: false
+    t.string   "icon"
   end
 
   create_table "request_types_requests", force: :cascade do |t|
