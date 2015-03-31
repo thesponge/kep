@@ -1,12 +1,12 @@
 import {
-  trimString
-} from '../../../helpers/trim-string';
+  ifNull
+} from '../../../helpers/if-null';
 import { module, test } from 'qunit';
 
-module('TrimStringHelper');
+module('IfNullHelper');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  var result = trimString(42);
+  var result = ifNull(42);
   assert.ok(result);
 });

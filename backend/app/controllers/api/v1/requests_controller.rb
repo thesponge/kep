@@ -29,8 +29,11 @@ class Api::V1::RequestsController < ApplicationController
   
   def destroy 
     request = current_user.requests.find(params[:id])
-    request.destroy
-    head 204
+    if request.destroy
+      head 204
+    else
+      render json: {errors: request.errors.full_messages}, status: 422
+    end
   end
     
   private 

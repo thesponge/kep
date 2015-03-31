@@ -2,7 +2,14 @@ import DS from 'ember-data';
 
 var Request = DS.Model.extend({
   title: DS.attr('string'),
-  description: DS.attr('string')
+  description: DS.attr('string'),
+  description_fragment: function() {
+    return this.get('description').substr(0, 150) + ' [...]';
+  }.property('description'),
+  is_owner: function(){
+    var session = container.lookup('simple-auth-session:main')
+    return this.get('user_id') === session.content.id;
+  }.property()
 });
 
 //Request.reopenClass({

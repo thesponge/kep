@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       console.log("Travel: ", this.get('newRequest.travel'));
       console.log("Driving license: ", this.get('newRequest.driver_license'));
       var self = this;
-      self.get('newRequest').save().then(function(request) {
+      self.get('newRequest').save().then(function() {
         //this.get('requests').pushObject(self.get('request'));
         self.transitionToRoute('requests.show', self.get('newRequest'));
       });

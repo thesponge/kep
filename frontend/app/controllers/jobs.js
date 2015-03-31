@@ -23,14 +23,12 @@ export default Ember.Controller.extend({
   //    });
   //  }
   //}
-  //queryParams: {
-  //  job_id: {
-  //    refreshModel: true
-  //  }
-  //},
   model: function() {
     return this.store.find('job');
   }.property(),
+  //isOwner: function(){
+  //  return this.model.user_id === user.id;
+  //}.property('job')
   //setupController: function(controller, model) {
   //  model.reload();
   //  controller.set('model', model);

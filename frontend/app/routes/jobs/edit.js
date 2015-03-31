@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   //  return this.store.find('job', 66); //this is random, I swear!
   //},
   setupController: function(controller, model){
-    controller.set('job', model)
+    controller.set('job', model);
   }
 });
 

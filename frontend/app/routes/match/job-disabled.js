@@ -9,6 +9,19 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       this.controllerFor('match').set('matchErrorMessage', message);
     }
   },
+  renderTemplate: function() {
+    this.render('match/index');
+    this.render('match/job/sideroll', {
+      outlet: 'rightside',
+      into: 'match.index',
+      controller: 'jobs'
+    });
+    this.render('match/job/request/sideroll', {
+      outlet: 'leftside',
+      into: 'match.index',
+      controller: 'requests'
+    });
+  },
 //  renderTemplate: function() {
 //    this.render();
 //    this.render('match.dashboard.index', {
@@ -16,7 +29,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 //      outlet: 'master'
 //    });
 //  }
-  beforeModel: function() {
-    this.transitionTo('match.dashboard');
-  }
+//  beforeModel: function() {
+//    this.transitionTo('match.dashboard');
+//  }
 });

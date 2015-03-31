@@ -1,0 +1,23 @@
+{{#each request in model}}
+  {{#link-to "match.job.show.request.show" request}}
+    <li class="post text-center">
+      <span class="post_title">
+        {{tool-tip tagName="i"
+          heading="Description"
+          class="fa fa-info-circle description-trigger"
+          tip=request.description_fragment}}
+        {{request.title}}
+      </span>
+      <span class="left_icons">
+        {{#each type in request.request_types}}
+          {{fa-icon type.icon}}
+        {{/each}}
+       </span>
+      <span class="right_icons">
+        {{#each compensation in request.request_compensation}}
+          {{fa-icon compensation.icon}}
+        {{/each}}
+       </span>
+    </li>
+  {{/link-to}}
+{{/each}}

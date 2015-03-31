@@ -12,12 +12,12 @@ export default Ember.Route.extend({
         //dataType: 'json'
       });
       req.then(function(result){
-        console.log('Response from Rails', result.response);
-      },
-      function(response) {
-        console.error('There was a problem', response.jqXHR.responseText, response);
-      }
-      )
+          console.log('Response from Rails', result.response);
+        },
+        function(response) {
+          console.error('There was a problem', response.jqXHR.responseText, response);
+        }
+      );
     }
   }
 });

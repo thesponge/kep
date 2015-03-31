@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import startApp from 'my-frontend/tests/helpers/start-app';
+import startApp from '../helpers/start-app';
 import Pretender from 'pretender';
 
 var App, server;

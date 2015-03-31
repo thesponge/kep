@@ -1,0 +1,23 @@
+{{#each job in model}}
+  {{#link-to "match.job.show" job}}
+    <li class="post text-center">
+      <span class="post_title">
+        {{tool-tip tagName="i"
+          heading="Description"
+          class="fa fa-info-circle description-trigger"
+          tip=job.description_fragment}}
+        {{job.title}}
+      </span>
+      <span class="left_icons">
+        {{#each type in job.job_types}}
+          {{fa-icon type.icon}}
+        {{/each}}
+       </span>
+      <span class="right_icons">
+        {{#each compensation in job.job_compensation}}
+          {{fa-icon compensation.icon}}
+        {{/each}}
+       </span>
+    </li>
+  {{/link-to}}
+{{/each}}

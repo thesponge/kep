@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :jobs, inverse_of: :user
   has_many :requests, inverse_of: :user
+  has_many :matches, inverse_of: :user
   has_one  :account
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

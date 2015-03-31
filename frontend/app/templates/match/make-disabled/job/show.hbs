@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="small-1 columns">&nbsp;</div>
+  <div class="small-10 columns content">
+    <h1 class="content-title">
+      ID: {{param.job_id}}
+      {{model.title}}
+    </h1>
+    <hr>
+    <p>
+      {{model.description}}
+    </p>
+
+    <ul class="small-block-grid-2 details-list">
+      <li>
+        <div class="panel radius callout">
+          <ul>
+            {{#each type in model.job_types}}
+            <li><span class="list-icon">{{fa-icon type.icon}}</span> {{type.option}} <small>({{type.category}})</small></li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="panel radius callout">
+          <span class="list-icon">
+            {{#if model.travel}} {{fa-icon 'check'}}
+            {{else}} {{fa-icon 'close'}} {{/if}}
+          </span>
+          Travel
+          <br>
+          <span class="list-icon">
+            {{#if model.driver_license}} {{fa-icon 'check'}}
+            {{else}} {{fa-icon 'close'}} {{/if}}
+          </span>
+          Driving license
+          <br>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="button-group radius pull-right">
+      <li><a href="#" class="button tiny" {{action 'editJob'}}>Edit</a></li>
+      <li><a href="#" class="button tiny alert" {{action 'deleteJob'}}>Delete</a></li>
+    </ul>
+  </div>
+  <div class="small-1 columns">&nbsp;</div>
+</div>
+

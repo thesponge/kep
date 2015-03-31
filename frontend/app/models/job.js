@@ -11,8 +11,12 @@ var Job = DS.Model.extend({
   //job_type_ids:          attr(),
   //job_compensation_ids:  attr(),
   //job_priority_ids:      attr(),
-  types:                 DS.hasMany('jobType', {async: true, embedded: 'always'}),
-  compensations:         DS.hasMany('jobCompensation', {async: true/*, embedded: 'always'*/})
+  job_types:             DS.hasMany('jobType', {inverse: 'job', async: true, embedded: 'always'}),
+  job_compensations:     DS.hasMany('jobCompensation', {async: true/*, embedded: 'always'*/}),
+  is_owner: function(){
+    var session = container.lookup('simple-auth-session:main')
+    return this.get('user_id') === session.content.id;
+  }.property()
 });
 
 //Job.reopenClass({
