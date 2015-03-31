@@ -35,6 +35,7 @@ Router.map(function() {
     //    });
     //  });
     //});
+    this.route('notifications');
     this.route('dashboard', function() {
       this.resource('requests', function() {
         this.route('show', {path: ':request_id'});

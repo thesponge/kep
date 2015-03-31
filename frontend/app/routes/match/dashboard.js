@@ -24,6 +24,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   //afterModel: function(){
   //  this.model.fetch();
   //}
+  actions: {
+    notificationsMessage: function(error){
+      console.log('Messages not implemented yet.');
+      this.notifications.addNotification({
+          message: 'Boo',
+          type: 'error',
+          autoclear: false
+      });
+      alert('Notifications are still under development!');
+    }
+  },
   renderTemplate: function() {
     this.render();
     this.render('jobs/sideroll', {

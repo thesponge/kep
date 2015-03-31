@@ -23,8 +23,11 @@
           <!--</li>-->
           <li class="divider"></li>
           {{#if session.isAuthenticated}}
-            <li>
-              {{#link-to 'match.dashboard'}}{{fa-icon "envelope"}}&nbsp;<span class="label round">10</span>{{/link-to}}
+            <li {{action 'notificationsMessage'}}>
+              {{!--
+              {{#link-to 'match.notifications'}}{{fa-icon "envelope"}}&nbsp;<span class="label round">10</span>{{/link-to}}
+              --}}
+              <a href="#">{{fa-icon "envelope"}}&nbsp;<span class="label round">10</span></a>
             </li>
             {{!--
             <li class="has-dropdown">

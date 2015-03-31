@@ -14,12 +14,13 @@ export default Ember.ObjectController.extend({
   //    requests: this.store.find('request')
   //  });
   //},
-  //actions: {
-  //  destroyCurrentUser: function() {
-  //    console.log('Accessing the destroy action');
-  //    this.get('model').destroyRecord().then(function() {
-  //      this.transitionToRoute('login');
-  //    }.bind(this));
-  //  },
-  //}
+  actions: {
+    destroyCurrentUser: function() {
+      console.log('Accessing the destroy action');
+      alert("I'm sorry, I can't let you do that.");
+      //this.get('model').destroyRecord().then(function() {
+      //  this.transitionToRoute('login');
+      //}.bind(this));
+    },
+  }
 });

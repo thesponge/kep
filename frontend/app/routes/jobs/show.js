@@ -22,13 +22,21 @@ export default Ember.Route.extend({
     match: function(params){
       console.log('step 1');
       this.controller.set('match', (Math.floor(Math.random() * 6) + 1));
+    },
+    matchExit: function(params){
+      console.log('Called matchExit from jobs route');
+      this.controller.set('match', null);
+      this.render('null', {
+        outlet: 'match',
+        into: 'jobs/show'
+      });
     }
   },
   renderTemplate: function(params){
     this.render();
 
     var match = params.match;
-    if(match !== undefined) {
+    if(match != undefined) {
       var reqc = this.controllerFor('requests.show');
       console.log('rT params: ', match);
       reqc.set('model', 
