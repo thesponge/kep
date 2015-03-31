@@ -19,8 +19,8 @@ class Api::V1::MatchesController < ApplicationController
       #Sent email to both parts
       j = User.find(match.job_owner)
       r = User.find(match.request_owner)
-      if MatchMailer.match_email(j).deliver &&
-            MatchMailer.match_email(r).deliver
+      if MatchMailer.match_email(j,'requests',match.request_id).deliver &&
+        MatchMailer.match_email(r,'jobs',match.job_id).deliver
         render json: {notice: "An email has been sent"}, status: 200
       end
     else
