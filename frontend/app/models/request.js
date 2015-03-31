@@ -5,7 +5,11 @@ var Request = DS.Model.extend({
   description: DS.attr('string'),
   description_fragment: function() {
     return this.get('description').substr(0, 150) + ' [...]';
-  }.property('description')
+  }.property('description'),
+  is_owner: function(){
+    var session = container.lookup('simple-auth-session:main')
+    return this.get('user_id') === session.content.id;
+  }.property()
 });
 
 //Request.reopenClass({
