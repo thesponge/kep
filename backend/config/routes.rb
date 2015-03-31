@@ -11,6 +11,7 @@ MyBackend::Application.routes.draw do
       resources :requests, :only => [:show, :index]
       resources :requests, :only => [:create, :update, :destroy]
       resources :request_types
+      resources :matches
     end
   end
   

@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   has_many :requests, inverse_of: :user
   has_many :matches, inverse_of: :user
   has_one  :account
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  accepts_nested_attributes_for :jobs
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   before_save :ensure_authentication_token

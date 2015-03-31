@@ -2,10 +2,8 @@ class Api::V1::JobsController < ApplicationController
   before_action :authenticate_with_token!, only: [ :create, :update, :destroy]
   
   def index
-    debugger
-    render json: Job.where(request.GET)
-#    render json: query_params
-#    render json: request.GET
+    jobs = Job.filter(params.slice(:title, :travel, :driver_license))
+    render json: jobs
   end
 
   def show
@@ -42,11 +40,8 @@ class Api::V1::JobsController < ApplicationController
   private 
   
   def job_params
-    params.require(:job).permit(:title, :description, :travel, :driver_license)
+    params.require(:job).permit(:title, :description, :travel, :driver_license, job_types_attributes: [:id, :category, :option] )
   end
   
-  def query_params
-    params.except(:action, :controller, :format)
-  end
   
 end
