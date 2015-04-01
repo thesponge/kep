@@ -3,6 +3,11 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
+  modals: {
+    layout: true,
+    style: true,
+    animation: 'flip'
+  }
   //'ember-cli-foundation-sass': {
     //'modernizr': true,
     //'fastclick': true,

@@ -15,7 +15,8 @@
     "ember-simple-auth": "0.7.3",
     "pretender": "0.1.0",
     "font-awesome": "~4.3.0",
-    "foundation": "~5.5.1"
+    "foundation": "~5.5.1",
+    "ic-modal": "~1.0.0"
   },
   "resolutions": {
     "jquery": "^1.11.1"
