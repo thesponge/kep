@@ -1,6 +1,7 @@
 import Ember from 'ember';
+import ApplicationRouteMixin from 'ember-modals/mixins/routes/application';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ApplicationRouteMixin, {
   queryParams: {
     match: {
       replace: true,
@@ -30,6 +31,19 @@ export default Ember.Route.extend({
         outlet: 'match',
         into: 'jobs/show'
       });
+    },
+    showMatchModal: function() {
+      this.controller.showModal('match/match-modal');
+      this.render('match/match-modal-column', {
+        outlet: 'job',
+        into: 'match/match-modal',
+        controller: 'jobs.show'
+      });
+      this.render('match/match-modal-column', {
+        outlet: 'request',
+        into: 'match/match-modal',
+        controller: 'requests.show'
+      });
     }
   },
   renderTemplate: function(params){
@@ -39,6 +53,7 @@ export default Ember.Route.extend({
     if(match != undefined) {
       var reqc = this.controllerFor('requests.show');
       console.log('rT params: ', match);
+      reqc.set('matchBase', true);
       reqc.set('model', 
                this.store.find('request', match)
               );

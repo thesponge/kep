@@ -22,5 +22,8 @@ export default Ember.ObjectController.extend({
       //  this.transitionToRoute('login');
       //}.bind(this));
     },
+    makeMatch: function(){
+      alert('Accessed the Match Maker');
+    }
   }
 });

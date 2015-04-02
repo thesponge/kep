@@ -1,0 +1,56 @@
+<ul class="pricing-table">
+  <li class="title">
+      {{#if model.job_types}}
+        The job
+      {{else}}
+        The request
+      {{/if}}
+  </li>
+  <li class="price">{{model.title}}</li>
+  <li class="description">{{model.description}}</li>
+  <li class="bullet-item">
+    <span class="list-icon">
+      {{#if model.travel}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+    </span>
+    Travel
+    <br>
+    <span class="list-icon">
+      {{#if model.driver_license}} {{fa-icon 'check'}}
+      {{else}} {{fa-icon 'close'}} {{/if}}
+    </span>
+    Driving license
+  </li>
+  <li class="bullet-item">
+    <ul>
+      {{#if model.job_types}}
+        {{#each type in model.job_types}} <li>
+            <span class="list-icon"> {{fa-icon type.icon}} </span> 
+            {{type.option}} 
+            <small> ({{type.category}})</small>
+        </li> {{/each}}
+      {{/if}}
+      {{#if model.request_types}}
+        {{#each type in model.job_types}} <li>
+            <span class="list-icon"> {{fa-icon type.icon}} </span> 
+            {{type.option}} 
+            <small> ({{type.category}})</small>
+        </li> {{/each}}
+      {{/if}}
+    </ul>
+  </li>
+  <li class="bullet-item">
+      {{#if model.job_compensations}}
+        {{#each compensation in model.job_compensations}} <li>
+          <span class="list-icon"> {{fa-icon compensation.icon}} </span> 
+          {{compensation.compensation}} 
+        </li> {{/each}}
+      {{/if}}
+      {{#if model.request_compensations}}
+        {{#each compensation in model.job_compensations}} <li>
+          <span class="list-icon"> {{fa-icon compensation.icon}} </span> 
+          {{compensation.compensation}} 
+        </li> {{/each}}
+      {{/if}}
+  </li>
+</ul>

@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
     editRequest: function() {
       var self = this;
       self.transitionToRoute('requests.edit', self.get('model'));
-    }
+    },
   },
  setupController: function(controller, model) {
   //  model.reload();

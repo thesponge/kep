@@ -13,20 +13,27 @@
           Match
         </button>
         --}}
-        {{#link-to 'jobs.show' 1 (query-params match=model.id) class="button micro radius success"}}
-          Match
-        {{/link-to}}
         {{#if match}}
-          <button class="button micro radius secondary"
-            {{action 'matchExit'}}>
-            Exit match
-          </button>
+          {{#if matchBase}}
+          {{else}}
+            <button class="button micro radius secondary"
+              {{action 'matchExit'}}>
+              Exit match
+            </button>
+          {{/if}}
+        {{else}}
+          {{#link-to 'requests.show' 1 (query-params match=model.id) class="button micro radius success"}}
+            Match
+          {{/link-to}}
         {{/if}}
       </div>
     </div>
-    <p>
-      {{model.description}}
-    </p>
+    {{#if match}}
+    {{else}}
+      <p>
+        {{model.description}}
+      </p>
+    {{/if}}
 
     <ul class="small-block-grid-2 details-list">
       <li>
@@ -72,6 +79,17 @@
   </div>
   <div class="small-1 columns">&nbsp;</div>
 </div>
+
+{{#if matchBase}}
+{{else}}
+  <div class="row">
+    <div class="small-4 columns"><hr></div>
+    <div class="small-4 columns text-center">
+        <button {{action 'showMatchModal'}} class="button radius tiny info">Review and match</button>
+    </div>
+    <div class="small-4 columns"><hr></div>
+  </div>
+{{/if}}
 
 <div class="row">
   {{outlet 'match'}}
