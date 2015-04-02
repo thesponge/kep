@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329131500) do
+ActiveRecord::Schema.define(version: 20150402165023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.datetime "updated_at",       null: false
   end
 
+  add_index "matches", ["job_id", "request_id"], name: "index_matches_on_job_id_and_request_id", unique: true, using: :btree
   add_index "matches", ["user_id"], name: "index_matches_on_user_id", using: :btree
 
   create_table "request_compensations", force: :cascade do |t|
