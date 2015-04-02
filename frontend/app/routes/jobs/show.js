@@ -12,9 +12,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     var match = params.queryParams.match;
     if(match !== undefined) {
       console.log('bM params: ', params.queryParams.match);
-        var reqc = this.controllerFor('requests.show');
+        var requestsController = this.controllerFor('requests.show');
         console.log('step 2');
-        reqc.set('model', 
+        requestsController.set('model', 
                  this.store.find('request', params.queryParams.match)
                 );
     }
@@ -27,6 +27,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     matchExit: function(params){
       console.log('Called matchExit from jobs route');
       this.controller.set('match', null);
+      this.controllerFor('requests.show').set('match', null);
       this.render('null', {
         outlet: 'match',
         into: 'jobs/show'
@@ -44,17 +45,19 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         into: 'match/match-modal',
         controller: 'requests.show'
       });
-    }
+    },
   },
   renderTemplate: function(params){
     this.render();
 
     var match = params.match;
     if(match != undefined) {
-      var reqc = this.controllerFor('requests.show');
+      Ember.$('requests-container .rollmask').show();
+      var requestsController = this.controllerFor('requests.show');
       console.log('rT params: ', match);
-      reqc.set('matchBase', true);
-      reqc.set('model', 
+      requestsController.set('match', match);
+      requestsController.set('matchBase', true);
+      requestsController.set('model', 
                this.store.find('request', match)
               );
 

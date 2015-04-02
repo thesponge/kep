@@ -14,6 +14,11 @@ export default Ember.Controller.extend({
       var self = this;
       self.get('newJob').save().then(function() {
         //this.get('jobs').pushObject(self.get('job'));
+        self.notifications.addNotification({
+            message: 'Job #' + self.get('newJob').id + ' created!',
+            type: 'success',
+            autoclear: true
+        });
         self.transitionToRoute('jobs.show', self.get('newJob'));
       });
     }

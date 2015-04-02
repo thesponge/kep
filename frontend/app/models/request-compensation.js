@@ -2,10 +2,10 @@ import DS from 'ember-data';
 
 var attr = DS.attr;
 
-var jobCompensation = DS.Model.extend({
+var requestCompensation = DS.Model.extend({
   title:         attr('string'),
   compensation:  attr('string'),
-  job:           DS.hasMany('job')
+  job:           DS.hasMany('request')
   //job_type_ids:          attr('string'),
   //job_compensation_ids:  attr('string'),
   //job_priority_ids:      attr('string')
@@ -19,5 +19,5 @@ var jobCompensation = DS.Model.extend({
 //  ]
 //});
 
-export default jobCompensation;
+export default requestCompensation;
 
