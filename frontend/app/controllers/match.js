@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend({
       this.notifications.addNotification({
           message: "I'm sorry, I can't let you do that.",
           type: 'error',
-          autoclear: true
+          autoClear: true
       });
       //this.get('model').destroyRecord().then(function() {
       //  this.transitionToRoute('login');

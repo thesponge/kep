@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
         self.notifications.addNotification({
             message: 'Job #' + id + ' deleted!',
             type: 'success',
-            autoclear: true
+            autoClear: true
         });
         this.transitionToRoute('match.dashboard');
       }.bind(this));

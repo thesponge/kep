@@ -17,7 +17,7 @@ export default Ember.Controller.extend({
         self.notifications.addNotification({
             message: 'Job #' + self.get('newJob').id + ' created!',
             type: 'success',
-            autoclear: true
+            autoClear: true
         });
         self.transitionToRoute('jobs.show', self.get('newJob'));
       });
