@@ -12,7 +12,11 @@ var Job = DS.Model.extend({
   job_compensations      : DS.hasMany('jobCompensation', {async : true/*, embedded : 'always'*/}),
   submissionType         : 'job',
   description_fragment: function() {
-    return this.get('description').substr(0, 150) + ' [...]';
+    if(this.get('description') !== undefined) {
+      return this.get('description').substr(0, 150) + ' [...]';
+    } else {
+      return '';
+    }
   }.property('description'),
   is_owner: function(){
     var session = container.lookup('simple-auth-session:main')

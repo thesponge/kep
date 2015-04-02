@@ -46,6 +46,24 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         controller: 'requests.show'
       });
     },
+    sendMatch: function(params) {
+      var newMatch        = this.store.createRecord('match');
+      //newMatch.job_id     = this.controller.match;
+      //newMatch.request_id = this.context.id;
+      newMatch.set('j_id', this.context.id);
+      newMatch.set('r_id', this.controller.match);
+      console.log('Called sendMatch from requests route.');
+      console.log('Request: ', this.controller.match,
+                    ', job: ', this.context.id);
+      var self = this;
+      //console.log('newMatch: ', newMatch);
+      newMatch.save().then(function(){
+        self.notifications.addNotification({
+          message: 'Yay, you made a match!',
+          type: 'success'
+        });
+      })
+    }
   },
   renderTemplate: function(params){
     this.render();

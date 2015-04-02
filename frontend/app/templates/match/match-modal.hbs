@@ -8,6 +8,11 @@
 </div>
 <div class="row">
   <div class="small-12 columns text-center">
-    <button class="button radius small">Make the match!</button>
+    <form id="newmatch" {{action 'sendMatch' on='submit'}}>
+      {{input type="hidden" id="r_id" value=newMatch.r_id}}
+      {{input type="hidden" id="j_id" value=newMatch.j_id}}
+      <button {{!--action 'sendMatch'--}} type="submit" class="button radius small">Make the match!</button>
+    </form>
   </div>
 </div>
+
