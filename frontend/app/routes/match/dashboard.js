@@ -24,6 +24,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   //afterModel: function(){
   //  this.model.fetch();
   //}
+  titleToken: "Match dashboard",
   actions: {
     notificationsMessage: function(error){
       console.log('Messages not implemented yet.');
