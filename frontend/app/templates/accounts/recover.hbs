@@ -1,17 +1,22 @@
 {{partial 'p-navbar'}}
 
+  <div class="notifications-container">
+      {{#each notification in notifications}}
+          {{notification-message notification=notification}}
+      {{/each}}
+  </div>
 <!--<div id="registerModal" class="reveal-modal" data-reveal>-->
   <div class="row">
     <div class="small-2 xlarge-3 columns">&nbsp;</div>
     <div class="small-8 xlarge-6 columns">
       <div class="row">
         <div class="small-8 xlarge-7 push-2 xlarge-push-3 columns">
-          <form id="recover" {{action 'deviseSendRecover' identification on='submit'}}>
+          <form id="recover" {{action 'deviseSendRecover' email on='submit'}}>
             <fieldset>
               <legend>Password recovery</legend>
-              <label for="identification">Email address</label>
-              {{input id='identification' placeholder='Enter your email address'
-                      value=identification}}
+              <label for="email">Email address</label>
+              {{input id='email' placeholder='Enter your email address'
+                      value=email}}
               <button id="submit" type="submit">Submit</button>
             </fieldset>
           </form>
