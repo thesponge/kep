@@ -14,6 +14,7 @@ export default Ember.ObjectController.extend({
   //    requests: this.store.find('request')
   //  });
   //},
+  //newMatch: null,
   actions: {
     destroyCurrentUser: function() {
       console.log('Accessing the destroy action');
@@ -28,6 +29,15 @@ export default Ember.ObjectController.extend({
     },
     makeMatch: function(){
       alert('Accessed the Match Maker');
-    }
+    },
+    //sendMatch: function() {
+    //  var self = this;
+    //  self.get('newMatch').save().then(function(){
+    //    self.notifications.addNotification({
+    //      message: 'Yay, you made a match!',
+    //      type: 'success'
+    //    });
+    //  })
+    //}
   }
 });

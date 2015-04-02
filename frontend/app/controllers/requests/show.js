@@ -2,12 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   queryParams: ['match'],
-  match: null,
+  //newMatch: function() {
+  //  return this.store.createRecord('match');
+  //},
   actions: {
     deleteRequest: function() {
+      var self = this;
+      var id = self.get('model').id;
       this.get('model').destroyRecord().then(function() {
         self.notifications.addNotification({
-            message: 'Request #' + self.get('request').id + ' deleted!',
+            message: 'Request #' + id + ' deleted!',
             type: 'success',
             autoclear: true
         });
