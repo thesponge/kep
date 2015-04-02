@@ -6,6 +6,11 @@ export default Ember.Controller.extend({
   actions: {
     deleteJob: function() {
       this.get('model').destroyRecord().then(function() {
+        self.notifications.addNotification({
+            message: 'Job #' + self.get('newJob').id + ' deleted!',
+            type: 'success',
+            autoclear: true
+        });
         this.transitionToRoute('match.dashboard');
       }.bind(this));
     },

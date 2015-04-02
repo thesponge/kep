@@ -18,6 +18,11 @@ export default Ember.Controller.extend({
       var self = this;
       self.get('job').save().then(function() {
         console.log('Saved!');
+        self.notifications.addNotification({
+            message: 'Job #' + self.get('job').id + ' updated!',
+            type: 'success',
+            autoclear: true
+        });
         self.transitionToRoute('jobs.show', self.get('job'));
       });
     }

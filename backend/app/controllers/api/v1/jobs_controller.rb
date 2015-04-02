@@ -40,7 +40,7 @@ class Api::V1::JobsController < ApplicationController
   private 
   
   def job_params
-    params.require(:job).permit(:title, :description, :travel, :driver_license, job_types_attributes: [:id, :category, :option] )
+    params.require(:job).permit(:title, :description, :travel, :driver_license, job_type_ids: [], job_compensation_ids: [], job_priority_ids: [])
   end
   
   

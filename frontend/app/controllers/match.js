@@ -17,7 +17,11 @@ export default Ember.ObjectController.extend({
   actions: {
     destroyCurrentUser: function() {
       console.log('Accessing the destroy action');
-      alert("I'm sorry, I can't let you do that.");
+      this.notifications.addNotification({
+          message: "I'm sorry, I can't let you do that.",
+          type: 'error',
+          autoclear: true
+      });
       //this.get('model').destroyRecord().then(function() {
       //  this.transitionToRoute('login');
       //}.bind(this));

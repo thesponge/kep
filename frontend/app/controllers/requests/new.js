@@ -11,6 +11,11 @@ export default Ember.Controller.extend({
       var self = this;
       self.get('newRequest').save().then(function() {
         //this.get('requests').pushObject(self.get('request'));
+        self.notifications.addNotification({
+            message: 'Request #' + self.get('newRequest').id + ' created!',
+            type: 'success',
+            autoclear: true
+        });
         self.transitionToRoute('requests.show', self.get('newRequest'));
       });
     }

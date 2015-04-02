@@ -1,10 +1,17 @@
+<div class="notifications-container">
+    {{#each notification in notifications}}
+        {{notification-message notification=notification}}
+    {{/each}}
+</div>
+
 <div class="row" style="margin-top: 50px;">
   <div class="xlarge-3 xlarge-offset-1 large-3 small-3 columns roll_container">
     <div class="row">
       <div class="large-1 columns">
       </div>
       <div class="large-11 columns">
-        <div class="roll-container">
+        <div class="roll-container" id="requests-container">
+          <div class="rollmask"></div>
           <ul class="roll">
             {{outlet 'leftside'}}
           </ul>
@@ -37,7 +44,8 @@
   <div class="small-3 xlarge-3 end large-3 columns roll_container">
     <div class="row">
       <div class="large-11 columns">
-        <div class="roll-container">
+        <div class="roll-container" id="jobs-container">
+          <div class="rollmask"></div>
           <ul class="roll" id="jobs-container">
             {{outlet 'rightside'}}
           </ul>

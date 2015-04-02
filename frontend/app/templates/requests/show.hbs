@@ -14,25 +14,21 @@
         </button>
         --}}
         {{#if match}}
-          {{#if matchBase}}
-          {{else}}
-            <button class="button micro radius secondary"
-              {{action 'matchExit'}}>
-              Exit match
-            </button>
-          {{/if}}
+          <button class="button micro radius secondary"
+            {{action 'matchExit'}}>
+            Exit match
+          </button>
         {{else}}
-          {{#link-to 'requests.show' 1 (query-params match=model.id) class="button micro radius success"}}
+          {{#link-to 'jobs.show' 1 (query-params match=model.id) class="button micro radius success"}}
             Match
           {{/link-to}}
         {{/if}}
       </div>
     </div>
     {{#if match}}
+      <p></p>
     {{else}}
-      <p>
-        {{model.description}}
-      </p>
+      <p>{{model.description}}</p>
     {{/if}}
 
     <ul class="small-block-grid-2 details-list">
@@ -69,7 +65,6 @@
       </li>
     </ul>
 
-    {{!--edit-buttons 'compare' job=model.user_id user=session.content.id--}}
     {{#if model.is_owner}}
       <ul class="button-group radius pull-right">
         <li><a href="#" class="button tiny" {{action 'editRequest'}}>Edit</a></li>
@@ -82,13 +77,15 @@
 
 {{#if matchBase}}
 {{else}}
-  <div class="row">
-    <div class="small-4 columns"><hr></div>
-    <div class="small-4 columns text-center">
+  {{#if match}}
+    <div class="row">
+      <div class="small-4 columns"><hr></div>
+      <div class="small-4 columns text-center">
         <button {{action 'showMatchModal'}} class="button radius tiny info">Review and match</button>
+      </div>
+      <div class="small-4 columns"><hr></div>
     </div>
-    <div class="small-4 columns"><hr></div>
-  </div>
+  {{/if}}
 {{/if}}
 
 <div class="row">
