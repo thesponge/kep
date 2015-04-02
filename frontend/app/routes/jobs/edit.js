@@ -6,6 +6,7 @@ export default Ember.Route.extend({
   //},
   setupController: function(controller, model){
     controller.set('job', model);
-  }
+  },
+  titleToken: 'Update job'
 });
 

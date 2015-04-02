@@ -8,6 +8,9 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 //export default Ember.Route.extend(SimpleAuthApplicationRouteMixin, EmberModalsApplicationRouteMixin, {
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
+  title: function(tokens) {
+    return tokens.join(' - ') + ' :: Knowledge Exchange Platform';
+  },
   actions: {
     error: function(transition, error) {
         this.notifications.addNotification({
