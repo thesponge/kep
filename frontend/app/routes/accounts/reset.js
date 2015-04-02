@@ -2,8 +2,12 @@ import Ember from 'ember';
 import { raw } from 'ic-ajax';
 
 export default Ember.Route.extend({
+  queryParams: {
+    reset_password_token: {
+    } 
+  },
   actions: {
-    deviseSendRecover: function(email) {
+    deviseSendReset: function(email) {
       var req = raw({
         type: 'POST',
         url: '/users/password',
@@ -15,7 +19,7 @@ export default Ember.Route.extend({
       req.then(function(result){
           console.log('Response from Rails', result.response);
           self.notifications.addNotification({
-            message: 'Password reset instructions were sent to your email address.',
+            message: 'Your password was updated!',
             type: 'success'
           });
           self.controller.transitionToRoute('login');
