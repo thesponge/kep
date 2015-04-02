@@ -2,8 +2,8 @@ class CreateMatches < ActiveRecord::Migration
   def change
     create_table :matches do |t|
       t.belongs_to :user, index: true
-      t.integer :request_id, null: false
-      t.integer :job_id, null: false
+      t.integer :r_id, null: false
+      t.integer :j_id, null: false
       t.integer :request_owner, null: false
       t.integer :job_owner, null: false
       t.boolean :accepted_job
@@ -12,5 +12,7 @@ class CreateMatches < ActiveRecord::Migration
       
       t.timestamps null: false
     end
+    
+    add_index "matches", ["j_id", "r_id"], unique:true
   end
 end
