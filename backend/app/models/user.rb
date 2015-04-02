@@ -2,9 +2,10 @@ class User < ActiveRecord::Base
   has_many :jobs, inverse_of: :user
   has_many :requests, inverse_of: :user
   has_many :matches, inverse_of: :user
-  has_one  :account
-
-  accepts_nested_attributes_for :jobs
+  has_one  :account, dependent: :destroy
+  
+  accepts_nested_attributes_for :account , allow_destroy: true
+  before_create :build_account
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable

@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
   before_action :authenticate_with_token!, only: [:update, :destroy]
-  
+
   def index
     render json: User.all
   end
@@ -37,6 +37,6 @@ class Api::V1::UsersController < ApplicationController
   private
   
   def  user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, account_attributes: [:bio, :avatar, :url])
   end
 end

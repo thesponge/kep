@@ -39,7 +39,7 @@ class Api::V1::RequestsController < ApplicationController
   private 
   
   def request_params
-    params.require(:request).permit(:title, :description, :travel, :driver_license)
+    params.require(:request).permit(:title, :description, :travel, :driver_license,request_type_ids: [], request_compensation_ids: [], request_priority_ids: [])
   end
   
   
