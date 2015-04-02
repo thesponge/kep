@@ -26,8 +26,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     },
     matchExit: function(params){
       console.log('Called matchExit from requests route');
-      this.controller.set('match', null);
-      this.controllerFor('jobs.show').set('match', null);
+      this.controller.set('match', undefined);
+      this.controllerFor('jobs.show').set('match', undefined);
       this.render('null', {
         outlet: 'match',
         into: 'requests/show'
