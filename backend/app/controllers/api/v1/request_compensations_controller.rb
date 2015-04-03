@@ -11,7 +11,7 @@ class Api::V1::RequestCompensationsController < ApplicationController
   protected
   
   def request_compensation_params
-    params.require(:request_compensation).permit(:compensation, requests_attributes: [:title, :description, :travel, :driver_license])
+    params.require(:request_compensation).permit(:compensation, :icon, requests_attributes: [:title, :description, :travel, :driver_license])
   end
   
 end

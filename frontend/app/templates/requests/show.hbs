@@ -35,13 +35,27 @@
       <li>
         <div class="panel radius callout">
           <ul>
-            {{#each type in model.job_types}}
+            {{#each type in model.request_types}}
               <li>
                 <span class="list-icon">
                   {{fa-icon type.icon}}
                 </span> 
                 {{type.option}} 
                 <small> ({{type.category}})</small>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="panel radius callout">
+          <ul>
+            {{#each compensation in model.request_compensations}}
+              <li>
+                <span class="list-icon">
+                  {{fa-icon compensation.icon}}
+                </span> 
+                {{compensation.compensation}} 
               </li>
             {{/each}}
           </ul>

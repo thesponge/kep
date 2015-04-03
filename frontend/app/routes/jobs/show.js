@@ -19,7 +19,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
                 );
     }
   },
- actions: {
+  actions: {
     match: function(params){
       console.log('step 1');
       this.controller.set('match', (Math.floor(Math.random() * 6) + 1));

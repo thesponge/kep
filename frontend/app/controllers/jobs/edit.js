@@ -4,6 +4,42 @@ export default Ember.Controller.extend({
   //job: function() {
   //  return this.store.find('job', 66);
   //}.property(),
+  compensations_select: function() {
+    return this.store.find('job-compensation');
+  }.property(),
+  types_select: function() {
+    var output = [];
+    var data = this.store.fetchAll('job-type').then(function(records){
+      records.forEach(function(item){
+
+        var filter = output.filter(function(obj) {
+              return obj.text == item.get('category');
+            });
+
+        if (filter.length === 0) {
+          output.push({ 
+            text: item.get('category'),
+            children:[
+              {
+                id: item.get('id'),
+                text: item.get('option')
+              }
+            ]
+          });
+        } else {
+          var index = output.indexOf(filter[0]);
+          output[index].children.push(
+            {
+              id: item.get('id'),
+              text: item.get('option')
+            }
+          );
+        }
+      });
+    });
+
+    return output;
+  }.property(),
   actions: {
     updateJob: function() {
       console.log("Title: ", this.get('job.title'));
@@ -25,6 +61,9 @@ export default Ember.Controller.extend({
         });
         self.transitionToRoute('jobs.show', self.get('job'));
       });
+    },
+    cancel: function(){
+      this.transitionToRoute('jobs.show', this.get('job'));
     }
   }
 });

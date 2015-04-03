@@ -11,7 +11,7 @@ class Api::V1::JobCompensationsController < ApplicationController
   protected
   
   def job_compensation_params
-    params.require(:job_compensation).permit(:compensation, jobs_attributes: [:title, :description, :travel, :driver_license])
+    params.require(:job_compensation).permit(:compensation, :icon, jobs_attributes: [:title, :description, :travel, :driver_license])
   end
   
 end
