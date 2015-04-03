@@ -82,12 +82,16 @@
       </li>
     </ul>
 
+    <div class="pull-right">
     {{#if model.is_owner}}
-      <ul class="button-group radius pull-right">
+      <ul class="button-group radius" style="position: relative;">
         <li><a href="#" class="button tiny" {{action 'editJob'}}>Edit</a></li>
-        <li><a href="#" class="button tiny alert" {{action 'deleteJob'}}>Delete</a></li>
+        {{#confirm-extension questionText='Do you really want to destroy this?' confirmText='Yes' declineText='No' confirmAction='deleteJob'}}
+          <li><a href="#" class="button tiny alert">Delete</a></li>
+        {{/confirm-extension}}
       </ul>
     {{/if}}
+    </div>
   </div>
   <div class="small-1 columns">&nbsp;</div>
 </div>
