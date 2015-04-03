@@ -32,6 +32,12 @@ export default Ember.Controller.extend({
         });
       }
       );
+    },
+    cancel: function(){
+      var self = this;
+      this.get('newRequest').destroyRecord().then(function() {
+        self.transitionToRoute('match.dashboard');
+      });
     }
-  }
+  },
 });
