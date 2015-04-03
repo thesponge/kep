@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
         self.notifications.addNotification({
             message: 'Request #' + self.get('newRequest').id + ' created!',
             type: 'success',
-            autoclear: true
+            autoClear: true
         });
         self.transitionToRoute('requests.show', self.get('newRequest'));
       });

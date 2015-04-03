@@ -16,7 +16,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         this.notifications.addNotification({
             message: error.errors[0],
             type: 'error',
-            autoclear: false
+            autoClear: false
         });
     }
   }

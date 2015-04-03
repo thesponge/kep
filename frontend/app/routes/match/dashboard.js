@@ -31,7 +31,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
       this.notifications.addNotification({
           message: 'Boo',
           type: 'error',
-          autoclear: false
+          autoClear: false
       });
       alert('Notifications are still under development!');
     }

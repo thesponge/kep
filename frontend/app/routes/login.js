@@ -8,7 +8,7 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       this.notifications.addNotification({
           message: error.errors[0],
           type: 'error',
-          autoclear: false
+          autoClear: false
       });
     }
   }

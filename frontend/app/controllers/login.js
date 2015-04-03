@@ -14,7 +14,7 @@ export default Ember.Controller.extend(LoginControllerMixin, {
           self.notifications.addNotification({
               message: 'Logged in!',
               type: 'success',
-              autoclear: true
+              autoClear: true
           });
         });
       }

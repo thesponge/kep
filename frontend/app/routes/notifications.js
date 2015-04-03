@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     this.notifications.addNotification({
         message: 'Notifications system is still under development!',
         type: 'error',
-        autoclear: true
+        autoClear: true
     });
   }
 });
