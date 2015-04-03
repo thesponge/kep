@@ -10,13 +10,18 @@ export default Ember.Controller.extend({
   }.property(),
   actions: {
     register: function() {
-      console.log('Accessing the register action');
-      console.log('User: ' + this.get('user.email'));
-      console.log('Password: ' + this.get('user.password'));
-      console.log('Confirmation: ' + this.get('user.password_confirmation'));
+      //console.log('Accessing the register action');
+      //console.log('User: ' + this.get('user.email'));
+      //console.log('Password: ' + this.get('user.password'));
+      //console.log('Confirmation: ' + this.get('user.password_confirmation'));
+      var self = this;
       this.get('user').save().then(function() {
-        this.transitionToRoute('login');
-      }.bind(this));
+        self.notifications.addNotification({
+          message: 'Done! Please check your inbox.',
+          type: 'success'
+        });
+        self.transitionToRoute('login');
+      });
     },
   }
 });
