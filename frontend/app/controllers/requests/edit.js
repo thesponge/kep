@@ -74,6 +74,7 @@ export default Ember.Controller.extend({
      );
     },
     cancel: function(){
+      this.get('request').rollback();
       this.transitionToRoute('requests.show', this.get('request'));
     }
   }

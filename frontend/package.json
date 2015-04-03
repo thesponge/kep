@@ -39,6 +39,7 @@
     "ember-cli-simple-auth-devise": "~0.7.3",
     "ember-cli-tooltip": "^0.2.1",
     "ember-cli-uglify": "1.0.1",
+    "ember-confirm-extension": "0.0.3",
     "ember-data": "1.0.0-beta.16.1",
     "ember-devtools": "^3.0.4",
     "ember-export-application-global": "^1.0.2",

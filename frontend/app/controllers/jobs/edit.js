@@ -77,6 +77,7 @@ export default Ember.Controller.extend({
      );
     },
     cancel: function(){
+      this.get('job').rollback();
       this.transitionToRoute('jobs.show', this.get('job'));
     }
   }

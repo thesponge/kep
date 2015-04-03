@@ -208,3 +208,25 @@ div.content {
 .select2-container {
   width: 100%;
 }
+
+.ece-bubble {
+  color: #000;
+  background-color: rgba(255,255,255,.85);
+  position: absolute;
+  border: 1px solid #dadada;
+  bottom: 45px;
+  left: 38px;
+  width: 188px;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.ece-buttons, .ece-question {
+  text-align: center;
+}
+
+.ece-confirm, .ece-decline {
+  color: #00f;
+  text-decoration: underline;
+  cursor: pointer;
+}
