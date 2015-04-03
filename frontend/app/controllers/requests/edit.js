@@ -57,7 +57,21 @@ export default Ember.Controller.extend({
             autoClear: true
         });
         self.transitionToRoute('requests.show', self.get('request'));
-      });
+      },
+      function(response) {
+        console.error('There was a problem', response);
+        Object.keys(response.errors).map(function(value, index) {
+          response.errors[value].map(function(v, i){
+            self.notifications.addNotification({
+              message: value + ' ' + v,
+              type: 'error',
+              autoClear: true,
+              clearDuration: 2500
+            });
+          });
+        });
+      }
+     );
     },
     cancel: function(){
       this.transitionToRoute('requests.show', this.get('request'));
