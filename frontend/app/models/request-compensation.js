@@ -3,9 +3,9 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 var requestCompensation = DS.Model.extend({
-  title:         attr('string'),
-  compensation:  attr('string'),
-  job:           DS.hasMany('request')
+  compensation : attr('string'),
+  icon         : attr('string'),
+  request      : DS.belongsTo('request', {inverse : 'request_compensations'})
   //job_type_ids:          attr('string'),
   //job_compensation_ids:  attr('string'),
   //job_priority_ids:      attr('string')

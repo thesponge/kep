@@ -52,6 +52,20 @@
       </li>
       <li>
         <div class="panel radius callout">
+          <ul>
+            {{#each compensation in model.job_compensations}}
+              <li>
+                <span class="list-icon">
+                  {{fa-icon compensation.icon}}
+                </span> 
+                {{compensation.compensation}} 
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="panel radius callout">
           <span class="list-icon">
             {{#if model.travel}} {{fa-icon 'check'}}
             {{else}} {{fa-icon 'close'}} {{/if}}
