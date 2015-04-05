@@ -100,7 +100,7 @@ $font-family-serif: Georgia, Cambria, Times, serif;
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
 
- $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -119,6 +119,19 @@ $charcoal    : #555555;
 $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
+$darkgreen   : #1E801E;
+$darkergreen   : #226622;
+
+// KEP colors
+//$kep-menubase   : #719B68;
+//$kep-menuaccent : #A9C9A2;
+$kep-menubase   : rgba(0,0,0,.1);
+$kep-menuaccent : rgba(0,0,0,.2);
+$kep-textbase : #222;
+$kep-textaccent : #333;
+
+
+
 
 // We use these as default colors throughout
 $primary-color: #008CBA;
@@ -1384,7 +1397,7 @@ $price-money-size: rem-calc(28);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
+$topbar-bg-color: $kep-menubase;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1396,15 +1409,15 @@ $price-money-size: rem-calc(28);
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-$topbar-link-color-hover: $white;
+$topbar-link-color: $kep-textbase;
+$topbar-link-color-hover: $kep-textaccent;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 $topbar-link-hover-lightness: -20%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: $charcoal;
+$topbar-link-bg-hover: $kep-menuaccent;
 $topbar-link-bg-color-hover: $oil;
 // $topbar-link-bg-active: $primary-color;
 $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
@@ -1418,10 +1431,10 @@ $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $kep-textbase;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-// $topbar-dropdown-link-bg: $oil;
-$topbar-dropdown-link-bg-hover: $charcoal;
+$topbar-dropdown-link-bg: $kep-menubase;
+$topbar-dropdown-link-bg-hover: $kep-menuaccent;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1468,3 +1481,23 @@ $topbar-dropdown-link-bg-hover: $charcoal;
 // $include-accessibility-classes: true;
 // $include-table-visibility-classes: true;
 // $include-legacy-visibility-classes: true;
+
+
+.top-bar *,
+.top-bar>.top-bar-section *,
+.top-bar>.top-bar-section>ul.left>li,
+.top-bar>.top-bar-section>ul.left>li>a,
+.top-bar>.top-bar-section>ul.left>li>a.active,
+.top-bar>.top-bar-section>ul.left>li.has-dropdown,
+.top-bar>.top-bar-section>ul.left>li.has-dropdown>a,
+.top-bar>.top-bar-section>ul.right>li,
+.top-bar>.top-bar-section>ul.right>li>a,
+.top-bar>.top-bar-section>ul.right>li>a.active,
+.top-bar>.top-bar-section>ul.right>li.has-dropdown,
+.top-bar>.top-bar-section>ul.right>li.has-dropdown>a
+{
+  background-color: transparent;
+  color: $kep-textbase;
+}
+
+.top-bar {position: relative;}

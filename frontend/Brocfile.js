@@ -1,20 +1,20 @@
 /* global require, module */
-
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp   = require('ember-cli/lib/broccoli/ember-app');
+var mergeTrees = require('broccoli-merge-trees');
 
 var app = new EmberApp({
   modals: {
-    layout: true,
-    style: true,
-    animation: 'flip'
-  }
-  //'ember-cli-foundation-sass': {
-    //'modernizr': true,
-    //'fastclick': true,
-    //'foundationJs': 'all'
-  //}
-  //,
-  //emberCliFontAwesome: { includeFontAwesomeAssets: true }
+    layout    : true,
+    style     : true,
+    animation : 'flip'
+  },
+  emberCliFontAwesome: {
+    includeFontAwesomeAssets: true
+  },
+  minifyCSS: {
+    enabled: true,
+    options: {}
+  },
 });
 
 // Use `app.import` to add additional libraries to the generated
@@ -30,6 +30,6 @@ var app = new EmberApp({
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-// app.import("bower_components/font-awesome/css/font-awesome.css");
+//app.import("bower_components/font-awesome/css/font-awesome.css");
 
-module.exports = app.toTree();
+module.exports = mergeTrees([app.toTree()], { overwrite: true });

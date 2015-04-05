@@ -15,9 +15,21 @@
   }
 }
 
+
+/* Color variables */
+
+$kep-postbase: #FBFFF4;
+/*$kep-postaccent: darken( $kep-postbase, 50% );*/
+$kep-postaccent: #E8EADA;
+$kep-normaltext: #141617;
+
 /* The SASS! */
 html, body {
   background: url('/assets/subtledots.png') repeat;
+}
+
+p {
+  color: $kep-normaltext;
 }
 
 div.growl-container {
@@ -30,7 +42,6 @@ div.growl-container {
     margin-bottom: 0.25em;
   }
 }
-
 
 div.slit {
   margin: 0px auto;
@@ -95,11 +106,12 @@ ul.roll {
   > a li.post {
     min-height: 100px;
     color: #555;
+    background-color: $kep-postbase;
     padding: 10px 8px 25px 8px;
     position: relative;
     border-bottom: 1px dashed #cccccc;
     &:hover {
-      background-color: #efefef;
+      background-color: $kep-postaccent;
       cursor: pointer;
       color: #222;
     }
@@ -193,17 +205,6 @@ div.content {
 .modal {
   max-width: 95%;
 }
-
-/*.top-bar .name h1 a:before {
-    background-image: url('/assets/kep_icon.png');
-    background-repeat: no-repeat;
-    content: "";
-    display: inline-block;
-    height: 40px;
-    margin-right: 10px;
-    position: relative;
-    width: 40px;
-}*/
 
 .select2-container {
   width: 100%;
