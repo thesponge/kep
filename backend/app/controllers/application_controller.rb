@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
   def set_default_response_format
-    resource.format = :json
+    request.format = :json
   end
   
   def record_not_found(error)
