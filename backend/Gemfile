@@ -8,6 +8,7 @@ gem 'devise', '~>3.4.1'
 #gem 'responders', '~> 2.0'
 gem 'exception_handler'
 gem 'figaro'
+gem 'seed-fu', '~> 2.3'
 
 #For the list of languages in language model
 gem 'language_list' 
