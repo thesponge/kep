@@ -4,10 +4,10 @@ class CreateMatches < ActiveRecord::Migration
       t.belongs_to :user, index: true
       t.integer :r_id, null: false
       t.integer :j_id, null: false
-      t.integer :request_owner, null: false
-      t.integer :job_owner, null: false
-      t.boolean :accepted_job
-      t.boolean :accepted_request
+      t.integer :resource_owner, null: false
+      t.integer :assignment_owner, null: false
+      t.boolean :accepted_assignment
+      t.boolean :accepted_resource
       t.boolean :completed 
       
       t.timestamps null: false

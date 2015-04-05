@@ -2,17 +2,17 @@ require 'ffaker'
 
 namespace :db do
   task populate: :environment do
-    Job.destroy_all
+    Assignment.destroy_all
      
     10.times do 
-     Job.create(
+     Assignment.create(
         title: FFaker::HipsterIpsum.words(10).join(' '),
         description: FFaker::HipsterIpsum.words(100).join(' '),
         travel: FFaker::Boolean.maybe
       )
       
       
-      JobType.create(
+      AssignmentType.create(
         category: FFaker::HipsterIpsum.word, 
         option: FFaker::HipsterIpsum.word 
       )
@@ -20,13 +20,13 @@ namespace :db do
     
     
     10.times do
-      Request.create(
+      Resource.create(
         title: FFaker::HipsterIpsum.words(10).join(' '),
         description: FFaker::HipsterIpsum.words(100).join(' '),
         travel: FFaker::Boolean.maybe
       )
     
-      RequestType.create(
+      ResourceType.create(
         category: FFaker::HipsterIpsum.word,  
         option: FFaker::HipsterIpsum.word  
       )

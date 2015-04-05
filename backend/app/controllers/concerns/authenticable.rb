@@ -3,9 +3,9 @@ module Authenticable
 
   #Devise methods overwrites
   
-  #Identifies current user by the token from the request
+  #Identifies current user by the token from the resource
   def current_user
-    @current_user ||= User.find_by(authentication_token: token_and_options(request)) 
+    @current_user ||= User.find_by(authentication_token: token_and_options(resource)) 
   end
   
   #Prevents unauthorized users from making user  specific actions i.e. edit & friends 
