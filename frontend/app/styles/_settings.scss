@@ -123,10 +123,14 @@ $darkgreen   : #1E801E;
 $darkergreen   : #226622;
 
 // KEP colors
-//$kep-menubase   : #719B68;
-//$kep-menuaccent : #A9C9A2;
-$kep-menubase   : rgba(0,0,0,.1);
-$kep-menuaccent : rgba(0,0,0,.2);
+//$kep-menubase   : rgba(0,0,0,.1);
+//$kep-menuaccent : rgba(0,0,0,.2);
+//$kep-menubase   : rgba(255,255,255,.7);
+//$kep-menuaccent : rgba(0,0,0,.4);
+$kep-menubase   : #719B68;
+$kep-menuaccent : #A9C9A2;
+$kep-menutextbase   : #fff;
+$kep-menutextaccent : #222;
 $kep-textbase : #222;
 $kep-textaccent : #333;
 
@@ -1409,8 +1413,8 @@ $topbar-bg-color: $kep-menubase;
 // $topbar-title-font-size: rem-calc(17);
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $kep-textbase;
-$topbar-link-color-hover: $kep-textaccent;
+$topbar-link-color: $kep-menutextbase;
+$topbar-link-color-hover: $kep-menutextaccent;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
@@ -1497,7 +1501,7 @@ $topbar-dropdown-link-bg-hover: $kep-menuaccent;
 .top-bar>.top-bar-section>ul.right>li.has-dropdown>a
 {
   background-color: transparent;
-  color: $kep-textbase;
+  color: $kep-menutextbase;
 }
 
 .top-bar {position: relative;}

@@ -39,32 +39,32 @@ ActiveRecord::Schema.define(version: 20150329131500) do
   add_index "accounts_skills", ["account_id"], name: "index_accounts_skills_on_account_id", using: :btree
   add_index "accounts_skills", ["skill_id"], name: "index_accounts_skills_on_skill_id", using: :btree
 
-  create_table "job_compensations", force: :cascade do |t|
-    t.string "compensation", null: false
-    t.string "icon"
-  end
-
-  create_table "job_compensations_jobs", id: false, force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "job_compensation_id"
-  end
-
-  add_index "job_compensations_jobs", ["job_compensation_id"], name: "index_job_compensations_jobs_on_job_compensation_id", using: :btree
-  add_index "job_compensations_jobs", ["job_id"], name: "index_job_compensations_jobs_on_job_id", using: :btree
-
-  create_table "job_priorities", force: :cascade do |t|
+  create_table "assignment_priorities", force: :cascade do |t|
     t.text "priority", null: false
   end
 
-  create_table "job_priorities_jobs", id: false, force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "job_priority_id"
+  create_table "assignment_priorities_assignments", id: false, force: :cascade do |t|
+    t.integer "assignment_id"
+    t.integer "assignment_priority_id"
   end
 
-  add_index "job_priorities_jobs", ["job_id"], name: "index_job_priorities_jobs_on_job_id", using: :btree
-  add_index "job_priorities_jobs", ["job_priority_id"], name: "index_job_priorities_jobs_on_job_priority_id", using: :btree
+  add_index "assignment_priorities_assignments", ["assignment_id"], name: "index_assignment_priorities_assignments_on_assignment_id", using: :btree
+  add_index "assignment_priorities_assignments", ["assignment_priority_id"], name: "idx_assignment_priorities_assignments_on_assignment_priority_id", using: :btree
 
-  create_table "job_types", force: :cascade do |t|
+  create_table "assignment_rewards", force: :cascade do |t|
+    t.string "reward", null: false
+    t.string "icon"
+  end
+
+  create_table "assignment_rewards_assignments", id: false, force: :cascade do |t|
+    t.integer "assignment_id"
+    t.integer "assignment_reward_id"
+  end
+
+  add_index "assignment_rewards_assignments", ["assignment_id"], name: "index_assignment_rewards_assignments_on_assignment_id", using: :btree
+  add_index "assignment_rewards_assignments", ["assignment_reward_id"], name: "index_assignment_rewards_assignments_on_assignment_reward_id", using: :btree
+
+  create_table "assignment_types", force: :cascade do |t|
     t.string   "category",   null: false
     t.string   "option",     null: false
     t.datetime "created_at", null: false
@@ -72,17 +72,17 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.string   "icon"
   end
 
-  add_index "job_types", ["category", "option"], name: "index_job_types_on_category_and_option", unique: true, using: :btree
+  add_index "assignment_types", ["category", "option"], name: "index_assignment_types_on_category_and_option", unique: true, using: :btree
 
-  create_table "job_types_jobs", id: false, force: :cascade do |t|
-    t.integer "job_id"
-    t.integer "job_type_id"
+  create_table "assignment_types_assignments", id: false, force: :cascade do |t|
+    t.integer "assignment_id"
+    t.integer "assignment_type_id"
   end
 
-  add_index "job_types_jobs", ["job_id"], name: "index_job_types_jobs_on_job_id", using: :btree
-  add_index "job_types_jobs", ["job_type_id"], name: "index_job_types_jobs_on_job_type_id", using: :btree
+  add_index "assignment_types_assignments", ["assignment_id"], name: "index_assignment_types_assignments_on_assignment_id", using: :btree
+  add_index "assignment_types_assignments", ["assignment_type_id"], name: "index_assignment_types_assignments_on_assignment_type_id", using: :btree
 
-  create_table "jobs", force: :cascade do |t|
+  create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title",          null: false
     t.text     "description",    null: false
@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.datetime "updated_at"
   end
 
-  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
+  add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string "iso"
@@ -101,45 +101,45 @@ ActiveRecord::Schema.define(version: 20150329131500) do
 
   create_table "matches", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "r_id",             null: false
-    t.integer  "j_id",             null: false
-    t.integer  "request_owner",    null: false
-    t.integer  "job_owner",        null: false
-    t.boolean  "accepted_job"
-    t.boolean  "accepted_request"
+    t.integer  "r_id",                null: false
+    t.integer  "j_id",                null: false
+    t.integer  "resource_owner",      null: false
+    t.integer  "assignment_owner",    null: false
+    t.boolean  "accepted_assignment"
+    t.boolean  "accepted_resource"
     t.boolean  "completed"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   add_index "matches", ["j_id", "r_id"], name: "index_matches_on_j_id_and_r_id", unique: true, using: :btree
   add_index "matches", ["user_id"], name: "index_matches_on_user_id", using: :btree
 
-  create_table "request_compensations", force: :cascade do |t|
-    t.string "compensation", null: false
-    t.string "icon"
-  end
-
-  create_table "request_compensations_requests", id: false, force: :cascade do |t|
-    t.integer "request_id"
-    t.integer "request_compensation_id"
-  end
-
-  add_index "request_compensations_requests", ["request_compensation_id"], name: "req_compensation_id", using: :btree
-  add_index "request_compensations_requests", ["request_id"], name: "index_request_compensations_requests_on_request_id", using: :btree
-
-  create_table "request_priorities", force: :cascade do |t|
+  create_table "resource_priorities", force: :cascade do |t|
     t.string "priority", null: false
   end
 
-  create_table "request_priorities_requests", id: false, force: :cascade do |t|
-    t.integer "request_id"
-    t.integer "request_priority_id"
+  create_table "resource_priorities_resources", id: false, force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "resource_priority_id"
   end
 
-  add_index "request_priorities_requests", ["request_id"], name: "index_request_priorities_requests_on_request_id", using: :btree
+  add_index "resource_priorities_resources", ["resource_id"], name: "index_resource_priorities_resources_on_resource_id", using: :btree
 
-  create_table "request_types", force: :cascade do |t|
+  create_table "resource_rewards", force: :cascade do |t|
+    t.string "reward", null: false
+    t.string "icon"
+  end
+
+  create_table "resource_rewards_resources", id: false, force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "resource_reward_id"
+  end
+
+  add_index "resource_rewards_resources", ["resource_id"], name: "index_resource_rewards_resources_on_resource_id", using: :btree
+  add_index "resource_rewards_resources", ["resource_reward_id"], name: "req_reward_id", using: :btree
+
+  create_table "resource_types", force: :cascade do |t|
     t.string   "category",   null: false
     t.string   "option",     null: false
     t.datetime "created_at", null: false
@@ -147,17 +147,17 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.string   "icon"
   end
 
-  add_index "request_types", ["category", "option"], name: "index_request_types_on_category_and_option", unique: true, using: :btree
+  add_index "resource_types", ["category", "option"], name: "index_resource_types_on_category_and_option", unique: true, using: :btree
 
-  create_table "request_types_requests", id: false, force: :cascade do |t|
-    t.integer "request_id"
-    t.integer "request_type_id"
+  create_table "resource_types_resources", id: false, force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "resource_type_id"
   end
 
-  add_index "request_types_requests", ["request_id"], name: "index_request_types_requests_on_request_id", using: :btree
-  add_index "request_types_requests", ["request_type_id"], name: "index_request_types_requests_on_request_type_id", using: :btree
+  add_index "resource_types_resources", ["resource_id"], name: "index_resource_types_resources_on_resource_id", using: :btree
+  add_index "resource_types_resources", ["resource_type_id"], name: "index_resource_types_resources_on_resource_type_id", using: :btree
 
-  create_table "requests", force: :cascade do |t|
+  create_table "resources", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title",          null: false
     t.text     "description",    null: false
@@ -167,7 +167,7 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.datetime "updated_at"
   end
 
-  add_index "requests", ["user_id"], name: "index_requests_on_user_id", using: :btree
+  add_index "resources", ["user_id"], name: "index_resources_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string "name",  null: false

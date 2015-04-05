@@ -3,21 +3,21 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   //model: function() {
-  //  return Request.find();
+  //  return Resource.find();
   //}
   //renderTemplate: function(controller, model){
-  //  //console.log(model.jobs.content);
-  //  this.controller.get('jobs').reload();
+  //  //console.log(model.assignments.content);
+  //  this.controller.get('assignments').reload();
   //},
   //setupController: function(controller, model){
-  //  controller.set('jobs', this.store.find('jobs'));
-  //  controller.set('requests', this.store.find('requests'));
+  //  controller.set('assignments', this.store.find('assignments'));
+  //  controller.set('resources', this.store.find('resources'));
   //}
   //,
   //model: function() {
   //  return Ember.RSVP.hash({
-  //    jobs: this.store.fetchAll('job'),
-  //    requests: this.store.fetchAll('request')
+  //    assignments: this.store.fetchAll('assignment'),
+  //    resources: this.store.fetchAll('resource')
   //  });
   //}
   //,
@@ -38,15 +38,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   renderTemplate: function() {
     this.render();
-    this.render('jobs/sideroll', {
+    this.render('assignments/sideroll', {
       outlet: 'rightside',
       into: 'match.dashboard',
-      controller: 'jobs'
+      controller: 'assignments'
     });
-    this.render('requests/sideroll', {
+    this.render('resources/sideroll', {
       outlet: 'leftside',
       into: 'match.dashboard',
-      controller: 'requests'
+      controller: 'resources'
     });
   },
 });

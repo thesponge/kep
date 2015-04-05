@@ -11,15 +11,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   },
   renderTemplate: function() {
     this.render('match/index');
-    this.render('match/job/sideroll', {
+    this.render('match/assignment/sideroll', {
       outlet: 'rightside',
       into: 'match/index',
-      controller: 'jobs'
+      controller: 'assignments'
     });
-    this.render('match/job/request/sideroll', {
+    this.render('match/assignment/resource/sideroll', {
       outlet: 'leftside',
       into: 'match/index',
-      controller: 'requests'
+      controller: 'resources'
     });
   },
 //  renderTemplate: function() {

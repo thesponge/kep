@@ -8,11 +8,11 @@ var User = DS.Model.extend({
   password_confirmation: attr('string')
 });
 
-//Job.reopenClass({
+//Assignment.reopenClass({
 //  FIXTURES: [
-//    {id: 1, title: 'Job One'},
-//    {id: 2, title: 'Job Two'},
-//    {id: 3, title: 'Job Three'}
+//    {id: 1, title: 'Assignment One'},
+//    {id: 2, title: 'Assignment Two'},
+//    {id: 3, title: 'Assignment Three'}
 //  ]
 //});
 

@@ -1,0 +1,54 @@
+<h5>Edit resource</h5>
+
+<form id="updateresource" {{action 'updateResource' on='submit'}}>
+  {{#each flashes.queue as |flash|}}
+    {{flash-message flash=flash messageStyle='foundation' class='radius'}}
+  {{/each}}
+
+  <label for="title">Title</label>
+  {{input id='title' placeholder='Enter a title'
+          value=resource.title}}
+  <label for="description">Description</label>
+  {{textarea id='description' placeholder='Description' value=resource.description}}
+  {{input id='travel' type='checkbox' checked=resource.travel}}
+  <label for='travel'>Travel</label>
+  <br>
+  {{input id='driver_license' type='checkbox' checked=resource.driver_license}}
+  <label for='driver_license'>Driving license</label>
+  <div class="row">
+    <div class="small-12 columns">
+      <label>Resource type(s)</label>
+      {{select-2
+          content=types_select
+          value=resource.resource_type_ids
+          multiple=true
+          optionValuePath="id"
+          placeholder="What type of resource is this?"
+      }}
+    </div>
+    <div class="small-12 columns">
+      <label>Reward(s)</label>
+      {{select-2
+          content=rewards_select
+          placeholder="Reward?"
+          value=resource.resource_reward_ids
+          multiple=true
+          optionValuePath="id"
+          optionLabelPath="reward"
+      }}
+    </div>
+  </div>
+  <hr>
+  <button id="submit" type="submit" class="pull-right">Send</button>
+  <button id="cancel" class="pull-right secondary" {{action 'cancel'}}>Cancel</button>
+</form>
+
+<script type="text/javascript">
+  $('#updateassignment').on("keyup keypress", function(e) {
+    var code = e.keyCode || e.which; 
+    if (code  == 13) {               
+      e.preventDefault();
+      return false;
+    }
+  });
+</script>

@@ -1,0 +1,23 @@
+{{#each assignment in model}}
+  {{#link-to "assignments.show" assignment}}
+    <li class="post text-center">
+      <span class="post_title">
+        {{tool-tip tagName="i"
+          heading="Description"
+          class="fa fa-info-circle description-trigger"
+          tip=assignment.description_fragment}}
+        {{assignment.title}}
+      </span>
+      <span class="left_icons">
+        {{#each type in assignment.assignment_types}}
+          {{fa-icon type.icon}}
+        {{/each}}
+       </span>
+      <span class="right_icons">
+        {{#each reward in assignment.assignment_reward}}
+          {{fa-icon reward.icon}}
+        {{/each}}
+       </span>
+    </li>
+  {{/link-to}}
+{{/each}}

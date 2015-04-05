@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :jobs, inverse_of: :user
-  has_many :requests, inverse_of: :user
+  has_many :assignments, inverse_of: :user
+  has_many :resources, inverse_of: :user
   has_many :matches, inverse_of: :user
   has_one  :account, dependent: :destroy
   
