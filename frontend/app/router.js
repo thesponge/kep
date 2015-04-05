@@ -7,8 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   //this.route('application');
-  //this.resource('jobs', function() {
-  //  this.route('show', { path: ':job_id' });
+  //this.resource('assignments', function() {
+  //  this.route('show', { path: ':assignment_id' });
   //  this.route('browse');
   //  this.route('suggested');
   //  this.route('taken');
@@ -20,35 +20,35 @@ Router.map(function() {
   this.route('match', {path: 'apps/match'}, function() {
     ////TODO: DRY on match subroutes
     //this.route('make', function(){
-    //  this.route('job', function(){
-    //    this.route('show', {path: ':job_id'}, function(){
-    //      this.route('request', function() {
-    //        this.route('show', {path: ':request_id'});
+    //  this.route('assignment', function(){
+    //    this.route('show', {path: ':assignment_id'}, function(){
+    //      this.route('resource', function() {
+    //        this.route('show', {path: ':resource_id'});
     //      });
     //    });
     //  });
-    //  this.resource('requests', {path: 'request'}, function(){
-    //    this.route('show', {path: ':request_id'}, function(){
-    //      this.resource('jobs', {path: 'job'}, function() {
-    //        this.route('show', {path: ':job_id'});
+    //  this.resource('resources', {path: 'resource'}, function(){
+    //    this.route('show', {path: ':resource_id'}, function(){
+    //      this.resource('assignments', {path: 'assignment'}, function() {
+    //        this.route('show', {path: ':assignment_id'});
     //      });
     //    });
     //  });
     //});
     this.route('notifications');
     this.route('dashboard', function() {
-      this.resource('requests', function() {
-        this.route('show', {path: ':request_id'});
-        this.route('edit', {path: ':request_id/edit'});
+      this.resource('resources', function() {
+        this.route('show', {path: ':resource_id'});
+        this.route('edit', {path: ':resource_id/edit'});
         this.route('new', {path: 'new'});
       });
-      this.resource('jobs', function() {
-        this.route('show', {path: ':job_id'});
-        this.route('edit', {path: ':job_id/edit'});
+      this.resource('assignments', function() {
+        this.route('show', {path: ':assignment_id'});
+        this.route('edit', {path: ':assignment_id/edit'});
         this.route('new', {path: 'new'});
       });
       //this.route('cake');
-      //this.route('job');
+      //this.route('assignment');
     });
   });
   this.resource('accounts', function() {

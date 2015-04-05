@@ -7,7 +7,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, ApplicationRouteMixin
     return Ember.RSVP.hash({
       user: this.store.find('user', { email: window.session.content.email })
       //,
-      //requests: this.store.find('request')
+      //resources: this.store.find('resource')
     });
   }
 });

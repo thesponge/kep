@@ -10,7 +10,7 @@
       <div class="large-1 columns">
       </div>
       <div class="large-11 columns">
-        <div class="roll-container" id="requests-container">
+        <div class="roll-container" id="resources-container">
           <div class="rollmask"></div>
           <ul class="roll">
             {{outlet 'leftside'}}
@@ -28,8 +28,8 @@
           </div>
           <div class="slit down"></div>
         </div>
-        {{#link-to 'requests.new' class="pull-right"}}
-          {{fa-icon 'plus'}} Add a new request
+        {{#link-to 'resources.new' class="pull-right"}}
+          {{fa-icon 'plus'}} Add a new resource
         {{/link-to}}
       </div>
     </div>
@@ -44,9 +44,9 @@
   <div class="small-3 xlarge-3 end large-3 columns roll_container">
     <div class="row">
       <div class="large-11 columns">
-        <div class="roll-container" id="jobs-container">
+        <div class="roll-container" id="assignments-container">
           <div class="rollmask"></div>
-          <ul class="roll" id="jobs-container">
+          <ul class="roll" id="assignments-container">
             {{outlet 'rightside'}}
           </ul>
           <div class="slit up">
@@ -62,8 +62,8 @@
           </div>
           <div class="slit down"></div>
         </div>
-        {{#link-to 'jobs.new'}}
-          {{fa-icon 'plus'}} Add a new job
+        {{#link-to 'assignments.new'}}
+          {{fa-icon 'plus'}} Add a new assignment
         {{/link-to}}
       </div>
       <div class="large-1 columns">

@@ -13,12 +13,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     this.render('match/index');
     this.render('match/assignment/sideroll', {
       outlet: 'rightside',
-      into: 'match/index',
+      into: 'match.index',
       controller: 'assignments'
     });
     this.render('match/assignment/resource/sideroll', {
       outlet: 'leftside',
-      into: 'match/index',
+      into: 'match.index',
       controller: 'resources'
     });
   },

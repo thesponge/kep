@@ -10,8 +10,8 @@ export default Ember.ObjectController.extend({
   //}.property(),
   //model: function() {
   //  return Ember.RSVP.hash({
-  //    jobs: this.store.find('job'),
-  //    requests: this.store.find('request')
+  //    assignments: this.store.find('assignment'),
+  //    resources: this.store.find('resource')
   //  });
   //},
   //newMatch: null,

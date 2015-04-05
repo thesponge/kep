@@ -21,8 +21,8 @@
           </div>
           <div class="slit down"></div>
         </div>
-        {{#link-to 'requests.new' class="pull-right"}}
-          {{fa-icon 'plus'}} Add a new request
+        {{#link-to 'resources.new' class="pull-right"}}
+          {{fa-icon 'plus'}} Add a new resource
         {{/link-to}}
       </div>
     </div>
@@ -38,7 +38,7 @@
     <div class="row">
       <div class="large-11 columns">
         <div class="roll-container">
-          <ul class="roll" id="jobs-container">
+          <ul class="roll" id="assignments-container">
             {{outlet 'rightside'}}
           </ul>
           <div class="slit up">
@@ -54,8 +54,8 @@
           </div>
           <div class="slit down"></div>
         </div>
-        {{#link-to 'jobs.new'}}
-          {{fa-icon 'plus'}} Add a new job
+        {{#link-to 'assignments.new'}}
+          {{fa-icon 'plus'}} Add a new assignment
         {{/link-to}}
       </div>
       <div class="large-1 columns">
