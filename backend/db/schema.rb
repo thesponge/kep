@@ -97,12 +97,15 @@ ActiveRecord::Schema.define(version: 20150405235950) do
 
   add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
 
-  create_table "intention_maps", id: false, force: :cascade do |t|
+  create_table "intention_maps", force: :cascade do |t|
     t.integer  "intention_map_id"
     t.string   "intention_map_type"
+    t.integer  "intention_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "intention_maps", ["intention_id"], name: "index_intention_maps_on_intention_id", using: :btree
 
   create_table "intentions", force: :cascade do |t|
     t.string "intention", null: false
