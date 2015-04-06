@@ -6,7 +6,9 @@ class CreateAssignments < ActiveRecord::Migration
       t.text :description, null: false
       t.boolean :travel
       t.boolean :driver_license
-
+      t.datetime :start_date
+      t.datetime :end_date
+      
       t.timestamps
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329131500) do
+ActiveRecord::Schema.define(version: 20150405235950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.text    "bio"
     t.string  "avatar"
     t.string  "url"
+    t.boolean "available"
   end
 
   create_table "accounts_languages", id: false, force: :cascade do |t|
@@ -88,11 +89,24 @@ ActiveRecord::Schema.define(version: 20150329131500) do
     t.text     "description",    null: false
     t.boolean  "travel"
     t.boolean  "driver_license"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "assignments", ["user_id"], name: "index_assignments_on_user_id", using: :btree
+
+  create_table "intention_maps", id: false, force: :cascade do |t|
+    t.integer  "intention_map_id"
+    t.string   "intention_map_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "intentions", force: :cascade do |t|
+    t.string "intention", null: false
+  end
 
   create_table "languages", force: :cascade do |t|
     t.string "iso"
@@ -125,37 +139,6 @@ ActiveRecord::Schema.define(version: 20150329131500) do
   end
 
   add_index "resource_priorities_resources", ["resource_id"], name: "index_resource_priorities_resources_on_resource_id", using: :btree
-
-  create_table "resource_rewards", force: :cascade do |t|
-    t.string "reward", null: false
-    t.string "icon"
-  end
-
-  create_table "resource_rewards_resources", id: false, force: :cascade do |t|
-    t.integer "resource_id"
-    t.integer "resource_reward_id"
-  end
-
-  add_index "resource_rewards_resources", ["resource_id"], name: "index_resource_rewards_resources_on_resource_id", using: :btree
-  add_index "resource_rewards_resources", ["resource_reward_id"], name: "req_reward_id", using: :btree
-
-  create_table "resource_types", force: :cascade do |t|
-    t.string   "category",   null: false
-    t.string   "option",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "icon"
-  end
-
-  add_index "resource_types", ["category", "option"], name: "index_resource_types_on_category_and_option", unique: true, using: :btree
-
-  create_table "resource_types_resources", id: false, force: :cascade do |t|
-    t.integer "resource_id"
-    t.integer "resource_type_id"
-  end
-
-  add_index "resource_types_resources", ["resource_id"], name: "index_resource_types_resources_on_resource_id", using: :btree
-  add_index "resource_types_resources", ["resource_type_id"], name: "index_resource_types_resources_on_resource_type_id", using: :btree
 
   create_table "resources", force: :cascade do |t|
     t.integer  "user_id"
