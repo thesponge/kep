@@ -5,6 +5,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.text :bio
       t.string :avatar
       t.string :url
+      t.boolean :available
     end
   end
 end
