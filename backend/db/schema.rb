@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405235950) do
+ActiveRecord::Schema.define(version: 20150407141811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,23 +22,8 @@ ActiveRecord::Schema.define(version: 20150405235950) do
     t.string  "avatar"
     t.string  "url"
     t.boolean "available"
+    t.string  "display_name"
   end
-
-  create_table "accounts_languages", id: false, force: :cascade do |t|
-    t.integer "account_id"
-    t.integer "language_id"
-  end
-
-  add_index "accounts_languages", ["account_id"], name: "index_accounts_languages_on_account_id", using: :btree
-  add_index "accounts_languages", ["language_id"], name: "index_accounts_languages_on_language_id", using: :btree
-
-  create_table "accounts_skills", id: false, force: :cascade do |t|
-    t.integer "account_id"
-    t.integer "skill_id"
-  end
-
-  add_index "accounts_skills", ["account_id"], name: "index_accounts_skills_on_account_id", using: :btree
-  add_index "accounts_skills", ["skill_id"], name: "index_accounts_skills_on_skill_id", using: :btree
 
   create_table "assignment_priorities", force: :cascade do |t|
     t.text "priority", null: false
@@ -64,24 +49,6 @@ ActiveRecord::Schema.define(version: 20150405235950) do
 
   add_index "assignment_rewards_assignments", ["assignment_id"], name: "index_assignment_rewards_assignments_on_assignment_id", using: :btree
   add_index "assignment_rewards_assignments", ["assignment_reward_id"], name: "index_assignment_rewards_assignments_on_assignment_reward_id", using: :btree
-
-  create_table "assignment_types", force: :cascade do |t|
-    t.string   "category",   null: false
-    t.string   "option",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "icon"
-  end
-
-  add_index "assignment_types", ["category", "option"], name: "index_assignment_types_on_category_and_option", unique: true, using: :btree
-
-  create_table "assignment_types_assignments", id: false, force: :cascade do |t|
-    t.integer "assignment_id"
-    t.integer "assignment_type_id"
-  end
-
-  add_index "assignment_types_assignments", ["assignment_id"], name: "index_assignment_types_assignments_on_assignment_id", using: :btree
-  add_index "assignment_types_assignments", ["assignment_type_id"], name: "index_assignment_types_assignments_on_assignment_type_id", using: :btree
 
   create_table "assignments", force: :cascade do |t|
     t.integer  "user_id"
@@ -111,9 +78,37 @@ ActiveRecord::Schema.define(version: 20150405235950) do
     t.string "intention", null: false
   end
 
+  create_table "language_maps", force: :cascade do |t|
+    t.integer  "language_map_id"
+    t.string   "language_map_type"
+    t.integer  "language_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "language_maps", ["language_id"], name: "index_language_maps_on_language_id", using: :btree
+
   create_table "languages", force: :cascade do |t|
     t.string "iso"
     t.string "common"
+  end
+
+  create_table "location_maps", force: :cascade do |t|
+    t.integer  "location_map_id"
+    t.string   "location_map_type"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "location_maps", ["location_id"], name: "index_location_maps_on_location_id", using: :btree
+
+  create_table "locations", force: :cascade do |t|
+    t.string "country",   null: false
+    t.string "state"
+    t.string "city"
+    t.float  "latitude"
+    t.float  "longitude"
   end
 
   create_table "matches", force: :cascade do |t|
@@ -155,9 +150,21 @@ ActiveRecord::Schema.define(version: 20150405235950) do
 
   add_index "resources", ["user_id"], name: "index_resources_on_user_id", using: :btree
 
+  create_table "skill_maps", force: :cascade do |t|
+    t.integer  "skill_map_id"
+    t.string   "skill_map_type"
+    t.integer  "skill_id"
+    t.string   "proof"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skill_maps", ["skill_id"], name: "index_skill_maps_on_skill_id", using: :btree
+
   create_table "skills", force: :cascade do |t|
-    t.string "name",  null: false
-    t.string "proof"
+    t.string "category", null: false
+    t.string "name",     null: false
+    t.string "icon"
   end
 
   create_table "users", force: :cascade do |t|

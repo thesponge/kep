@@ -6,6 +6,7 @@ class CreateAccounts < ActiveRecord::Migration
       t.string :avatar
       t.string :url
       t.boolean :available
+      t.string :display_name
     end
   end
 end

@@ -1,5 +1,5 @@
-class AddFontawesomeColumn < ActiveRecord::Migration
-  AFFECTED_TABLES = [:assignment_types, :assignment_rewards]
+class AddFontAwesomeToColumns < ActiveRecord::Migration
+  AFFECTED_TABLES = [:skills, :assignment_rewards]
 
   def self.up
     AFFECTED_TABLES.each do |t|
