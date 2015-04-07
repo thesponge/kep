@@ -57,6 +57,7 @@ Router.map(function() {
     this.route('recover', {path: 'recover'});
     this.route('reset');
     this.route('destroy');
+    this.route('show', {path: ':user_id'});
   });
 });
 

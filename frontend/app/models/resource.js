@@ -3,17 +3,15 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 var Resource = DS.Model.extend({
-  submissionType           : 'resource',
-  user_id                  : attr(),
-  title                    : attr('string'),
-  description              : attr('string'),
-  travel                   : attr('string'),
-  driver_license           : attr('string'),
-  resource_types            : DS.hasMany('resourceType', {inverse: 'resource', async: true, embedded: 'always'}),
-  resource_rewards    : DS.hasMany('resourceReward', {inverse: 'resource', async: true, embedded: 'always'}),
-  resource_type_ids         : attr(),
-  resource_reward_ids : attr(),
-  resource_priority_ids     : attr(),
+  submissionType         : 'resource',
+  user_id                : attr(),
+  title                  : attr('string'),
+  description            : attr('string'),
+  travel                 : attr('string'),
+  driver_license         : attr('string'),
+  resource_intentions    : DS.hasMany('resourceIntention', {inverse: 'resource', async: true, embedded: 'always'}),
+  resource_intention_ids : attr(),
+  resource_priority_ids  : attr(),
   description_fragment: function() {
     if(this.get('description') !== undefined) {
       return this.get('description').substr(0, 150) + ' [...]';

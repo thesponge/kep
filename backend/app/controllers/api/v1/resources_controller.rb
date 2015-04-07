@@ -39,7 +39,7 @@ class Api::V1::ResourcesController < ApplicationController
   private 
   
   def resource_params
-    params.require(:resource).permit(:title, :description, :travel, :driver_license,resource_type_ids: [], resource_reward_ids: [], resource_priority_ids: [])
+    params.require(:resource).permit(:title, :description, :travel, :driver_license,resource_intention_ids: [], resource_priority_ids: [])
   end
   
   

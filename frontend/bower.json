@@ -17,7 +17,8 @@
     "font-awesome": "~4.3.0",
     "foundation": "~5.5.1",
     "ic-modal": "~1.0.0",
-    "select2": "~3.5.2"
+    "select2": "~3.5.2",
+    "JavaScript-MD5": "~1.1.0"
   },
   "resolutions": {
     "jquery": "^1.11.1"
