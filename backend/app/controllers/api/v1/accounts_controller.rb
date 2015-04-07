@@ -11,9 +11,8 @@ class Api::V1::ResourcesController < ApplicationController
   end
   
   
-  
   def  account_params
     params.require(:account).permit(:bio, :avatar, :url, user_attributes: [:id])
-  end
+  end  
   
 end

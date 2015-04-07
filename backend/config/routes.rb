@@ -7,8 +7,9 @@ MyBackend::Application.routes.draw do
     namespace :api, :defaults => {:format => :json} do
       namespace :v1 do
         
-        resources :users, :only => [:update, :destroy,:create, :show]
-        
+        resources :users, :only => [:update, :destroy,:create, :show] do 
+          resource :account
+        end
         resources :assignments, :only => [:show, :index,:create, :update, :destroy]
         resources :assignment_types
         resources :assignment_rewards
