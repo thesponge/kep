@@ -49,7 +49,7 @@
               <a href="#">{{fa-icon "user-secret"}} {{session.content.email}}</a>
               <ul class="dropdown">
                 <li>
-                  <a {{ action 'destroyCurrentUser' }}>Delete my account</a>
+                  {{#link-to accounts.show 1}}My account{{/link-to}}
                 </li>
                 <li>
                   <a {{ action 'invalidateSession' }}>Logout</a>

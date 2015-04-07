@@ -35,7 +35,7 @@ module.exports = function(environment) {
     'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *", // Allow scripts from https://cdn.mxpnl.com
     'font-src': "'self' http://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
     'connect-src': "'self' http://0.0.0.0:3000 https://api.mixpanel.com http://localhost:3000 http://localhost:35729", // Allow data (ajax/websocket) from [...]
-    'img-src': "'self'",
+    'img-src': "'self' *",
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com 
     'media-src': "'self'",
     'report-uri': "http://localhost:4200"
