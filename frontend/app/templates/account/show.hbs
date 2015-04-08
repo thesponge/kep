@@ -7,7 +7,7 @@
   <div class="small-10 columns profile">
     <div class="row">
 
-      <div class="small-7 columns profile-left">
+      <div class="small-6 columns profile-left">
         <div class="biography">
           <span class="label secondary">Biography</span>
           {{lorem-ipsum length=550}}
@@ -25,11 +25,11 @@
         </div>
       </div>
 
-      <div class="small-5 columns profile-inset">
+      <div class="small-6 columns profile-inset">
         <div class="row">
           <div class="small-8 columns profile-center">
             <div class="username-container text-center">
-              <span>Unknown User</span>
+              <span>{{model.display_name}}</span>
             </div>
             <div class="avatar">
               <ul class="clearing-thumbs" data-clearing>
@@ -40,8 +40,9 @@
                 </li>
               </ul>
             </div>
-            <hr>
+            <br>
             <div class="affiliations-container">
+              <span class="label secondary">Affiliations</span>
               <ul class="affiliations">
                 <li><a href="#">Centrul Român pentru Jurnalism de Investigație</a></li>
                 <li><a href="#">The Guardian</a></li>

@@ -51,13 +51,19 @@ Router.map(function() {
       //this.route('assignment');
     });
   });
-  this.resource('accounts', function() {
+  this.route('accounts', function() {
     this.route('new', {path: 'register'});
     this.route('confirm');
     this.route('recover', {path: 'recover'});
     this.route('reset');
     this.route('destroy');
-    this.route('show', {path: ':user_id'});
+  });
+  this.resource('users', function() {
+    this.route('show', {path: ':user_id'}, function(){
+      this.resource('account', function(){
+        this.route('show', {path: '/'});
+      });
+    });
   });
 });
 

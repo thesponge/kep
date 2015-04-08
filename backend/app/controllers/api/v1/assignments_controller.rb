@@ -40,7 +40,7 @@ class Api::V1::AssignmentsController < ApplicationController
   private 
   
   def assignment_params
-    params.require(:assignment).permit(:title, :description, :travel, :driver_license, assignment_type_ids: [], assignment_reward_ids: [], assignment_priority_ids: [])
+    params.require(:assignment).permit(:title, :description, :travel, :driver_license,assignment_reward_ids: [], assignment_priority_ids: [])
   end
   
   

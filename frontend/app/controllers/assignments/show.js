@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
       self.transitionToRoute('assignments.edit', self.get('model'));
     }
   },
- setupController: function(controller, model) {
+  setupController: function(controller, model) {
   //  model.reload();
     controller.set('model', model);
     //controller.set('isOwner', function(){

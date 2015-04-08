@@ -221,9 +221,11 @@ div.profile{
     border-left:   1px dashed #888;
     border-bottom: 1px dashed #888;
     div.profile-center {
-      border-right: 1px dashed #bbb;
+      /*border-right: 1px dashed #bbb;*/
     }
-    div.profile-right {}
+    div.profile-right {
+      border-left: 1px dashed #bbb;
+    }
   }
   div.profile-bottom {}
 
@@ -234,7 +236,9 @@ div.profile{
       font-size: 1.1em;
     }
   }
-  div.bio {}
+  div.bio {
+    padding-right: 2em;
+  }
   div.avatar {  
     ul.clearing-thumbs {
       text-align: center;
@@ -261,12 +265,17 @@ div.profile{
     }
   }
   div.affiliations-container {
+    span.label {
+      float: none;
+      margin: 0px auto;
+      display: block;
+    }
     ul.affiliations {
       margin: 0em auto;
       text-align: center;
       >li {
         line-height: 90%;
-        margin: 6px;
+        margin: 10px;
       }
     }
   }
@@ -279,7 +288,7 @@ div.profile{
   ul.intentions,
   ul.languages,
   ul.skills {
-    > li {font-size: .8em;}
+    > li {font-size: .95em;}
   }
   div.submissions {
     div.resources-container {

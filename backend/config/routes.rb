@@ -7,7 +7,11 @@ MyBackend::Application.routes.draw do
     namespace :api, :defaults => {:format => :json} do
       namespace :v1 do
         
-        resources :users, :only => [:update, :destroy,:create, :show]
+        resources :users, :only => [:update, :destroy,:create, :show] 
+        
+        resources :users do
+          resource :account
+        end
         
         resources :assignments, :only => [:show, :index,:create, :update, :destroy]
         resources :assignment_types
@@ -15,6 +19,8 @@ MyBackend::Application.routes.draw do
         resources :resources, :only => [:show, :index]
         resources :resources, :only => [:create, :update, :destroy]
         resources :matches
+        resources :affiliations
+        
       end
     end
   end
