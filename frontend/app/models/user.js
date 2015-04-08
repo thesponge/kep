@@ -3,16 +3,17 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 var User = DS.Model.extend({
-  email: attr('string'),
-  password: attr('string'),
-  password_confirmation: attr('string')
+  email                 : attr('string'),
+  password              : attr('string'),
+  password_confirmation : attr('string'),
+  account               : DS.belongsTo ('account')
 });
 
-//Assignment.reopenClass({
+//User.reopenClass({
 //  FIXTURES: [
-//    {id: 1, title: 'Assignment One'},
-//    {id: 2, title: 'Assignment Two'},
-//    {id: 3, title: 'Assignment Three'}
+//    {id: 1, email: 'user1@email.com'},
+//    {id: 2, email: 'user2@email.com'},
+//    {id: 3, email: 'user3@email.com'}
 //  ]
 //});
 
