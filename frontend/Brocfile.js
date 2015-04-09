@@ -6,7 +6,7 @@ var app = new EmberApp({
   modals: {
     layout    : true,
     style     : true,
-    animation : 'flip'
+    animation : 'slide-up'
   },
   emberCliFontAwesome: {
     includeFontAwesomeAssets: true

@@ -1,5 +1,11 @@
 {{partial 'p-navbar'}}
 
+<div class="notifications-container">
+    {{#each notification in notifications}}
+        {{notification-message notification=notification}}
+    {{/each}}
+</div>
+
 <div class="spacer"></div>
 
 <div class="row h300">
@@ -8,19 +14,35 @@
     <div class="row">
 
       <div class="small-6 columns profile-left">
-        <div class="biography">
-          <span class="label secondary">Biography</span>
-          {{lorem-ipsum length=550}}
+        <div class="bio-container">
+          <span class="label secondary">Biography:</span>
+          {{#if model.account.is_owner}}
+            <a {{action 'modalFor' 'account/update/bio'}}>{{fa-icon 'edit'}}</a>
+          {{/if}}
+          <div class="bio">
+            {{model.account.bio}}
+          </div>
         </div>
-        <div class="url">
-          <span class="label secondary">Website</span>
-          <a href="#">http://kep.thesponge.eu</a>
+        <div class="url-container">
+          <span class="label secondary">Website:</span>
+          {{#if model.account.is_owner}}
+            <a {{action 'modalFor' 'account/update/url'}}>{{fa-icon 'edit'}}</a>
+          {{/if}}
+          <div class="url">
+            <a {{bind-attr href=model.account.url}}>
+              {{model.account.url}}
+            </a>
+          </div>
         </div>
         <div class="locations-container">
           <span class="label secondary">Locations:</span>
+          {{#if model.account.is_owner}}
+            <a {{action 'modalFor' 'account/update/locations'}}>{{fa-icon 'edit'}}</a>
+          {{/if}}
           <ul>
-            <li><a href="#">City, Country</a></li>
-            <li><a href="#">City, Country</a></li>
+            {{#each location in model.account.locations}}
+              <li>{{location.city}}, {{location.country}}</li>
+            {{/each}}
           </ul>
         </div>
       </div>
@@ -29,49 +51,86 @@
         <div class="row">
           <div class="small-8 columns profile-center">
             <div class="username-container text-center">
-              <span>{{model.display_name}}</span>
+              <span>{{model.account.display_name}}</span>
+              {{#if model.account.is_owner}}
+                <a {{action 'modalFor' 'account/update/display-name'}}>{{fa-icon 'edit'}}</a>
+              {{/if}}
             </div>
-            <div class="avatar">
-              <ul class="clearing-thumbs" data-clearing>
-                <li class="avatar">
-                  <a class="th" href="http://lorempixel.com/500/500">
-                    <img src="http://lorempixel.com/100/100">
-                  </a>
-                </li>
-              </ul>
+            <div class="avatar-container">
+              <div class="avatar">
+                {{gravatar-image email=model.email
+                  alt=model.account.display_name size=150 default='identicon'}}
+              </div>
             </div>
             <br>
             <div class="affiliations-container">
-              <span class="label secondary">Affiliations</span>
+              <span class="label secondary">Affiliations:</span>
+              {{#if model.account.is_owner}}
+                <a {{action 'modalFor' 'account/update/affiliations'}}>{{fa-icon 'edit'}}</a>
+              {{/if}}
               <ul class="affiliations">
+                {{#each affiliation in model.account.affiliations}}
+                  <li>
+                    <a {{bind-attr href=affiliaton.link}}>
+                      {{affiliation.affiliation}}
+                    </a>
+                  </li>
+                {{/each}}
+                {{!--
                 <li><a href="#">Centrul Român pentru Jurnalism de Investigație</a></li>
                 <li><a href="#">The Guardian</a></li>
                 <li><a href="#">Asociația pentru Tehnologie și Internet (ApTI)</a></li>
+                --}}
               </ul>
             </div>
           </div>
           <div class="small-4 columns profile-right">
             <div class="skills-container">
               <span class="label secondary">Skills:</span>
+              {{#if model.account.is_owner}}
+                <a {{action 'modalFor' 'account/update/skills'}}>{{fa-icon 'edit'}}</a>
+              {{/if}}
               <ul class="skills">
+                {{#each skill in model.account.skills}}
+                  {{skill.name}}
+                  ({{skill.category}})
+                {{/each}}
+                {{!--
                 <li><a href="#">Skill 1</a> <small>(<a href="#">proof</a>)</small></li>
                 <li><a href="#">Skill 2</a></li>
                 <li><a href="#">Skill 3</a> <small>(<a href="#">proof</a>)</small></li>
+                --}}
               </ul>
             </div>
             <div class="languages-container">
               <span class="label secondary">Languages:</span>
+              {{#if model.account.is_owner}}
+                <a {{action 'modalFor' 'account/update/languages'}}>{{fa-icon 'edit'}}</a>
+              {{/if}}
               <ul class="languages">
+                {{#each language in model.account.languages}}
+                  <li>{{language.common}}</li>
+                {{/each}}
+                {{!--
                 <li>Swahili</li>
                 <li>Zulu</li>
                 <li>Klingonian</li>
+                --}}
               </ul>
             </div>
             <div class="intentions-container">
               <span class="label secondary">Intentions:</span>
+              {{#if model.account.is_owner}}
+                <a {{action 'modalFor' 'account/update/intentions'}}>{{fa-icon 'edit'}}</a>
+              {{/if}}
               <ul class="intentions">
+                {{#each intention in model.account.intentions}}
+                  <li>{{intention.intention}}</li>
+                {{/each}}
+                {{!--
                 <li>Brainstorming</li>
                 <li>Development</li>
+                --}}
               </ul>
             </div>
           </div>
@@ -80,19 +139,19 @@
     </div>
 
     <hr>
-    
+
     <div class="row">
       <div class="small-12 columns">
         <ul class="small-block-grid-2 submissions">
           <li class="resources">
-            <span class="label secondary">Resources shared</span>
+            <span class="label secondary">Resources shared:</span>
             <ul>
               <li><a href="#">Resource #1</a></li>
               <li><a href="#">Resource #2</a></li>
             </ul>
           </li>
           <li class="assignments">
-            <span class="label secondary">Assignments offered</span>
+            <span class="label secondary">Assignments offered:</span>
             <ul>
               <li><a href="#">Assignment #1</a></li>
               <li><a href="#">Assignment #2</a></li>
@@ -104,3 +163,4 @@
   </div>
   <div class="small-1 columns">&nbsp;</div>
 </div>
+<div class="spacer"></div>

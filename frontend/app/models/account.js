@@ -1,9 +1,11 @@
 import DS from 'ember-data';
 
 var Account = DS.Model.extend({
-  display_name    : DS.attr('string'),
+  display_name    : DS.attr('string', {
+    defaultValue: function() { return 'Unknown identity'; }
+  }),
   join_date       : DS.attr(),
-  biography       : DS.attr('string'),
+  bio             : DS.attr('string'),
   url             : DS.attr('string'),
   avatar          : DS.attr('string'),
   locations       : DS.hasMany('location', { async : true, embedded : 'always' }),
@@ -16,7 +18,11 @@ var Account = DS.Model.extend({
   skill_ids       : DS.attr(),
   intention_ids   : DS.attr(),
   affiliation_ids : DS.attr(),
-  user            : DS.belongsTo ('user')
+  user            : DS.belongsTo ('user'),
+  is_owner: function(){
+    var session = container.lookup('simple-auth-session:main')
+    return this.get('id') == session.content.id;
+  }.property()
 });
 
 //Account.reopenClass({

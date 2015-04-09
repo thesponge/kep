@@ -117,7 +117,7 @@ $white       : #FFFFFF;
 $charcoal    : #555555;
 // $tuatara     : #444444;
 $oil         : #333333;
-// $jet         : #222222;
+$jet         : #443647;
 // $black       : #000000;
 $darkgreen   : #1E801E;
 $darkergreen   : #226622;
@@ -127,10 +127,14 @@ $darkergreen   : #226622;
 //$kep-menuaccent : rgba(0,0,0,.2);
 //$kep-menubase   : rgba(255,255,255,.7);
 //$kep-menuaccent : rgba(0,0,0,.4);
-$kep-menubase   : #719B68;
-$kep-menuaccent : #A9C9A2;
-$kep-menutextbase   : #fff;
-$kep-menutextaccent : #222;
+//$kep-menubase   : #719B68;
+//$kep-menuaccent : #A9C9A2;
+$kep-menubase   : #E3E8E5;
+/*$kep-menuaccent : #A69DA3;*/
+$kep-menuaccent : lighten($kep-menubase, 10%);
+$kep-menutextbase   : darken(#473933, 10%);
+/*$kep-menutextbase   : #E3E8E5;*/
+$kep-menutextaccent : #FFFFFF;
 $kep-textbase : #222;
 $kep-textaccent : #333;
 
@@ -138,10 +142,10 @@ $kep-textaccent : #333;
 
 
 // We use these as default colors throughout
-$primary-color: #008CBA;
+$primary-color: #1D415B;
 // $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
+$alert-color: #C73935;
+$success-color: #72A854;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
@@ -472,7 +476,7 @@ $primary-color: #008CBA;
 // We use these to control button border styles.
 // $button-border-width: 0;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+// $button-bg-color: #1D415B;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -947,7 +951,7 @@ $primary-color: #008CBA;
 // Hide controls on small
 // $orbit-nav-hide-for-small: true;
 // $orbit-bullet-hide-for-small: true;
-// $orbit-timer-hide-for-small: true; 
+// $orbit-timer-hide-for-small: true;
 
 // 20. Pagination
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1285,7 +1289,7 @@ $price-money-size: rem-calc(28);
 // $switch-paddle-bg: $white;
 // $switch-paddle-transition-speed: .15s;
 // $switch-paddle-transition-ease: ease-out;
-// $switch-active-color: $primary-color; 
+// $switch-active-color: $primary-color;
 
 // 30. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1402,7 +1406,7 @@ $price-money-size: rem-calc(28);
 
 // Background color for the top bar
 $topbar-bg-color: $kep-menubase;
-// $topbar-bg: $topbar-bg-color;
+/*$topbar-bg: url('http://bradjasper.com/subtle-patterns-bookmarklet/patterns/gradient_squares.png');*/
 
 // Height and margin
 // $topbar-height: rem-calc(45);
@@ -1435,9 +1439,10 @@ $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
-$topbar-dropdown-link-color: $kep-textbase;
-$topbar-dropdown-link-color-hover: $topbar-link-color-hover;
+$topbar-dropdown-link-color: $kep-menutextbase;
+$topbar-dropdown-link-color-hover: $kep-menutextaccent;
 $topbar-dropdown-link-bg: $kep-menubase;
+$topbar-dropdown-link-bg: url('http://bradjasper.com/subtle-patterns-bookmarklet/patterns/gradient_squares.png');
 $topbar-dropdown-link-bg-hover: $kep-menuaccent;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
@@ -1476,7 +1481,7 @@ $topbar-dropdown-link-bg-hover: $kep-menuaccent;
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
-// $topbar-dropdown-arrows: true; //Set false to remove the \00bb >> text from dropdown subnavigation li// 
+// $topbar-dropdown-arrows: true; //Set false to remove the \00bb >> text from dropdown subnavigation li//
 
 // 36. Visibility Classes
 // - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -19,6 +19,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
                 );
     }
   },
+  afterModel: function() {
+  },
  actions: {
     match: function(params){
       console.log('step 1');
@@ -67,6 +69,11 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   },
   renderTemplate: function(params){
     this.render();
+    this.render('account/username', {
+      outlet: 'username',
+      into: 'resources/show',
+      controller: 'account.show'
+    });
 
     var match = params.match;
     if(match != undefined) {

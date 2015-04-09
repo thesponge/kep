@@ -60,7 +60,7 @@ Router.map(function() {
   });
   this.resource('users', function() {
     this.route('show', {path: ':user_id'}, function(){
-      this.resource('account', function(){
+      this.resource('account', {path: '/profile'}, function(){
         this.route('show', {path: '/'});
       });
     });

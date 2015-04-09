@@ -27,18 +27,21 @@
 
 /* Color variables */
 
-$kep-postbase: #FBFFF4;
+/*$kep-postbase: lighten(saturate(#C2DB65, 7), 9);*/
+/*$kep-postbase: rgba(237, 222, 185, 0.7);*/
+$kep-postbase: #E0D4BE;
 /*$kep-postaccent: darken( $kep-postbase, 50% );*/
-$kep-postaccent: #E8EADA;
+$kep-postaccent: lighten($kep-postbase, 5%);
 $kep-normaltext: #141617;
+$kep-rollbackground: #FCF3F8;
 
 /* The SASS! */
 html, body {
-  background: url('/assets/subtledots.png') repeat;
+  background: #C9D8D1;
 }
 
 p {
-  color: $kep-normaltext;
+  /*color: $kep-normaltext;*/
 }
 
 div.spacer { width: 100%; height: 50px; }
@@ -116,7 +119,7 @@ ul.roll {
   height: 470px;
   list-style: none;
   margin: 0px auto;
-  background-color: rgba(255,255,255,.7);
+  background-color: $kep-rollbackground;
   /*margin-top: 25px;*/
   > a li.post {
     min-height: 100px;
@@ -212,6 +215,15 @@ div.content {
 
 /* Start profile page stuff */
 div.profile{
+  background-color: lighten(#F7F2CC, 10%);
+  padding: 2em;
+  .label {
+    font-size: 1em;
+    font-style: oblique;
+  }
+  div[class$="-container"] {
+    margin-bottom: 1em;
+  }
 
   /* Profile resets */
   ul {list-style: none;}
@@ -236,20 +248,20 @@ div.profile{
       font-size: 1.1em;
     }
   }
-  div.bio {
+  div.bio-container {
     padding-right: 2em;
+    div.bio { }
   }
-  div.avatar {  
-    ul.clearing-thumbs {
-      text-align: center;
-    }
-    ul.clearing-thumbs>li.avatar {
+  div.avatar-container {  
+    text-align: center;
+    div.avatar {
       float: none;
       margin: 0px auto;
-      a { }
     }
   }
-  div.url {}
+  div.url-container {
+    div.url {}
+  }
   div.availability {}
   div.locations-container {
     ul.locations {
@@ -311,11 +323,9 @@ div.profile{
 .micro {
   padding: 3px 4px;
   font-size: .6em;
+  margin: 0px;
 }
 
-.modal {
-  max-width: 95%;
-}
 
 .select2-container {
   width: 100%;

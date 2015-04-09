@@ -20,6 +20,9 @@
                             <a href="#">{{session.content.email}}</a>
                             <ul class="dropdown">
                               <li>
+                                {{#link-to 'account.show' session.content.id}}My account{{/link-to}}
+                              </li>
+                              <li>
                                 <a {{ action 'invalidateSession' }}>Logout</a>
                               </li>
                             </ul>

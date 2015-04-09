@@ -26,6 +26,9 @@ export default Ember.Controller.extend({
   model: function() {
     return this.store.find('assignment');
   }.property(),
+  //owner: function() {
+  //  return this.store.find('accounts', 1);
+  //}.property(),
   //isOwner: function(){
   //  return this.model.user_id === user.id;
   //}.property('assignment')
