@@ -6,7 +6,11 @@ var User = DS.Model.extend({
   email                 : attr('string'),
   password              : attr('string'),
   password_confirmation : attr('string'),
-  account               : DS.belongsTo ('account')
+  account               : DS.belongsTo ('account'),
+  resources             : DS.hasMany('resource', { async : true, embedded : 'always' }),
+  assignments           : DS.hasMany('assignment', { async : true, embedded : 'always' }),
+  resource_ids          : DS.attr(),
+  assignment_ids        : DS.attr(),
 });
 
 //User.reopenClass({

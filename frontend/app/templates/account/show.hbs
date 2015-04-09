@@ -146,15 +146,21 @@
           <li class="resources">
             <span class="label secondary">Resources shared:</span>
             <ul>
-              <li><a href="#">Resource #1</a></li>
-              <li><a href="#">Resource #2</a></li>
+              {{#each resource in model.resources}}
+                <li>
+                  {{#link-to 'resources.show' resource.id}}{{resource.title}}{{/link-to}}
+                </li>
+              {{/each}}
             </ul>
           </li>
           <li class="assignments">
             <span class="label secondary">Assignments offered:</span>
             <ul>
-              <li><a href="#">Assignment #1</a></li>
-              <li><a href="#">Assignment #2</a></li>
+              {{#each assignment in model.assignments}}
+                <li>
+                  {{#link-to 'assignments.show' assignment.id}}{{assignment.title}}{{/link-to}}
+                </li>
+              {{/each}}
             </ul>
           </li>
         </ul>
