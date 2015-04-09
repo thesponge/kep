@@ -11,7 +11,7 @@ class Api::V1::AssignmentRewardsController < ApplicationController
   protected
   
   def assignment_reward_params
-    params.require(:assignment_reward).permit(:reward, :icon, assignments_attributes: [:title, :description, :travel, :driver_license])
+    params.require(:assignment_reward).permit(:reward, :icon, assignments_ids:[])
   end
   
 end

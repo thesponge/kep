@@ -20,6 +20,10 @@ MyBackend::Application.routes.draw do
         resources :resources, :only => [:create, :update, :destroy]
         resources :matches
         resources :affiliations
+        resources :intentions
+        resources :languages
+        resources :locations
+        resources :skills
         
       end
     end
