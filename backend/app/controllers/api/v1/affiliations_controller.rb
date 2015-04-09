@@ -2,7 +2,7 @@ class Api::V1::AffiliationsController < ApplicationController
    before_action :authenticate_with_token!, only: [:create, :update, :destroy]
   
   def index
-    render json: Affiliations.all
+    render json: Affiliation.all
   end
 
   def show
