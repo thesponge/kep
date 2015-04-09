@@ -9,9 +9,7 @@ MyBackend::Application.routes.draw do
         
         resources :users, :only => [:update, :destroy,:create, :show] 
         
-        resources :users do
-          resource :account
-        end
+        resources :accounts
         
         resources :assignments, :only => [:show, :index,:create, :update, :destroy]
         resources :assignment_types
