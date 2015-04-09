@@ -14,7 +14,7 @@ class Api::V1::LocationsController < ApplicationController
     if location
        render json: location, status: 200
     else 
-      render json: { errors: aff.errors }, status: 422
+      render json: { errors: location.errors }, status: 422
     end
   end
   
