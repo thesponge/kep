@@ -1,0 +1,12 @@
+<form id="updateintentions" {{action 'updateIntentions' on='submit'}}>
+  <label for="intentions">Intentions</label>
+      {{select-2
+          content=intentions_select
+          value=model.account.intention_ids
+          multiple=true
+          optionValuePath="id"
+          optionLabelPath="intention"
+          placeholder="What would you like to do here?"
+      }}
+  <button id="submit" type="submit" class="pull-right micro">Submit</button>
+</form>

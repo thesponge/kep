@@ -14,7 +14,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       console.log('bM params: ', params.queryParams.match);
         var resourcesController = this.controllerFor('resources.show');
         console.log('step 2');
-        resourcesController.set('model', 
+        resourcesController.set('model',
                  this.store.find('resource', params.queryParams.match)
                 );
     }
@@ -75,7 +75,7 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       console.log('rT params: ', match);
       resourcesController.set('match', match);
       resourcesController.set('matchBase', true);
-      resourcesController.set('model', 
+      resourcesController.set('model',
                this.store.find('resource', match)
               );
 
@@ -87,4 +87,3 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     }
   }
 });
-

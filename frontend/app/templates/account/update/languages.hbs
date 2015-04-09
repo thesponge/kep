@@ -1,0 +1,12 @@
+<form id="updatelanguages" {{action 'updateLanguages' on='submit'}}>
+  <label for="languages">Languages</label>
+      {{select-2
+          content=languages_select
+          value=model.account.language_ids
+          multiple=true
+          optionValuePath="id"
+          optionLabelPath="common"
+          placeholder="What would you like to do here?"
+      }}
+  <button id="submit" type="submit" class="pull-right micro">Submit</button>
+</form>

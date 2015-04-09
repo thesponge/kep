@@ -1,0 +1,6 @@
+<form id="updatebio" {{action 'updateBio' on='submit'}}>
+  <label for="bio">Biography</label>
+  {{textarea id='bio' placeholder='Enter your desired biography'
+          value=model.account.bio}}
+  <button id="submit" type="submit" class="pull-right micro">Change it</button>
+</form>
