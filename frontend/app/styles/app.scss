@@ -30,9 +30,11 @@
 /*$kep-postbase: lighten(saturate(#C2DB65, 7), 9);*/
 /*$kep-postbase: rgba(237, 222, 185, 0.7);*/
 $kep-postbase: rgba(255, 228, 171, 0.4);
-$kep-postbase: #E4FAEC;
+$kep-postbase: #E1F9E9;
 /*$kep-postaccent: darken( $kep-postbase, 50% );*/
 $kep-postaccent: lighten($kep-postbase, 5%);
+$kep-assignmentborder: #E4FAEC;
+$kep-resourceborder  : rgba(255, 228, 171, 0.4);
 $kep-normaltext: #141617;
 $kep-rollbackground: #FCF3F8;
 $kep-rollbackground: #FEFEFE;
