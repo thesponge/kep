@@ -9,9 +9,9 @@ var Assignment = DS.Model.extend({
   description          : attr('string'),
   travel               : attr('string'),
   driver_license       : attr('string'),
-  assignment_types            : DS.hasMany('assignmentType', {inverse: 'assignment', async: true, embedded: 'always'}),
+  skills            : DS.hasMany('skill', {inverse: 'assignment', async: true, embedded: 'always'}),
   assignment_rewards    : DS.hasMany('assignmentReward', {inverse: 'assignment', async: true, embedded: 'always'}),
-  assignment_type_ids         : attr(),
+  skill_ids         : attr(),
   assignment_reward_ids : attr(),
   assignment_priority_ids     : attr(),
   description_fragment : function() {

@@ -25,13 +25,17 @@ test:
   timeout: 5000
   
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: kep_production
   pool: 5
   timeout: 5000
-  #adapter: postgresql
-  #encoding: unicode
-  #database: myapp_development
-  #pool: 5
-  #username: myapp
-  #password: password1
+  username: ENV["DB_USER"]
+  password: ENV["DB_PASS"]
+
+staging:
+  adapter: postgresql
+  database: kep_staging
+  pool: 5
+  timeout: 5000
+  username: ENV["DB_USER"]
+  password: ENV["DB_PASS"]

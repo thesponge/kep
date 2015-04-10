@@ -47,13 +47,13 @@
       <li>
         <div class="panel radius callout">
           <ul>
-            {{#each type in model.assignment_types}}
+            {{#each skill in model.skills}}
               <li>
                 <span class="list-icon">
-                  {{fa-icon type.icon}}
+                  {{fa-icon skill.icon}}
                 </span> 
-                {{type.option}} 
-                <small> ({{type.category}})</small>
+                {{skill.name}} 
+                <small> ({{skill.category}})</small>
               </li>
             {{/each}}
           </ul>

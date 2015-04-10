@@ -5,7 +5,7 @@ var attr = DS.attr;
 var assignmentReward = DS.Model.extend({
   reward : attr('string'),
   icon         : attr('string'),
-  assignment          : DS.belongsTo('assignment', {inverse : 'assignment_rewards'})
+  assignment          : DS.hasMany('assignment', {inverse : 'assignment_rewards'})
   //assignment_type_ids:          attr('string'),
   //assignment_reward_ids:  attr('string'),
   //assignment_priority_ids:      attr('string')
