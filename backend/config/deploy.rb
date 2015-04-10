@@ -5,6 +5,11 @@ set :application, 'KEP'
 set :repo_url, 'https://github.com/thesponge/kep'
 set :repo_tree, 'backend'
 
+#call with cap -s env="<env>" branch="<branchname>" deploy
+
+set :branch, fetch(:branch, "master")
+#set :env, fetch(:env, "production")
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -24,7 +29,7 @@ set :repo_tree, 'backend'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/application.yml', 'config/secrets.yml')
+#set :linked_files, fetch(:linked_files, []).push('config/application.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
