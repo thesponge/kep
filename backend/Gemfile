@@ -12,6 +12,12 @@ gem 'seed-fu', '~> 2.3'
 gem 'geocoder'
 #For the list of languages in language model
 gem 'language_list' 
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-rails', '~> 1.1.0'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', "~> 2.0" 
+gem 'capistrano-passenger'
+
 
 group :development do
   gem 'byebug'
