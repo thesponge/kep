@@ -9,6 +9,11 @@ class ApplicationController < ActionController::API
   before_action :set_default_response_format
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+
+  skip_before_filter :verify_authenticity_token
+ 
+  #before_filter :cors_preflight_check
+  #after_filter :cors_set_access_control_headers
   
   def set_default_response_format
     request.format = :json
@@ -32,5 +37,23 @@ class ApplicationController < ActionController::API
       end
     end
   end
+
+  #def cors_set_access_control_headers
+  #  headers['Access-Control-Allow-Origin'] = '*'
+  #  #headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, PATCH, OPTIONS'
+  #  #headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
+  #  #headers['Access-Control-Max-Age'] = "1728000"
+  #  #headers['Access-Control-Request-Method'] = '*'
+  #end
+ 
+  #def cors_preflight_check
+  #  #headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, PATCH, OPTIONS'
+  #  #response.headers['Access-Control-Allow-Headers'] = 'X-Requested-With, Content-Type, X-Prototype-Version, Token'
+  #  #headers['Access-Control-Max-Age'] = '1728000'
+  #  #headers['Access-Control-Request-Method'] = '*'
+
+  #  #render :json => '', :content_type => 'application/json'
+  #  headers["Access-Control-Allow-Origin"] = "*"
+  #end
   
 end
