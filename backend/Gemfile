@@ -19,7 +19,7 @@ gem 'capistrano-bundler'
 gem 'capistrano-rbenv', "~> 2.0" 
 gem 'capistrano-passenger'
 gem 'capistrano-figaro-yml'
-
+gem 'rack-cors'
 
 group :development do
   gem 'byebug'
