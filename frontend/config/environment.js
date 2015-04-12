@@ -19,7 +19,9 @@ module.exports = function(environment) {
       emberDevTools: {global: true},
       'ember-cli-notifications': {
           includeFontAwesome: true
-      }
+      },
+      host: 'http://localhost:3000',
+      namespace: 'api/v1'
     }
   };
 
