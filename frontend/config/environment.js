@@ -26,11 +26,13 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
+    authorizer: 'simple-auth-authorizer:devise',
+    crossOriginWhitelist: ['*']
   };
   ENV['simple-auth-devise'] = {
     tokenAttributeName: 'token',
-    identificationAttributeName: 'email'
+    identificationAttributeName: 'email',
+    serverTokenEndpoint: ENV.APP.apiHost + '/users/sign_in'
   };
   ENV.contentSecurityPolicy = {
     'default-src': "'self'",

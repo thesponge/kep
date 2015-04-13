@@ -22,7 +22,7 @@ module MyBackend
   
   config.autoload_paths += %W(#{config.root}/lib)
     
-  #config.middleware.insert_before Warden::Manager, Rack::Cors
+  config.middleware.insert 0, Rack::Cors
 
   config.middleware.use Rack::Cors do
     allow do
