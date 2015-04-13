@@ -20,8 +20,6 @@ module.exports = function(environment) {
       'ember-cli-notifications': {
           includeFontAwesome: true
       },
-      apiHost: 'http://localhost:3000',
-      apiNamespace: 'api/v1'
     }
   };
 
@@ -51,6 +49,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'development') {
+    ENV.APP.apiHost = 'http://localhost:3000';
+    ENV.APP.apiNamespace = 'api/v1';
     // ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -70,7 +70,15 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'staging') {
+    ENV.APP.apiHost = 'http://api.staging.kep.thesponge.eu';
+    ENV.APP.apiNamespace = 'v1';
+
+  }
+
   if (environment === 'production') {
+    ENV.APP.apiHost = 'http://api.kep.thesponge.eu';
+    ENV.APP.apiNamespace = 'v1';
 
   }
 
