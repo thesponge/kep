@@ -5,6 +5,8 @@ set :application, 'KEP'
 set :repo_url, 'https://github.com/thesponge/kep'
 set :repo_tree, 'backend'
 
+set :rbenv_ruby, File.read('.ruby-version').strip
+
 #call with cap -s env="<env>" branch="<branchname>" deploy
 
 set :branch, fetch(:branch, "master")

@@ -129,12 +129,13 @@ $darkergreen   : #226622;
 //$kep-menuaccent : rgba(0,0,0,.4);
 //$kep-menubase   : #719B68;
 //$kep-menuaccent : #A9C9A2;
-$kep-menubase   : #E3E8E5;
+$kep-menubase   : #3BB57D;
 /*$kep-menuaccent : #A69DA3;*/
 $kep-menuaccent : lighten($kep-menubase, 10%);
 $kep-menutextbase   : darken(#473933, 10%);
+$kep-menutextbase   : #FEFEFE;
 /*$kep-menutextbase   : #E3E8E5;*/
-$kep-menutextaccent : #FFFFFF;
+$kep-menutextaccent : #CDCDCD;
 $kep-textbase : #222;
 $kep-textaccent : #333;
 
@@ -1442,7 +1443,7 @@ $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 $topbar-dropdown-link-color: $kep-menutextbase;
 $topbar-dropdown-link-color-hover: $kep-menutextaccent;
 $topbar-dropdown-link-bg: $kep-menubase;
-$topbar-dropdown-link-bg: url('http://bradjasper.com/subtle-patterns-bookmarklet/patterns/gradient_squares.png');
+/*$topbar-dropdown-link-bg: url('http://bradjasper.com/subtle-patterns-bookmarklet/patterns/gradient_squares.png');*/
 $topbar-dropdown-link-bg-hover: $kep-menuaccent;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;

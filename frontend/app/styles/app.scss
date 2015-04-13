@@ -29,15 +29,26 @@
 
 /*$kep-postbase: lighten(saturate(#C2DB65, 7), 9);*/
 /*$kep-postbase: rgba(237, 222, 185, 0.7);*/
-$kep-postbase: #E0D4BE;
+$kep-postbase: rgba(255, 228, 171, 0.4);
+$kep-postbase: #E1F9E9;
 /*$kep-postaccent: darken( $kep-postbase, 50% );*/
 $kep-postaccent: lighten($kep-postbase, 5%);
+$kep-assignmentborder: #E4FAEC;
+$kep-resourceborder  : rgba(255, 228, 171, 0.4);
 $kep-normaltext: #141617;
 $kep-rollbackground: #FCF3F8;
+$kep-rollbackground: #FEFEFE;
 
 /* The SASS! */
 html, body {
-  background: #C9D8D1;
+  /*background: #CBF4DA;*/
+  /*background: #E1F9E9;*/
+  /*background: linen;*/
+  background: #F5F5F5;
+}
+
+.top-bar {
+  box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.75);
 }
 
 p {

@@ -11,7 +11,6 @@ var App = Ember.Application.extend({
   Resolver: Resolver
 });
 
-
 loadInitializers(App, config.modulePrefix);
 
 Ember.View.reopen({
