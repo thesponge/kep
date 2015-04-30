@@ -36,7 +36,7 @@ cd frontend; npm start
 
 # Development
 
-Detailed information about the Rails backend and the Ember client are to be found in their own README files: [backend](https://github.com/thesponge/kep/tree/master/backend) / [frontend](https://github.com/thesponge/kep/tree/master/frontend).
+Detailed information about the Rails backend and the Ember client are to be found in their own README files: [backend](https://github.com/thesponge/kep/kep-backend) / [frontend](https://github.com/thesponge/kep/kep-frontend).
 
 
 You need to have a SMTP server set up in `backend/config/application.yml`
