@@ -15,6 +15,8 @@ cd kep
 git submodule init
 git submodule update
 cd backend
+#install bundler(http://bundler.io/) or another dependency manager
+#if you chose bundler,run the following line:
 bundle install
 # now create the development database into postgresql server
 # then update DB_USER in config/application.yml
