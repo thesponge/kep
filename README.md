@@ -1,9 +1,18 @@
 [![Stories in Ready](https://badge.waffle.io/thesponge/kep.png?label=ready&title=Ready)](https://waffle.io/thesponge/kep)
+
+
+
 # Introduction
 
-## Knowledge Exchange Platform (KEP)
+# Knowledge Exchange Platform (KEP)
 
-(general description will be updated here)
+The free software Knowledge Exchange Platform (KEP) is designed as the one stop shop, where interdisciplinary groups or networks, can find exciting assignments (money, barter, dinner) or exchange relevant information in an open and collaborative way.
+
+KEP is constantly fed with information by it's users. Users are motivated to use KEP because it creates a marketplace where members can post assignments(jobs) and resources (info) and have their needs/skills mixed and matched. Everybody wins!
+
+We are also throwing a bundle of task centric tools into the mix, to make the launching of a collaborative investigative project as easy and inclusive as starting to play a game.
+
+The marketplace was build with the investigative journalism field in mind. Projects related to the fields of activism, fixing, coding, mapping, design can also be fused here.
 
 --------
 
