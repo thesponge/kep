@@ -1,6 +1,6 @@
 [submodule "backend"]
 	path = backend
-	url = git@github.com:thesponge/kep-backend
+	url = https://github.com/thesponge/kep-backend.git
 [submodule "frontend"]
 	path = frontend
-	url = git@github.com:thesponge/kep-frontend
+	url = https://github.com/thesponge/kep-frontend.git
